@@ -31,4 +31,5 @@ struct Colors {
     static let searchBarColor = UIColor(hex: "2B2B2B")
     static let gradientButton1 = UIColor(hex: "BC66FF")
     static let gradientButton2 = UIColor(hex: "DEB5FF")
+    //
 }
