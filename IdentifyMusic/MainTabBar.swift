@@ -67,6 +67,8 @@ extension MainTabBar {
         playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 3)
         let playlistNavigation = UINavigationController()
         playlistNavigation.viewControllers = [playlistVC]
+        
+        
         return playlistNavigation
     }
 }
