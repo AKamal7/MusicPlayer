@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */; };
+		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
+		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
+		BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
-		F73B5A8B2B9CA81300521C7F /* PlayListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A8A2B9CA81200521C7F /* PlayListVC.swift */; };
 		F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571CC2B9AC030000AC75E /* AppDelegate.swift */; };
 		F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571D02B9AC030000AC75E /* SearchVC.swift */; };
 		F78571D42B9AC030000AC75E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78571D22B9AC030000AC75E /* Main.storyboard */; };
@@ -19,9 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
+		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
+		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
+		BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
-		F73B5A8A2B9CA81200521C7F /* PlayListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListVC.swift; sourceTree = "<group>"; };
 		F78571C92B9AC030000AC75E /* IdentifyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentifyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78571CC2B9AC030000AC75E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F78571D02B9AC030000AC75E /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -43,6 +49,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB526F8A2BA28B53006E6322 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F78571CC2B9AC030000AC75E /* AppDelegate.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB526F8B2BA28B81006E6322 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB526F8C2BA28B89006E6322 /* Playlist */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB526F8C2BA28B89006E6322 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */,
+				BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		BB526FA62BA29DDE006E6322 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BB526FA72BA29DF4006E6322 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F78571D52B9AC032000AC75E /* Assets.xcassets */,
+				BB526FA62BA29DDE006E6322 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BB526FAA2BA2A220006E6322 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F78571C02B9AC030000AC75E = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +118,14 @@
 		F78571CB2B9AC030000AC75E /* IdentifyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				F78571CC2B9AC030000AC75E /* AppDelegate.swift */,
-				F73B5A8A2B9CA81200521C7F /* PlayListVC.swift */,
+				BB526F8A2BA28B53006E6322 /* Shared */,
+				BB526F8B2BA28B81006E6322 /* Views */,
+				BB526FAA2BA2A220006E6322 /* Extensions */,
+				BB526FA72BA29DF4006E6322 /* Assets */,
 				F78571D02B9AC030000AC75E /* SearchVC.swift */,
 				F73B5A882B9CA7F100521C7F /* HistoryVC.swift */,
 				F73B5A862B9CA73F00521C7F /* MainTabBar.swift */,
 				F78571D22B9AC030000AC75E /* Main.storyboard */,
-				F78571D52B9AC032000AC75E /* Assets.xcassets */,
 				F78571E22B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf */,
 				F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */,
 				F78571DA2B9AC032000AC75E /* Info.plist */,
@@ -92,6 +149,8 @@
 			dependencies = (
 			);
 			name = IdentifyMusic;
+			packageProductDependencies = (
+			);
 			productName = IdentifyMusic;
 			productReference = F78571C92B9AC030000AC75E /* IdentifyMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +179,10 @@
 				Base,
 			);
 			mainGroup = F78571C02B9AC030000AC75E;
+			packageReferences = (
+				BB526FA12BA299E1006E6322 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				BB526FAD2BA31CC8006E6322 /* XCRemoteSwiftPackageReference "EachNavigationBar" */,
+			);
 			productRefGroup = F78571CA2B9AC030000AC75E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,9 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
+				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,
 				F78571E32B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf in Resources */,
 				F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */,
 				F78571D42B9AC030000AC75E /* Main.storyboard in Resources */,
+				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,11 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F73B5A8B2B9CA81300521C7F /* PlayListVC.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
+				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,
 				F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */,
 				F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */,
 				F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */,
+				BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +377,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +405,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB526FA12BA299E1006E6322 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.0;
+			};
+		};
+		BB526FAD2BA31CC8006E6322 /* XCRemoteSwiftPackageReference "EachNavigationBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Pircate/EachNavigationBar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = F78571C12B9AC030000AC75E /* Project object */;
 }

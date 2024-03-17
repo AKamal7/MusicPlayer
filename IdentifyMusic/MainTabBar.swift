@@ -28,9 +28,22 @@ class MainTabBar: UITabBarController {
 
 // MARK:- Private Methods
 extension MainTabBar {
+    
     private func setupTabBar() {
-        self.tabBar.backgroundColor = UIColor.gray
+        self.tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+
         self.tabBar.tintColor = UIColor(named: "mainColor")
+        let blurEffect = UIBlurEffect(style: .regular)
+
+             // Create a visual effect view with the blur effect
+             let visualEffectView = UIVisualEffectView(effect: blurEffect)
+
+             // Set the frame of the visual effect view to cover the area below the tab bar
+             let tabBarFrame = tabBar.frame
+             visualEffectView.frame = CGRect(x: 0, y: tabBarFrame.origin.y - 50, width: view.bounds.width, height: view.bounds.height - tabBarFrame.origin.y - 45)
+
+             // Add the visual effect view below the tab bar
+             view.insertSubview(visualEffectView, belowSubview: tabBar)
     }
     
     private func createServiceSearchVC() -> UINavigationController {
@@ -50,7 +63,7 @@ extension MainTabBar {
     }
     
     private func createPlaylistVC() -> UINavigationController {
-        let playlistVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayListVC") as! PlayListVC
+        let playlistVC = UIStoryboard(name: "PlaylistVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC") as! PlaylistVC
         playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 3)
         let playlistNavigation = UINavigationController()
         playlistNavigation.viewControllers = [playlistVC]
