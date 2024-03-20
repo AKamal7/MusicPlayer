@@ -21,7 +21,7 @@ class MainTabBar: UITabBarController {
         let searchNavigation = mainTabBar.createServiceSearchVC()
         let favoriteNavigation = mainTabBar.createHistoryVC()
         let appointmentsNavigation = mainTabBar.createPlaylistVC()
-        mainTabBar.viewControllers = [searchNavigation, favoriteNavigation, appointmentsNavigation]
+        mainTabBar.viewControllers = [favoriteNavigation, searchNavigation, appointmentsNavigation]
         return mainTabBar
     }
 }
@@ -31,19 +31,23 @@ extension MainTabBar {
     
     private func setupTabBar() {
         self.tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-
+        self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
         self.tabBar.tintColor = UIColor(named: "mainColor")
-        let blurEffect = UIBlurEffect(style: .regular)
+//        self.tabBar.inputViewController?.edgesForExtendedLayout = .bottom
+//        self.tabBar.inputViewController?.edgesForExtendedLayout = .top
+
+        let blurEffect = UIBlurEffect(style: .light)
 
              // Create a visual effect view with the blur effect
              let visualEffectView = UIVisualEffectView(effect: blurEffect)
 
              // Set the frame of the visual effect view to cover the area below the tab bar
              let tabBarFrame = tabBar.frame
-             visualEffectView.frame = CGRect(x: 0, y: tabBarFrame.origin.y - 50, width: view.bounds.width, height: view.bounds.height - tabBarFrame.origin.y - 45)
+        visualEffectView.frame = self.view.bounds
 
              // Add the visual effect view below the tab bar
-             view.insertSubview(visualEffectView, belowSubview: tabBar)
+        
+        tabBar.addSubview(visualEffectView)
     }
     
     private func createServiceSearchVC() -> UINavigationController {

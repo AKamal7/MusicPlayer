@@ -1,17 +1,16 @@
 //
-//  HistoryVC.swift
+//  PlayerVC.swift
 //  IdentifyMusic
 //
-//  Created by ahmedkamal on 09/03/2024.
+//  Created by ahmedkamal on 20/03/2024.
 //
 
 import UIKit
 
-class HistoryVC: UIViewController {
+class PlayerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.selectedIndex = 1
 
         // Do any additional setup after loading the view.
     }
