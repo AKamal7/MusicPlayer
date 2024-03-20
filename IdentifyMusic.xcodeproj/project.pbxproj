@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A37DCD47369310179A05B9E /* Pods_IdentifyMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD09DE62ECB2504FDAF6D4B /* Pods_IdentifyMusic.framework */; };
+		BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */; };
+		BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */; };
+		BB3A57962BAB401B001AC9FD /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = BB3A57952BAB401B001AC9FD /* Sources */; };
 		BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */; };
 		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
 		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
@@ -33,16 +36,17 @@
 		F7754EB02BAB3652003956C0 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7754EAF2BAB3652003956C0 /* SelfSizedTableView.swift */; };
 		F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571CC2B9AC030000AC75E /* AppDelegate.swift */; };
 		F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571D02B9AC030000AC75E /* SearchVC.swift */; };
-		F78571D42B9AC030000AC75E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78571D22B9AC030000AC75E /* Main.storyboard */; };
 		F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78571D52B9AC032000AC75E /* Assets.xcassets */; };
 		F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */; };
-		F78571E32B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F78571E22B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1FD09DE62ECB2504FDAF6D4B /* Pods_IdentifyMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdentifyMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A91D91660040A3126CF9D9 /* Pods-IdentifyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentifyMusic.release.xcconfig"; path = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.release.xcconfig"; sourceTree = "<group>"; };
 		B59387F5BC9962A72DA77DBA /* Pods-IdentifyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentifyMusic.debug.xcconfig"; path = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchVC.storyboard; sourceTree = "<group>"; };
+		BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryVC.storyboard; sourceTree = "<group>"; };
+		BB3A57952BAB401B001AC9FD /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
 		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
@@ -69,11 +73,9 @@
 		F78571C92B9AC030000AC75E /* IdentifyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentifyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78571CC2B9AC030000AC75E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F78571D02B9AC030000AC75E /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		F78571D32B9AC030000AC75E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F78571D52B9AC032000AC75E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F78571D82B9AC032000AC75E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F78571DA2B9AC032000AC75E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F78571E22B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-VariableFont_GRAD,wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,48 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB3A578B2BAB3E69001AC9FD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F78571D02B9AC030000AC75E /* SearchVC.swift */,
+				BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BB3A578C2BAB3E9C001AC9FD /* History */ = {
+			isa = PBXGroup;
+			children = (
+				F73B5A882B9CA7F100521C7F /* HistoryVC.swift */,
+				BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		BB3A578D2BAB3EBF001AC9FD /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F73B5A862B9CA73F00521C7F /* MainTabBar.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		BB3A57932BAB3FD4001AC9FD /* LunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */,
+			);
+			path = LunchScreen;
+			sourceTree = "<group>";
+		};
+		BB3A57942BAB3FEF001AC9FD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F7754EA72BAB35DD003956C0 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BB526F8A2BA28B53006E6322 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +152,13 @@
 		BB526F8B2BA28B81006E6322 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7754EB12BAB367A003956C0 /* CustomViews */,
-				F7754E9C2BAB3582003956C0 /* PlayerVC */,
+				BB3A578D2BAB3EBF001AC9FD /* MainTabBar */,
+				BB3A578C2BAB3E9C001AC9FD /* History */,
+				BB3A578B2BAB3E69001AC9FD /* Search */,
+				F7754E9C2BAB3582003956C0 /* Player */,
 				BB526F8C2BA28B89006E6322 /* Playlist */,
 				BB954FC42BA94C0A001F12C0 /* CreatePlist */,
+				BB3A57932BAB3FD4001AC9FD /* LunchScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,13 +238,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F7754E9C2BAB3582003956C0 /* PlayerVC */ = {
+		F7754E9C2BAB3582003956C0 /* Player */ = {
 			isa = PBXGroup;
 			children = (
 				F7754E9D2BAB3582003956C0 /* PlayerVC.storyboard */,
 				F7754E9E2BAB3582003956C0 /* PlayerVC.swift */,
 			);
-			path = PlayerVC;
+			path = Player;
 			sourceTree = "<group>";
 		};
 		F7754EA32BAB35DD003956C0 /* Managers */ = {
@@ -224,12 +271,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F7754EB12BAB367A003956C0 /* CustomViews */ = {
+		F7754EB12BAB367A003956C0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				F7754EAF2BAB3652003956C0 /* SelfSizedTableView.swift */,
 			);
-			path = CustomViews;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F78571C02B9AC030000AC75E = {
@@ -253,20 +300,16 @@
 		F78571CB2B9AC030000AC75E /* IdentifyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				F7754EA72BAB35DD003956C0 /* Constants.swift */,
+				BB3A57952BAB401B001AC9FD /* Sources */,
 				F7754EA32BAB35DD003956C0 /* Managers */,
 				F7754EA82BAB35DD003956C0 /* Model */,
 				F7754EA52BAB35DD003956C0 /* Networking */,
 				BB526F8A2BA28B53006E6322 /* Shared */,
+				F7754EB12BAB367A003956C0 /* Classes */,
 				BB526F8B2BA28B81006E6322 /* View */,
 				BB526FAA2BA2A220006E6322 /* Extensions */,
+				BB3A57942BAB3FEF001AC9FD /* Helpers */,
 				BB526FA72BA29DF4006E6322 /* Assets */,
-				F78571D02B9AC030000AC75E /* SearchVC.swift */,
-				F73B5A882B9CA7F100521C7F /* HistoryVC.swift */,
-				F73B5A862B9CA73F00521C7F /* MainTabBar.swift */,
-				F78571D22B9AC030000AC75E /* Main.storyboard */,
-				F78571E22B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf */,
-				F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */,
 				F78571DA2B9AC032000AC75E /* Info.plist */,
 			);
 			path = IdentifyMusic;
@@ -335,12 +378,13 @@
 				F7754E9F2BAB3583003956C0 /* PlayerVC.storyboard in Resources */,
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
 				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
+				BB3A57962BAB401B001AC9FD /* Sources in Resources */,
 				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,
-				F78571E32B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf in Resources */,
 				F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */,
-				F78571D42B9AC030000AC75E /* Main.storyboard in Resources */,
 				BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */,
+				BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */,
 				BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */,
+				BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */,
 				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,14 +463,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F78571D22B9AC030000AC75E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F78571D32B9AC030000AC75E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
