@@ -69,8 +69,10 @@ extension MainTabBar {
     private func createPlaylistVC() -> UINavigationController {
         let playlistVC = UIStoryboard(name: "PlaylistVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC") as! PlaylistVC
         playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 3)
-        let playlistNavigation = UINavigationController()
-        playlistNavigation.viewControllers = [playlistVC]
-        return playlistNavigation
+        let plistNav = UINavigationController()
+        plistNav.viewControllers = [playlistVC]
+        
+        
+        return plistNav
     }
 }
