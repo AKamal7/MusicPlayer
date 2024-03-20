@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Create New Playlist.png",
+      "filename" : "ph_dots-three-outline-fill.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }

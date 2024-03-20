@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import MusicKit
 
 class PlaylistVC: UIViewController {
     
     // MARK:- Variables
     @IBOutlet var playlistView: UIView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var trendsLabel: UILabel!
     @IBOutlet weak var seeAllBtn: UIButton!
     @IBOutlet weak var seeAllPlystBtn: UIButton!
     @IBOutlet weak var playlistLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: SelfSizedTableView!
     @IBOutlet weak var createNewPlylstView: UIView!
-    @IBOutlet weak var createNewPlistLbl: UILabel!
     @IBOutlet weak var musicIconView: UIImageView!
+    @IBOutlet weak var creatPlistImgView: UIImageView!
+
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +31,27 @@ class PlaylistVC: UIViewController {
         setupView()
         setupTable()
         
+//        let attributes = [NSAttributedString.Key.font: UIFont(name: "Heebo-Regular", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+//        titleBarItem.setTitleTextAttributes(attributes, for: .disabled)
+        
     }
+    
+    // MARK:- Actions
     @IBAction func seeAllBtnClicked(_ sender: Any) {
         print("btn clicked")
     }
     @IBAction func seeAllPlyLstBtnClicked(_ sender: Any) {
         print("btn clicked")
     }
-    // MARK:- Public Methods
-    // MARK:- Private Methods
-    private func setupTable() {
-        tableView.delegate = self
-        tableView.dataSource = self
+    @IBAction func createNewPlistBtn(_ sender: Any) {
+        let createPlistVC = UIStoryboard(name: "CreatePlistVC", bundle: nil).instantiateViewController(withIdentifier: "CreatePlistVC") as! CreatePlistVC
+        self.navigationController?.pushViewController(createPlistVC, animated: true)
     }
+    
+    // MARK:- Private Methods
     private func setupView() {
-        self.view.backgroundColor = Colors.mainBackground
-        setupNavBar()
+        self.view.backgroundColor = UIColor(hex: "141414")
+        contentView.backgroundColor = UIColor(hex: "141414")
         setupSearchBar()
         setupWhiteLabel(label: trendsLabel, text: "Trends")
         setupWhiteLabel(label: playlistLabel, text: "My playlist")
@@ -51,65 +59,12 @@ class PlaylistVC: UIViewController {
         setupSeeAllButton(button: seeAllPlystBtn)
         setupNewPlylstView()
         setupMusicIconImgView()
-        setupMusicNewPlistLbl()
+        setupMusicNewPlistImgView()
+        setupCollectionView()
+        setupTable()
+       
     }
-    
-//
-    
-    private func setupNavBar() {
-
-        let navC = self.navigationController
-        let navB = navC?.navigationBar
-        navB?.backgroundColor = Colors.mainBackground
-        //SettingUp title
-        let title = UILabel()
-        title.text      = "My playlist"
-        title.textColor = .white
-        title.font = UIFont(name: "Heebo-Regular", size: 20)
-
-        //Setting up Spacer
-        let spacer      = UIView()
-        let constraint  = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
-        constraint.isActive = true
-        constraint.priority = .defaultLow
-
-        //Creating stackView
-        let stack                = UIStackView(arrangedSubviews: [title, spacer])
-        stack.axis               = .horizontal
-        navigationItem.titleView = stack
-
-        //Setting up backButton
-        let lButton = UIBarButtonItem()
-        navB?.topItem?.leftBarButtonItem = lButton
-        lButton.image = UIImage(named: "backButton")
-     
-        //Setting up rightButton
-        let rButton = UIBarButtonItem()
-        navB?.topItem?.rightBarButtonItem = rButton
-        rButton.image = UIImage(named: "addButton")
-
-        //SettingUp constraints
-
-
-    }
-    
-    private func setupSearchBar() {
-        searchBar.delegate = self
-        searchBar.searchTextField.clearButtonMode = .never
-        searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 15, vertical: 0)
-        searchBar.searchTextField.backgroundColor = Colors.mainBackground
-        searchBar.searchTextField.textColor = .white
-        searchBar.searchBarStyle = .minimal
-        searchBar.searchTextField.layer.frame = CGRect(x: 0, y: 0, width: 382, height: 45)
-        searchBar.searchTextField.layer.borderWidth = 1
-        searchBar.searchTextField.layer.borderColor = Colors.searchBarColor.cgColor
-        searchBar.searchTextField.layer.cornerRadius = 12
-        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
-            string: "Search",
-            attributes: [.foregroundColor: UIColor.gray]
-        )
-        searchBar.setImage(UIImage(), for: .search, state: .normal)
-    }
+  
     private func setupWhiteLabel(label: UILabel, text: String) {
         label.text = text
         trendsLabel.textColor = .white
@@ -119,51 +74,31 @@ class PlaylistVC: UIViewController {
         button.setImage(UIImage(named: "seeAll"), for: .normal)
         button.setTitle("", for: .normal)
         
-       
+        
     }
     private func setupNewPlylstView() {
         
-        createNewPlylstView.backgroundColor = Colors.createPlistView
+        createNewPlylstView.backgroundColor = UIColor(hex: "FFFFFF", alpha: 0.04)
+        createNewPlylstView.layer.cornerRadius = 12
+        createNewPlylstView.layer.borderWidth = 1
     }
     private func setupMusicIconImgView() {
-//        musicIconView.backgroundColor = Colors.createPlistView
+        //        musicIconView.backgroundColor = Colors.createPlistView
         musicIconView.layer.borderWidth = 1
+        musicIconView.layer.borderColor = UIColor(hex: "BC66FF0A", alpha: 0.04).cgColor
         musicIconView.image = UIImage(named: "musicIcon")
-       
+        
     }
-    private func setupMusicNewPlistLbl() {
-        createNewPlistLbl.text = "create new playlist"
-        createNewPlistLbl.font = UIFont(name: "Heebo-Regular", size: 18)
-    }
-    // MARK:- Objc methods
-    
-
-}
-
-
-
-extension PlaylistVC: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            guard !searchText.isEmpty else {
-                return
-            }
-        }
-    
-}
-
-extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        112
+    private func setupMusicNewPlistImgView() {
+        creatPlistImgView.image = UIImage(named: "createNewPlaylist")
+        
     }
     
     
 }
+
+
+
+
+
 

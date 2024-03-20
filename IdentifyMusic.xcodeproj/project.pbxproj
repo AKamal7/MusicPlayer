@@ -12,8 +12,17 @@
 		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
 		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
 		BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */; };
+		BB954FBF2BA94947001F12C0 /* PlistVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */; };
+		BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FC02BA94987001F12C0 /* PlistVC + CollectionView.swift */; };
+		BB954FC32BA94A41001F12C0 /* PlistVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */; };
+		BB954FC62BA94C57001F12C0 /* CreatePlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FC52BA94C57001F12C0 /* CreatePlistVC.swift */; };
+		BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB954FC72BA94C9B001F12C0 /* CreatePlistVC.storyboard */; };
 		BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC07922BA6E7F900971473 /* PlistTableCell.swift */; };
 		BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAC07932BA6E7F900971473 /* PlistTableCell.xib */; };
+		BBF479E42BAA6DC1002CEB3C /* TintableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF479E32BAA6DC0002CEB3C /* TintableBarButtonItem.swift */; };
+		BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */; };
+		BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */; };
+		BBFE3CCD2BA86B3D00BA7863 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CCC2BA86B3D00BA7863 /* SelfSizedTableView.swift */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
 		F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571CC2B9AC030000AC75E /* AppDelegate.swift */; };
@@ -32,8 +41,17 @@
 		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
 		BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlistVC + TableView.swift"; sourceTree = "<group>"; };
+		BB954FC02BA94987001F12C0 /* PlistVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlistVC + CollectionView.swift"; sourceTree = "<group>"; };
+		BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlistVC+SearchBar.swift"; sourceTree = "<group>"; };
+		BB954FC52BA94C57001F12C0 /* CreatePlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlistVC.swift; sourceTree = "<group>"; };
+		BB954FC72BA94C9B001F12C0 /* CreatePlistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePlistVC.storyboard; sourceTree = "<group>"; };
 		BBAC07922BA6E7F900971473 /* PlistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistTableCell.swift; sourceTree = "<group>"; };
 		BBAC07932BA6E7F900971473 /* PlistTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlistTableCell.xib; sourceTree = "<group>"; };
+		BBF479E32BAA6DC0002CEB3C /* TintableBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintableBarButtonItem.swift; sourceTree = "<group>"; };
+		BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionCell.swift; sourceTree = "<group>"; };
+		BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendsCollectionCell.xib; sourceTree = "<group>"; };
+		BBFE3CCC2BA86B3D00BA7863 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		F78571C92B9AC030000AC75E /* IdentifyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentifyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				BB526F8C2BA28B89006E6322 /* Playlist */,
+				BB954FC42BA94C0A001F12C0 /* CreatePlist */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,7 +107,10 @@
 			children = (
 				BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */,
 				BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */,
-				BBAC07902BA6E7AF00971473 /* TrendsCollectionCell */,
+				BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */,
+				BB954FC02BA94987001F12C0 /* PlistVC + CollectionView.swift */,
+				BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */,
+				BBFE3CC42BA855BC00BA7863 /* TrendsCollectionCell */,
 				BBAC07912BA6E7C600971473 /* PlistTableCell */,
 			);
 			path = Playlist;
@@ -119,11 +141,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BBAC07902BA6E7AF00971473 /* TrendsCollectionCell */ = {
+		BB954FC42BA94C0A001F12C0 /* CreatePlist */ = {
 			isa = PBXGroup;
 			children = (
+				BB954FC52BA94C57001F12C0 /* CreatePlistVC.swift */,
+				BB954FC72BA94C9B001F12C0 /* CreatePlistVC.storyboard */,
 			);
-			path = TrendsCollectionCell;
+			path = CreatePlist;
 			sourceTree = "<group>";
 		};
 		BBAC07912BA6E7C600971473 /* PlistTableCell */ = {
@@ -133,6 +157,24 @@
 				BBAC07932BA6E7F900971473 /* PlistTableCell.xib */,
 			);
 			path = PlistTableCell;
+			sourceTree = "<group>";
+		};
+		BBFE3CC42BA855BC00BA7863 /* TrendsCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */,
+				BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */,
+			);
+			path = TrendsCollectionCell;
+			sourceTree = "<group>";
+		};
+		BBFE3CCB2BA86B3300BA7863 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE3CCC2BA86B3D00BA7863 /* SelfSizedTableView.swift */,
+				BBF479E32BAA6DC0002CEB3C /* TintableBarButtonItem.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E8192917C1A016F3D47D2867 /* Frameworks */ = {
@@ -164,6 +206,7 @@
 		F78571CB2B9AC030000AC75E /* IdentifyMusic */ = {
 			isa = PBXGroup;
 			children = (
+				BBFE3CCB2BA86B3300BA7863 /* Classes */,
 				BB526F8A2BA28B53006E6322 /* Shared */,
 				BB526F8B2BA28B81006E6322 /* Views */,
 				BB526FAA2BA2A220006E6322 /* Extensions */,
@@ -240,10 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
+				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
 				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,
 				F78571E32B9AC43F000AC75E /* Signika-VariableFont_GRAD,wght.ttf in Resources */,
 				F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */,
 				F78571D42B9AC030000AC75E /* Main.storyboard in Resources */,
+				BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */,
 				BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */,
 				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 			);
@@ -298,12 +343,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */,
+				BBF479E42BAA6DC1002CEB3C /* TintableBarButtonItem.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
+				BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */,
 				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,
 				BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */,
+				BB954FC62BA94C57001F12C0 /* CreatePlistVC.swift in Sources */,
 				F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */,
 				F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */,
 				F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */,
+				BB954FBF2BA94947001F12C0 /* PlistVC + TableView.swift in Sources */,
+				BB954FC32BA94A41001F12C0 /* PlistVC+SearchBar.swift in Sources */,
+				BBFE3CCD2BA86B3D00BA7863 /* SelfSizedTableView.swift in Sources */,
 				BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,9 +507,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8SG6DP28R;
+				DEVELOPMENT_TEAM = ZHXVY6M87Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,8 +524,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = IdentifyMusic.com.IdentifyMusic;
+				PRODUCT_BUNDLE_IDENTIFIER = joelSosa.com.IdentifyMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,7 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8SG6DP28R;
+				DEVELOPMENT_TEAM = ZHXVY6M87Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -501,7 +555,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = IdentifyMusic.com.IdentifyMusic;
+				PRODUCT_BUNDLE_IDENTIFIER = joelSosa.com.IdentifyMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
