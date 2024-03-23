@@ -42,7 +42,7 @@ extension MainTabBar {
              let visualEffectView = UIVisualEffectView(effect: blurEffect)
 
              // Set the frame of the visual effect view to cover the area below the tab bar
-             let tabBarFrame = tabBar.frame
+//             let tabBarFrame = tabBar.frame
         visualEffectView.frame = self.view.bounds
 
              // Add the visual effect view below the tab bar
@@ -51,7 +51,7 @@ extension MainTabBar {
     }
     
     private func createServiceSearchVC() -> UINavigationController {
-        let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        let searchVC = UIStoryboard(name: "SearchVC", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 1)
         let searchNavigation = UINavigationController()
         searchNavigation.viewControllers = [searchVC]
@@ -59,7 +59,7 @@ extension MainTabBar {
     }
     
     private func createHistoryVC() -> UINavigationController {
-        let historyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
+        let historyVC = UIStoryboard(name: "HistoryVC", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
         historyVC.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history"), tag: 2)
         let favoriteNavigation = UINavigationController()
         favoriteNavigation.viewControllers = [historyVC]
@@ -68,7 +68,7 @@ extension MainTabBar {
     
     private func createPlaylistVC() -> UINavigationController {
         let playlistVC = UIStoryboard(name: "PlaylistVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC") as! PlaylistVC
-        playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 3)
+        playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 2)
         let plistNav = UINavigationController()
         plistNav.viewControllers = [playlistVC]
         

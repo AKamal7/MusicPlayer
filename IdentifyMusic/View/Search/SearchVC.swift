@@ -10,6 +10,9 @@ import MediaPlayer
 
 class SearchVC: UIViewController {
 
+    
+    @IBOutlet weak var playerBtnOutlet: UIButton!
+    
     let player = MPMusicPlayerController.systemMusicPlayer
 
     override func viewDidLoad() {
@@ -17,7 +20,6 @@ class SearchVC: UIViewController {
         title = "Search"
         tabBarController?.selectedIndex = 0
         // Create a search bar
-        
           let searchBar = UISearchBar()
           searchBar.placeholder = "Search lyrics, songs or artists..."
           searchBar.delegate = self
@@ -32,14 +34,21 @@ class SearchVC: UIViewController {
           navigationItem.titleView = searchBar
           navigationItem.rightBarButtonItem = barButtonItem
         
-        var playerQueue = PlayerQueue()
-        if let song = player.nowPlayingItem {
-            let id = song.playbackStoreID
-           }
+//        var playerQueue = PlayerQueue()
+//        if let song = player.nowPlayingItem {
+//            let id = song.playbackStoreID
+//           }
     }
     
     @objc func addButtonTapped() {
-        
+        let vc = UIStoryboard(name: "SettingsVC", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func playerBtnPressed(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 

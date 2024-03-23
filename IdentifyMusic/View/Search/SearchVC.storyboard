@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-9Q-SJQ">
+                                <rect key="frame" x="0.0" y="746" width="393" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-gz-Ih7">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="playerBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A2R-m4-yBI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="s6Q-gz-Ih7" firstAttribute="leading" secondItem="Ymg-9Q-SJQ" secondAttribute="leading" id="V3A-X5-Yuq"/>
+                                    <constraint firstItem="s6Q-gz-Ih7" firstAttribute="top" secondItem="Ymg-9Q-SJQ" secondAttribute="top" id="Z14-IT-ZEU"/>
+                                    <constraint firstAttribute="height" constant="72" id="dZt-sf-fpW"/>
+                                    <constraint firstAttribute="trailing" secondItem="s6Q-gz-Ih7" secondAttribute="trailing" id="gk2-0q-xM1"/>
+                                    <constraint firstAttribute="bottom" secondItem="s6Q-gz-Ih7" secondAttribute="bottom" id="tRK-8o-XCC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ymg-9Q-SJQ" secondAttribute="bottom" id="3YD-CA-jjf"/>
+                            <constraint firstItem="Ymg-9Q-SJQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iGB-2a-GNQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ymg-9Q-SJQ" secondAttribute="trailing" id="wKe-OJ-vv1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerBtnOutlet" destination="s6Q-gz-Ih7" id="H4r-hj-CWv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
