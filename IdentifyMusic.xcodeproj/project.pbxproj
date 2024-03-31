@@ -352,13 +352,6 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
-		F7754EA32BAB35DD003956C0 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		F7754EA52BAB35DD003956C0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,7 +397,6 @@
 		F78571CB2B9AC030000AC75E /* IdentifyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				F7754EA32BAB35DD003956C0 /* Managers */,
 				F7754EA82BAB35DD003956C0 /* Model */,
 				F7754EA52BAB35DD003956C0 /* Networking */,
 				BB526F8A2BA28B53006E6322 /* Shared */,

@@ -7,5 +7,5 @@ target 'IdentifyMusic' do
 
   # Pods for IdentifyMusic
 
-pod 'EachNavigationBar'
+
 end

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,9 +65,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-Oh-Zxl">
                                 <rect key="frame" x="94.666666666666686" y="336.66666666666669" width="204" height="204.00000000000006"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <connections>
-                                    <action selector="recognitionBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiS-A5-JyU"/>
-                                </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-9Q-SJQ">
                                 <rect key="frame" x="0.0" y="746" width="393" height="72"/>
@@ -76,9 +73,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <connections>
-                                            <action selector="playerBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A2R-m4-yBI"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -108,12 +102,6 @@
                             <constraint firstItem="Trn-8I-D9s" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="yld-fM-KhF"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="adView" destination="cVW-hd-fni" id="3vb-PS-sRq"/>
-                        <outlet property="imageOutlet" destination="Trn-8I-D9s" id="Oob-Jw-9Gh"/>
-                        <outlet property="playerBtnOutlet" destination="s6Q-gz-Ih7" id="H4r-hj-CWv"/>
-                        <outlet property="recognitionBtnOutlet" destination="rwj-Oh-Zxl" id="9A9-IJ-B2F"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,7 +109,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Frame 16" width="430" height="120"/>
+        <image name="Frame 16" width="334" height="72"/>
         <image name="adImg" width="156.33332824707031" height="72"/>
         <image name="recognition" width="252" height="252"/>
         <systemColor name="systemBackgroundColor">

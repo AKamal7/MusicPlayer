@@ -9,7 +9,7 @@ import UIKit
 import MediaPlayer
 
 class SearchVC: UIViewController {
-
+    
     let player = MPMusicPlayerController.systemMusicPlayer
 
     override func viewDidLoad() {
