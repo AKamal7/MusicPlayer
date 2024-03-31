@@ -22,6 +22,7 @@ class MainTabBar: UITabBarController {
         let favoriteNavigation = mainTabBar.createHistoryVC()
         let appointmentsNavigation = mainTabBar.createPlaylistVC()
         mainTabBar.viewControllers = [favoriteNavigation, searchNavigation, appointmentsNavigation]
+        mainTabBar.selectedIndex = 1
         return mainTabBar
     }
 }
@@ -30,28 +31,22 @@ class MainTabBar: UITabBarController {
 extension MainTabBar {
     
     private func setupTabBar() {
-        self.tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.tabBar.isTranslucent = true
+        self.tabBar.backgroundColor = .clear
+        self.tabBar.backgroundImage = UIImage()
         self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
         self.tabBar.tintColor = UIColor(named: "mainColor")
-//        self.tabBar.inputViewController?.edgesForExtendedLayout = .bottom
-//        self.tabBar.inputViewController?.edgesForExtendedLayout = .top
-
-        let blurEffect = UIBlurEffect(style: .light)
-
-             // Create a visual effect view with the blur effect
-             let visualEffectView = UIVisualEffectView(effect: blurEffect)
-
-             // Set the frame of the visual effect view to cover the area below the tab bar
-             let tabBarFrame = tabBar.frame
-        visualEffectView.frame = self.view.bounds
-
-             // Add the visual effect view below the tab bar
         
-        tabBar.addSubview(visualEffectView)
+        let blurEffect = UIBlurEffect(style: .dark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = tabBar.bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tabBar.insertSubview(visualEffectView, at: 0)
+        
     }
     
     private func createServiceSearchVC() -> UINavigationController {
-        let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        let searchVC = UIStoryboard(name: "SearchVC", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 1)
         let searchNavigation = UINavigationController()
         searchNavigation.viewControllers = [searchVC]
@@ -59,7 +54,7 @@ extension MainTabBar {
     }
     
     private func createHistoryVC() -> UINavigationController {
-        let historyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
+        let historyVC = UIStoryboard(name: "HistoryVC", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
         historyVC.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history"), tag: 2)
         let favoriteNavigation = UINavigationController()
         favoriteNavigation.viewControllers = [historyVC]
@@ -68,7 +63,7 @@ extension MainTabBar {
     
     private func createPlaylistVC() -> UINavigationController {
         let playlistVC = UIStoryboard(name: "PlaylistVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistVC") as! PlaylistVC
-        playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 3)
+        playlistVC.tabBarItem = UITabBarItem(title: "Playlist", image: UIImage(named: "playlist"), tag: 2)
         let plistNav = UINavigationController()
         plistNav.viewControllers = [playlistVC]
         
