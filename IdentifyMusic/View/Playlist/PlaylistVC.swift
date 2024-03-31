@@ -13,6 +13,7 @@ class PlaylistVC: UIViewController {
     // MARK:- Variables
     @IBOutlet var playlistView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var trendsLabel: UILabel!
@@ -30,13 +31,14 @@ class PlaylistVC: UIViewController {
         
         setupView()
         setupTable()
+        setupNavBar()
         
-//        let attributes = [NSAttributedString.Key.font: UIFont(name: "Heebo-Regular", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-//        titleBarItem.setTitleTextAttributes(attributes, for: .disabled)
         
     }
     
     // MARK:- Actions
+    
+    
     @IBAction func seeAllBtnClicked(_ sender: Any) {
         print("btn clicked")
     }
@@ -52,6 +54,7 @@ class PlaylistVC: UIViewController {
     private func setupView() {
         self.view.backgroundColor = UIColor(hex: "141414")
         contentView.backgroundColor = UIColor(hex: "141414")
+        setupNavBar()
         setupSearchBar()
         setupWhiteLabel(label: trendsLabel, text: "Trends")
         setupWhiteLabel(label: playlistLabel, text: "My playlist")
@@ -62,9 +65,25 @@ class PlaylistVC: UIViewController {
         setupMusicNewPlistImgView()
         setupCollectionView()
         setupTable()
-       
+        
     }
-  
+    
+    private func setupNavBar() {
+        
+        let navC = self.navigationController
+        let navB = navC?.navigationBar
+        navB?.backgroundColor = UIColor(hex: "141414", alpha: 1)
+        
+        
+        navC?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navC?.navigationBar.shadowImage = UIImage()
+        
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Heebo-Regular", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        titleBarItem.setTitleTextAttributes(attributes, for: .disabled)
+        
+        
+    }
+    
     private func setupWhiteLabel(label: UILabel, text: String) {
         label.text = text
         trendsLabel.textColor = .white

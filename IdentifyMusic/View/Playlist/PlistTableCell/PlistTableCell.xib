@@ -31,6 +31,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="optionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9dq-zk-ma5"/>
+                                            <action selector="popOptionsBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fcm-xl-9rU"/>
+                                            <action selector="popOptionsOver:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dgf-Re-5ca"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQ2-0n-t1v">
                                         <rect key="frame" x="16" y="16" width="80" height="80"/>
@@ -109,7 +114,7 @@
                 <outlet property="hoursOfPlayingLbl" destination="3t5-RP-0Os" id="UNh-gC-Fx9"/>
                 <outlet property="moreActionsBtn" destination="5ub-Xd-fyj" id="0RW-Kr-b4I"/>
             </connections>
-            <point key="canvasLocation" x="251.90839694656486" y="-16.197183098591552"/>
+            <point key="canvasLocation" x="3402" y="-14"/>
         </tableViewCell>
     </objects>
 </document>

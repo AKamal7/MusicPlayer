@@ -32,7 +32,7 @@ class SearchVC: UIViewController {
           navigationItem.titleView = searchBar
           navigationItem.rightBarButtonItem = barButtonItem
         
-        var playerQueue = PlayerQueue()
+//        var playerQueue = PlayerQueue()
         if let song = player.nowPlayingItem {
             let id = song.playbackStoreID
            }

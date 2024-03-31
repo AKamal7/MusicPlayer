@@ -7,11 +7,14 @@
 
 import UIKit
 
+
 class PlistTableCell: UITableViewCell {
     
  
+   
     @IBOutlet weak var PlistNameLbl: UILabel!
     @IBOutlet weak var cellImgView: UIImageView!
+    
     @IBOutlet weak var moreActionsBtn: UIButton!
     @IBOutlet weak var artistsNamesLbl: UILabel!
     @IBOutlet weak var hoursOfPlayingLbl: UILabel!
@@ -20,10 +23,9 @@ class PlistTableCell: UITableViewCell {
         super.awakeFromNib()
         
         setupView()
-        
                 
     }
-    
+
     private func setupView() {
         setupLabel(label: artistsNamesLbl, text: "Artist Name", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.24))
         setupLabel(label: hoursOfPlayingLbl, text: "Hours of playing", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.24))
@@ -32,11 +34,21 @@ class PlistTableCell: UITableViewCell {
 
         setupImgView()
         setupButton()
+        
     }
+    
+    
+    
+  
     private func setupButton() {
         moreActionsBtn.setImage(UIImage(named: "moreActions"), for: .normal)
         moreActionsBtn.setTitle("", for: .normal)
     }
+    @IBAction func popOptionsBtn(_ sender: UIButton) {
+        
+        print("cell button clicked")
+    }
+    
     private func setupLabel(label: UILabel,text: String, size: CGFloat, fontName: String, color: UIColor) {
         label.text = text
         label.font = UIFont(name: fontName, size: size)

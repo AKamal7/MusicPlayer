@@ -51,7 +51,7 @@ extension MainTabBar {
     }
     
     private func createServiceSearchVC() -> UINavigationController {
-        let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        let searchVC = UIStoryboard(name: "SearchVC", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 1)
         let searchNavigation = UINavigationController()
         searchNavigation.viewControllers = [searchVC]
@@ -59,7 +59,7 @@ extension MainTabBar {
     }
     
     private func createHistoryVC() -> UINavigationController {
-        let historyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
+        let historyVC = UIStoryboard(name: "HistoryVC", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
         historyVC.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history"), tag: 2)
         let favoriteNavigation = UINavigationController()
         favoriteNavigation.viewControllers = [historyVC]
