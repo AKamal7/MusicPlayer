@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "icons8-apple-music-(@1×).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-apple-music-(@2×).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-apple-music-(@3×).png",
       "idiom" : "universal",
-      "filename" : "navigation_back_default.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

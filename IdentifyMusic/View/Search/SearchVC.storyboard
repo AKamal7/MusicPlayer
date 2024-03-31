@@ -17,7 +17,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-9Q-SJQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-hd-fni">
+                                <rect key="frame" x="24" y="83" width="345" height="72"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 16" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-kw-B8s">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20384933774834438" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adImg" translatesAutoresizingMaskIntoConstraints="NO" id="IPu-05-290">
+                                        <rect key="frame" x="5" y="0.0" width="110.66666666666667" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110.62" id="mzD-ZC-28P"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="leading" secondItem="cVW-hd-fni" secondAttribute="leading" id="1uC-1F-OLo"/>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="top" secondItem="cVW-hd-fni" secondAttribute="top" id="OwD-L4-91c"/>
+                                    <constraint firstItem="IPu-05-290" firstAttribute="leading" secondItem="cVW-hd-fni" secondAttribute="leading" constant="5" id="X5N-pb-Gb2"/>
+                                    <constraint firstAttribute="bottom" secondItem="i0S-kw-B8s" secondAttribute="bottom" id="b2V-e8-Jcu"/>
+                                    <constraint firstAttribute="height" constant="72" id="iG6-Xi-EQx"/>
+                                    <constraint firstItem="IPu-05-290" firstAttribute="centerY" secondItem="cVW-hd-fni" secondAttribute="centerY" id="jNG-3t-CKo"/>
+                                    <constraint firstAttribute="trailing" secondItem="i0S-kw-B8s" secondAttribute="trailing" id="n44-m1-Z5V"/>
+                                    <constraint firstItem="IPu-05-290" firstAttribute="height" secondItem="cVW-hd-fni" secondAttribute="height" id="r5g-ms-0pH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recognition" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-8I-D9s">
+                                <rect key="frame" x="94.666666666666686" y="336.66666666666669" width="204" height="204.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Trn-8I-D9s" secondAttribute="height" multiplier="1:1" id="9Mg-zL-57K"/>
+                                    <constraint firstAttribute="width" constant="204" id="YNM-I7-b6t"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-Oh-Zxl">
+                                <rect key="frame" x="94.666666666666686" y="336.66666666666669" width="204" height="204.00000000000006"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="recognitionBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiS-A5-JyU"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-9Q-SJQ">
                                 <rect key="frame" x="0.0" y="746" width="393" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-gz-Ih7">
@@ -43,20 +95,35 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ymg-9Q-SJQ" secondAttribute="bottom" id="3YD-CA-jjf"/>
+                            <constraint firstItem="cVW-hd-fni" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="G4z-w6-nDm"/>
+                            <constraint firstItem="rwj-Oh-Zxl" firstAttribute="centerX" secondItem="Trn-8I-D9s" secondAttribute="centerX" id="H34-K1-E1E"/>
+                            <constraint firstItem="rwj-Oh-Zxl" firstAttribute="centerY" secondItem="Trn-8I-D9s" secondAttribute="centerY" id="L4V-X0-JUc"/>
+                            <constraint firstItem="rwj-Oh-Zxl" firstAttribute="height" secondItem="Trn-8I-D9s" secondAttribute="height" id="Vv2-yF-WEe"/>
+                            <constraint firstItem="cVW-hd-fni" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="dD3-Zv-seA"/>
                             <constraint firstItem="Ymg-9Q-SJQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iGB-2a-GNQ"/>
+                            <constraint firstItem="Trn-8I-D9s" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="oXn-Ax-tVu"/>
+                            <constraint firstItem="rwj-Oh-Zxl" firstAttribute="width" secondItem="Trn-8I-D9s" secondAttribute="width" id="qV8-tk-gIq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cVW-hd-fni" secondAttribute="trailing" constant="24" id="ubc-vY-Ws3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ymg-9Q-SJQ" secondAttribute="trailing" id="wKe-OJ-vv1"/>
+                            <constraint firstItem="Trn-8I-D9s" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="yld-fM-KhF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adView" destination="cVW-hd-fni" id="3vb-PS-sRq"/>
+                        <outlet property="imageOutlet" destination="Trn-8I-D9s" id="Oob-Jw-9Gh"/>
                         <outlet property="playerBtnOutlet" destination="s6Q-gz-Ih7" id="H4r-hj-CWv"/>
+                        <outlet property="recognitionBtnOutlet" destination="rwj-Oh-Zxl" id="9A9-IJ-B2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-17"/>
+            <point key="canvasLocation" x="104.58015267175573" y="-17.605633802816904"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Frame 16" width="430" height="120"/>
+        <image name="adImg" width="156.33332824707031" height="72"/>
+        <image name="recognition" width="252" height="252"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

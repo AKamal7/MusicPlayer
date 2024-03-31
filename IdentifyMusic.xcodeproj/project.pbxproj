@@ -11,7 +11,6 @@
 		BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */; };
 		BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */; };
 		BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */; };
-		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
 		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
 		BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */; };
 		BB954FBF2BA94947001F12C0 /* PlistVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */; };
@@ -23,14 +22,12 @@
 		BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAC07932BA6E7F900971473 /* PlistTableCell.xib */; };
 		BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */; };
 		BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */; };
-		F704DB4D2BADB4BD0081955A /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704DB4B2BADB4BD0081955A /* ContactCell.swift */; };
-		F704DB4E2BADB4BD0081955A /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F704DB4C2BADB4BD0081955A /* ContactCell.xib */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
+		F74CD5912BAF1F650014DD73 /* UiView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CD5902BAF1F650014DD73 /* UiView+Gradient.swift */; };
+		F74CD5932BAFA6CE0014DD73 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74CD5922BAFA6CE0014DD73 /* PlaylistVC.storyboard */; };
 		F750AADE2BADABFF007C9772 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750AADD2BADABFF007C9772 /* SettingsVC.swift */; };
 		F750AAE02BADAC09007C9772 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F750AADF2BADAC09007C9772 /* SettingsVC.storyboard */; };
-		F750AAE52BADACDF007C9772 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750AAE32BADACDF007C9772 /* SettingsCell.swift */; };
-		F750AAE62BADACDF007C9772 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F750AAE42BADACDF007C9772 /* SettingsCell.xib */; };
 		F7754E9F2BAB3583003956C0 /* PlayerVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7754E9D2BAB3582003956C0 /* PlayerVC.storyboard */; };
 		F7754EA02BAB3583003956C0 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7754E9E2BAB3582003956C0 /* PlayerVC.swift */; };
 		F7754EA22BAB35A1003956C0 /* UiView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */; };
@@ -51,7 +48,6 @@
 		BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchVC.storyboard; sourceTree = "<group>"; };
 		BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryVC.storyboard; sourceTree = "<group>"; };
 		BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
-		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
 		BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 		BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlistVC + TableView.swift"; sourceTree = "<group>"; };
@@ -63,14 +59,12 @@
 		BBAC07932BA6E7F900971473 /* PlistTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlistTableCell.xib; sourceTree = "<group>"; };
 		BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionCell.swift; sourceTree = "<group>"; };
 		BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendsCollectionCell.xib; sourceTree = "<group>"; };
-		F704DB4B2BADB4BD0081955A /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
-		F704DB4C2BADB4BD0081955A /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		F74CD5902BAF1F650014DD73 /* UiView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Gradient.swift"; sourceTree = "<group>"; };
+		F74CD5922BAFA6CE0014DD73 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		F750AADD2BADABFF007C9772 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F750AADF2BADAC09007C9772 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
-		F750AAE32BADACDF007C9772 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		F750AAE42BADACDF007C9772 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		F7754E9D2BAB3582003956C0 /* PlayerVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerVC.storyboard; sourceTree = "<group>"; };
 		F7754E9E2BAB3582003956C0 /* PlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UiView+CornerRadius.swift"; sourceTree = "<group>"; };
@@ -176,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */,
-				BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */,
+				F74CD5922BAFA6CE0014DD73 /* PlaylistVC.storyboard */,
 				BB954FBE2BA94947001F12C0 /* PlistVC + TableView.swift */,
 				BB954FC02BA94987001F12C0 /* PlistVC + CollectionView.swift */,
 				BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */,
@@ -208,6 +202,7 @@
 			children = (
 				F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */,
 				BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */,
+				F74CD5902BAF1F650014DD73 /* UiView+Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,7 +245,6 @@
 		F750AADC2BADABEB007C9772 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F750AAE22BADACC1007C9772 /* SettingsCell */,
 				F750AAE12BADACA9007C9772 /* SettingsVC */,
 			);
 			path = Settings;
@@ -263,17 +257,6 @@
 				F750AADF2BADAC09007C9772 /* SettingsVC.storyboard */,
 			);
 			path = SettingsVC;
-			sourceTree = "<group>";
-		};
-		F750AAE22BADACC1007C9772 /* SettingsCell */ = {
-			isa = PBXGroup;
-			children = (
-				F750AAE32BADACDF007C9772 /* SettingsCell.swift */,
-				F750AAE42BADACDF007C9772 /* SettingsCell.xib */,
-				F704DB4B2BADB4BD0081955A /* ContactCell.swift */,
-				F704DB4C2BADB4BD0081955A /* ContactCell.xib */,
-			);
-			path = SettingsCell;
 			sourceTree = "<group>";
 		};
 		F7754E9C2BAB3582003956C0 /* Player */ = {
@@ -341,9 +324,9 @@
 				F7754EA82BAB35DD003956C0 /* Model */,
 				F7754EA52BAB35DD003956C0 /* Networking */,
 				BB526F8A2BA28B53006E6322 /* Shared */,
+				BB526FAA2BA2A220006E6322 /* Extensions */,
 				F7754EB12BAB367A003956C0 /* Classes */,
 				BB526F8B2BA28B81006E6322 /* View */,
-				BB526FAA2BA2A220006E6322 /* Extensions */,
 				BB3A57942BAB3FEF001AC9FD /* Helpers */,
 				BB526FA72BA29DF4006E6322 /* Assets */,
 				F78571DA2B9AC032000AC75E /* Info.plist */,
@@ -415,15 +398,13 @@
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
 				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
 				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,
+				F74CD5932BAFA6CE0014DD73 /* PlaylistVC.storyboard in Resources */,
 				F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */,
 				BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */,
-				F750AAE62BADACDF007C9772 /* SettingsCell.xib in Resources */,
 				BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */,
-				F704DB4E2BADB4BD0081955A /* ContactCell.xib in Resources */,
 				BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */,
 				F750AAE02BADAC09007C9772 /* SettingsVC.storyboard in Resources */,
 				BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */,
-				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +459,7 @@
 			files = (
 				F750AADE2BADABFF007C9772 /* SettingsVC.swift in Sources */,
 				BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */,
+				F74CD5912BAF1F650014DD73 /* UiView+Gradient.swift in Sources */,
 				F7754EAC2BAB35DD003956C0 /* Constants.swift in Sources */,
 				F7754EAB2BAB35DD003956C0 /* AppleMusicAPI.swift in Sources */,
 				F7754EAD2BAB35DD003956C0 /* Song.swift in Sources */,
@@ -488,10 +470,8 @@
 				BB954FC62BA94C57001F12C0 /* CreatePlistVC.swift in Sources */,
 				F7754EB02BAB3652003956C0 /* SelfSizedTableView.swift in Sources */,
 				F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */,
-				F704DB4D2BADB4BD0081955A /* ContactCell.swift in Sources */,
 				F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */,
 				F7754EA22BAB35A1003956C0 /* UiView+CornerRadius.swift in Sources */,
-				F750AAE52BADACDF007C9772 /* SettingsCell.swift in Sources */,
 				F7754EA02BAB3583003956C0 /* PlayerVC.swift in Sources */,
 				F78571CD2B9AC030000AC75E /* AppDelegate.swift in Sources */,
 				BB954FBF2BA94947001F12C0 /* PlistVC + TableView.swift in Sources */,

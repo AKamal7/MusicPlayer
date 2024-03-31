@@ -22,6 +22,7 @@ class MainTabBar: UITabBarController {
         let favoriteNavigation = mainTabBar.createHistoryVC()
         let appointmentsNavigation = mainTabBar.createPlaylistVC()
         mainTabBar.viewControllers = [favoriteNavigation, searchNavigation, appointmentsNavigation]
+        mainTabBar.selectedIndex = 1
         return mainTabBar
     }
 }
@@ -30,24 +31,18 @@ class MainTabBar: UITabBarController {
 extension MainTabBar {
     
     private func setupTabBar() {
-        self.tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.tabBar.isTranslucent = true
+        self.tabBar.backgroundColor = .clear
+        self.tabBar.backgroundImage = UIImage()
         self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
         self.tabBar.tintColor = UIColor(named: "mainColor")
-//        self.tabBar.inputViewController?.edgesForExtendedLayout = .bottom
-//        self.tabBar.inputViewController?.edgesForExtendedLayout = .top
-
-        let blurEffect = UIBlurEffect(style: .light)
-
-             // Create a visual effect view with the blur effect
-             let visualEffectView = UIVisualEffectView(effect: blurEffect)
-
-             // Set the frame of the visual effect view to cover the area below the tab bar
-//             let tabBarFrame = tabBar.frame
-        visualEffectView.frame = self.view.bounds
-
-             // Add the visual effect view below the tab bar
         
-        tabBar.addSubview(visualEffectView)
+        let blurEffect = UIBlurEffect(style: .dark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = tabBar.bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tabBar.insertSubview(visualEffectView, at: 0)
+        
     }
     
     private func createServiceSearchVC() -> UINavigationController {
