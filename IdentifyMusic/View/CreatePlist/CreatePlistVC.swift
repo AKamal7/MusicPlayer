@@ -9,13 +9,18 @@ import UIKit
 
 class CreatePlistVC: UIViewController {
 
+    
     @IBOutlet weak var createPlayistTxtField: UITextField!
     @IBOutlet weak var createPlaylistBtn: UIButton!
     @IBOutlet weak var createPlaylistLabel: UILabel!
     
+    @IBOutlet weak var titleBarItem: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    @IBAction func popScreenBtn(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     private func setupView() {
         view.backgroundColor = UIColor(hex: "141414")
@@ -23,7 +28,11 @@ class CreatePlistVC: UIViewController {
         setupLabel()
         setupTextField()
         setupButton()
+        
+                
     }
+    
+    
     private func setupNavBar() {
         
         let navC = self.navigationController
@@ -34,27 +43,8 @@ class CreatePlistVC: UIViewController {
         navC?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navC?.navigationBar.shadowImage = UIImage()
         
-        //SettingUp title
-        let title = UILabel()
-        title.text      = "Create new playlist"
-        title.textColor = .white
-        title.font = UIFont(name: "Heebo-Regular", size: 20)
-        
-        //Setting up Spacer
-        let spacer      = UIView()
-        let constraint  = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
-        constraint.isActive = true
-        constraint.priority = .defaultLow
-        
-        //Creating stackView
-        let stack                = UIStackView(arrangedSubviews: [title, spacer])
-        stack.axis               = .horizontal
-        navigationItem.titleView = stack
-        
-        //Setup back button
-        let backBtnImage = UIImage(named: "backButton")
-        navB?.backIndicatorImage = backBtnImage
-        navB?.backIndicatorTransitionMaskImage = backBtnImage
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Heebo-Regular", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        titleBarItem.setTitleTextAttributes(attributes, for: .disabled)
         
         
     }

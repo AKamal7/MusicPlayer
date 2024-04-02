@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
+
+
 extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
+    
+
    
     // Register TableView Cell
     func registerCell() {
@@ -20,7 +24,6 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = Colors.mainBackground
-        tableView.allowsSelection = false
         registerCell()
     }
     // Number of rows
@@ -38,7 +41,12 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.clipsToBounds = true
         cell.containerView.backgroundColor = UIColor(hex: "1f1f1f")
         cell.containerView.layer.cornerRadius = 12
-        
+        cell.selectionStyle = .none
+        cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("ay 7aga")
     }
 }

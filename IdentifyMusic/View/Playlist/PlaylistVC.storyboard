@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dmy-yq-gEl">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -92,10 +92,10 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZC2-LW-h7d">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZC2-LW-h7d" userLabel="TrendsCollectionCell">
                                                         <rect key="frame" x="0.0" y="0.66666666666666663" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qar-CY-WdH">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TrendsCollectionCell" insetsLayoutMarginsFromSafeArea="NO" id="Qar-CY-WdH" customClass="TrendsCollectionCell" customModule="IdentifyMusic" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
@@ -188,6 +188,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" prompt="  " id="yct-5R-zp6">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="myPlayListTitle" style="done" id="qJf-Nl-2MO">
+                            <inset key="imageInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -202,6 +206,7 @@
                         <outlet property="seeAllBtn" destination="f9w-s9-yBt" id="RRM-q5-XWI"/>
                         <outlet property="seeAllPlystBtn" destination="8vd-bd-LfA" id="NAf-oC-8X9"/>
                         <outlet property="tableView" destination="Dw0-91-hIf" id="g2i-XX-y2N"/>
+                        <outlet property="titleBarItem" destination="qJf-Nl-2MO" id="Dwu-Iy-agT"/>
                         <outlet property="trendsLabel" destination="GYw-Xo-GMU" id="MR4-kG-98S"/>
                     </connections>
                 </viewController>
@@ -210,25 +215,26 @@
             <point key="canvasLocation" x="2881.679389312977" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="j8t-vG-gVm">
+        <scene sceneID="Y0b-tb-qhi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCy-WE-KFn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dmy-yq-gEl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1P-7b-T2d">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yX-sM-VXP">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="2Of-YA-f8I"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="mcP-oL-p5F"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdY-9p-KLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzf-d9-ima" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1954.9618320610687" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="myPlayListTitle" width="106" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

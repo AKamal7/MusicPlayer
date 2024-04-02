@@ -9,22 +9,19 @@ import UIKit
 
 class HistoryVC: UIViewController {
 
+    @IBOutlet weak var tableView: SelfSizedTableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.selectedIndex = 1
-
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor(hex: "141414", alpha: 1)
+        setupTable()
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
