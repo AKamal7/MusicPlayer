@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Close.png",
+      "filename" : "Frame 9.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Close@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Close@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

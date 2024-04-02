@@ -23,20 +23,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrX-QF-pfl">
                                 <rect key="frame" x="0.0" y="0.0" width="382" height="112"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-Xd-fyj">
-                                        <rect key="frame" x="346" y="16" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="NCx-V3-tGK"/>
-                                            <constraint firstAttribute="width" constant="20" id="daS-WW-a12"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <connections>
-                                            <action selector="optionButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9dq-zk-ma5"/>
-                                            <action selector="popOptionsBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fcm-xl-9rU"/>
-                                            <action selector="popOptionsOver:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dgf-Re-5ca"/>
-                                        </connections>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQ2-0n-t1v">
                                         <rect key="frame" x="16" y="16" width="80" height="80"/>
                                         <constraints>
@@ -83,18 +69,30 @@
                                     <constraint firstItem="DMz-KH-bOr" firstAttribute="leading" secondItem="nQ2-0n-t1v" secondAttribute="trailing" constant="16" id="HY2-44-cdm"/>
                                     <constraint firstItem="nQ2-0n-t1v" firstAttribute="leading" secondItem="CrX-QF-pfl" secondAttribute="leading" constant="16" id="K09-WN-TI3"/>
                                     <constraint firstItem="nQ2-0n-t1v" firstAttribute="centerY" secondItem="CrX-QF-pfl" secondAttribute="centerY" id="XgG-pK-HmB"/>
-                                    <constraint firstItem="5ub-Xd-fyj" firstAttribute="top" secondItem="CrX-QF-pfl" secondAttribute="top" constant="16" id="jUe-BE-cXb"/>
-                                    <constraint firstAttribute="trailing" secondItem="5ub-Xd-fyj" secondAttribute="trailing" constant="16" id="lHJ-vX-Y0B"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-Xd-fyj">
+                                <rect key="frame" x="346" y="16" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="NCx-V3-tGK"/>
+                                    <constraint firstAttribute="width" constant="20" id="daS-WW-a12"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="actionClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2Cg-oq-95B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="5ub-Xd-fyj" firstAttribute="top" secondItem="SjL-WL-U2n" secondAttribute="top" constant="16" id="3OD-ZP-Is7"/>
                             <constraint firstItem="CrX-QF-pfl" firstAttribute="top" secondItem="SjL-WL-U2n" secondAttribute="top" id="IVQ-bj-kkv"/>
                             <constraint firstAttribute="height" constant="124" id="Jfi-ke-lvr"/>
                             <constraint firstAttribute="trailing" secondItem="CrX-QF-pfl" secondAttribute="trailing" id="Lhd-I5-oTw"/>
                             <constraint firstAttribute="bottom" secondItem="CrX-QF-pfl" secondAttribute="bottom" constant="12" id="OIy-xr-y9O"/>
                             <constraint firstAttribute="width" constant="382" id="TUv-90-MjL"/>
                             <constraint firstItem="CrX-QF-pfl" firstAttribute="leading" secondItem="SjL-WL-U2n" secondAttribute="leading" id="kPV-fT-xQ2"/>
+                            <constraint firstAttribute="trailing" secondItem="5ub-Xd-fyj" secondAttribute="trailing" constant="16" id="leE-zu-nmX"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -112,7 +110,7 @@
                 <outlet property="cellImgView" destination="nQ2-0n-t1v" id="vgs-IY-gBj"/>
                 <outlet property="containerView" destination="CrX-QF-pfl" id="sS2-X3-bFg"/>
                 <outlet property="hoursOfPlayingLbl" destination="3t5-RP-0Os" id="UNh-gC-Fx9"/>
-                <outlet property="moreActionsBtn" destination="5ub-Xd-fyj" id="0RW-Kr-b4I"/>
+                <outlet property="moreActionsBtn" destination="5ub-Xd-fyj" id="znt-lK-vhB"/>
             </connections>
             <point key="canvasLocation" x="3402" y="-14"/>
         </tableViewCell>

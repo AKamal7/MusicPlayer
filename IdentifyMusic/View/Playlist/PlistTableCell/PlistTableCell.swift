@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol plistTabelCellProtocol: AnyObject {
+    
+    func presentView()
+    
+}
 
 class PlistTableCell: UITableViewCell {
     
- 
+    weak var delegate: plistTabelCellProtocol?
    
     @IBOutlet weak var PlistNameLbl: UILabel!
     @IBOutlet weak var cellImgView: UIImageView!
@@ -36,6 +41,13 @@ class PlistTableCell: UITableViewCell {
         setupButton()
         
     }
+    @IBAction func actionClicked(_ sender: UIButton) {
+        
+        
+        delegate?.presentView()
+        
+        print("action yalla")
+    }
     
     
     
@@ -44,11 +56,7 @@ class PlistTableCell: UITableViewCell {
         moreActionsBtn.setImage(UIImage(named: "moreActions"), for: .normal)
         moreActionsBtn.setTitle("", for: .normal)
     }
-    @IBAction func popOptionsBtn(_ sender: UIButton) {
-        
-        print("cell button clicked")
-    }
-    
+   
     private func setupLabel(label: UILabel,text: String, size: CGFloat, fontName: String, color: UIColor) {
         label.text = text
         label.font = UIFont(name: fontName, size: size)

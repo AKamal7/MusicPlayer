@@ -8,6 +8,7 @@
 import UIKit
 
 class PremiumVC: UIViewController {
+    @IBOutlet weak var cntView: UIView!
     @IBOutlet weak var headerImgView: UIImageView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -29,6 +30,8 @@ class PremiumVC: UIViewController {
     
     
     private func setupView() {
+        
+        Public.setupContainerView(view: cntView, backGround: UIColor(hex: "272727", alpha: 1))
         Public.setupButton(button: subscribeBtn, imgString: "Frame 27")
         Public.setupLabel(label: headerLabel,  text: "What’s included:",  size: 20,    color: .white)
         Public.setupLabel(label: priceLabel,   text: "$3.50/per month",   size: 36,    color: .white)

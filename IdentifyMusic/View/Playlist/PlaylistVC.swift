@@ -8,6 +8,7 @@
 import UIKit
 import MusicKit
 
+
 class PlaylistVC: UIViewController {
     
     // MARK:- Variables
@@ -117,7 +118,15 @@ class PlaylistVC: UIViewController {
 }
 
 
-
+extension PlaylistVC: plistTabelCellProtocol {
+    func presentView() {
+        let pListOptionsVC = UIStoryboard(name: "PListOptionsVC", bundle: nil).instantiateViewController(withIdentifier: "PListOptionsVC") as! PListOptionsVC
+        pListOptionsVC.modalPresentationStyle = .overFullScreen
+        self.present(pListOptionsVC, animated: false, completion: nil)
+    }
+    
+    
+}
 
 
 

@@ -17,8 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NME-gL-bL4">
+                                <rect key="frame" x="0.0" y="-200.66666666666663" width="393" height="1278.333333333333"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="popBtnClicked:" destination="sUv-eT-o7J" eventType="touchUpInside" id="TIo-Ni-wPI"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka5-Pl-eoG">
-                                <rect key="frame" x="0.0" y="575" width="393" height="243"/>
+                                <rect key="frame" x="0.0" y="317" width="393" height="243"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ut-X1-xgg">
                                         <rect key="frame" x="40" y="33" width="246" height="21"/>
@@ -26,13 +34,13 @@
                                             <constraint firstAttribute="width" constant="246" id="8EM-Y1-j7H"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pY-Ck-BSn">
-                                        <rect key="frame" x="76" y="85" width="150" height="26"/>
+                                        <rect key="frame" x="76" y="85" width="250" height="26"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="Bpy-XA-XD9"/>
+                                            <constraint firstAttribute="width" constant="250" id="Bpy-XA-XD9"/>
                                             <constraint firstAttribute="height" constant="26" id="xYM-k5-Bfs"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -96,14 +104,23 @@
                                     <constraint firstItem="D5b-Ba-hXp" firstAttribute="leading" secondItem="aQb-Dx-5nz" secondAttribute="leading" id="pcf-Mh-IYd"/>
                                     <constraint firstItem="D5b-Ba-hXp" firstAttribute="top" secondItem="aQb-Dx-5nz" secondAttribute="bottom" constant="24" id="ti6-9I-s4P"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4s5-Yv-3mW"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ka5-Pl-eoG" firstAttribute="leading" secondItem="4s5-Yv-3mW" secondAttribute="leading" id="0Dw-Fe-RnT"/>
-                            <constraint firstItem="4s5-Yv-3mW" firstAttribute="bottom" secondItem="ka5-Pl-eoG" secondAttribute="bottom" id="bqB-Oy-Dom"/>
+                            <constraint firstItem="NME-gL-bL4" firstAttribute="centerY" secondItem="4s5-Yv-3mW" secondAttribute="centerY" id="2Dr-gh-JS0"/>
+                            <constraint firstItem="NME-gL-bL4" firstAttribute="width" secondItem="cNq-Ct-eMG" secondAttribute="width" id="Hak-r2-Cyh"/>
+                            <constraint firstItem="NME-gL-bL4" firstAttribute="height" secondItem="cNq-Ct-eMG" secondAttribute="height" multiplier="1.5" id="WtN-0b-F0T"/>
+                            <constraint firstItem="NME-gL-bL4" firstAttribute="centerX" secondItem="4s5-Yv-3mW" secondAttribute="centerX" id="m4E-4H-KbA"/>
                             <constraint firstItem="4s5-Yv-3mW" firstAttribute="trailing" secondItem="ka5-Pl-eoG" secondAttribute="trailing" id="qtn-wc-PL4"/>
+                            <constraint firstItem="ka5-Pl-eoG" firstAttribute="centerY" secondItem="4s5-Yv-3mW" secondAttribute="centerY" id="rJw-do-5Ki"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -112,9 +129,11 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="cntView" destination="ka5-Pl-eoG" id="J4M-Mg-b9Z"/>
                         <outlet property="deletePListBtn" destination="52m-lR-8AF" id="LDk-f8-uPr"/>
                         <outlet property="editNameBtn" destination="7pY-Ck-BSn" id="M6I-iE-EIO"/>
                         <outlet property="editPListBtn" destination="lRn-rZ-Z05" id="it4-MK-qIu"/>
+                        <outlet property="popButton" destination="NME-gL-bL4" id="Kna-dh-xE3"/>
                         <outlet property="titleLablel" destination="2ut-X1-xgg" id="RWG-z8-oDl"/>
                     </connections>
                 </viewController>

@@ -23,6 +23,9 @@ class MainTabBar: UITabBarController {
         let appointmentsNavigation = mainTabBar.createPlaylistVC()
         mainTabBar.viewControllers = [favoriteNavigation, searchNavigation, appointmentsNavigation]
         mainTabBar.selectedIndex = 1
+        mainTabBar.tabBar.items!.first?.titlePositionAdjustment = UIOffset(horizontal: 30, vertical: 0.0);
+        mainTabBar.tabBar.items!.last?.titlePositionAdjustment = UIOffset(horizontal: -30, vertical: 0.0);
+        
         return mainTabBar
     }
 }

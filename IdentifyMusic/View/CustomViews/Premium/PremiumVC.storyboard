@@ -100,6 +100,11 @@
                                     <constraint firstItem="nUu-5O-Mw0" firstAttribute="leading" secondItem="cxZ-I0-KWx" secondAttribute="leading" constant="24" id="sL5-Qi-bbe"/>
                                     <constraint firstItem="KtW-DZ-bhB" firstAttribute="leading" secondItem="RTx-F6-wng" secondAttribute="trailing" constant="35" id="xNR-qO-2DL"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -116,6 +121,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="cntView" destination="cxZ-I0-KWx" id="WXU-mX-HV9"/>
                         <outlet property="headerImgView" destination="rdn-t3-OiP" id="dWs-wL-aPM"/>
                         <outlet property="headerLabel" destination="Gxd-a8-tG9" id="CRd-ub-1mN"/>
                         <outlet property="noAdsLabel" destination="KtW-DZ-bhB" id="adV-7e-dur"/>

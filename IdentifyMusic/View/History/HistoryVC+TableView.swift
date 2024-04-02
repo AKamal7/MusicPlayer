@@ -1,3 +1,4 @@
+
 //
 //  PlistVC + TableView.swift
 //  IdentifyMusic
@@ -10,7 +11,7 @@ import UIKit
 
 
 
-extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
+extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     
 
    
@@ -42,7 +43,7 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.containerView.backgroundColor = UIColor(hex: "1f1f1f")
         cell.containerView.layer.cornerRadius = 12
         cell.selectionStyle = .none
-        cell.delegate = self
+        
         return cell
     }
     
