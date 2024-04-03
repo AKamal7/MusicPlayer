@@ -43,6 +43,10 @@
 		BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
+		F748FAE82BBD82B300A3488B /* HistoryVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */; };
+		F748FAEA2BBD854E00A3488B /* UILabel+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748FAE92BBD854E00A3488B /* UILabel+Gradient.swift */; };
+		F748FAEE2BBD8C0B00A3488B /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748FAEC2BBD8C0B00A3488B /* HistoryTableCell.swift */; };
+		F748FAEF2BBD8C0B00A3488B /* HistoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F748FAED2BBD8C0B00A3488B /* HistoryTableCell.xib */; };
 		F7754E9F2BAB3583003956C0 /* PlayerVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7754E9D2BAB3582003956C0 /* PlayerVC.storyboard */; };
 		F7754EA02BAB3583003956C0 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7754E9E2BAB3582003956C0 /* PlayerVC.swift */; };
 		F7754EA22BAB35A1003956C0 /* UiView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */; };
@@ -95,6 +99,10 @@
 		BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendsCollectionCell.xib; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryVC+SearchBar.swift"; sourceTree = "<group>"; };
+		F748FAE92BBD854E00A3488B /* UILabel+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Gradient.swift"; sourceTree = "<group>"; };
+		F748FAEC2BBD8C0B00A3488B /* HistoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
+		F748FAED2BBD8C0B00A3488B /* HistoryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableCell.xib; sourceTree = "<group>"; };
 		F7754E9D2BAB3582003956C0 /* PlayerVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerVC.storyboard; sourceTree = "<group>"; };
 		F7754E9E2BAB3582003956C0 /* PlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UiView+CornerRadius.swift"; sourceTree = "<group>"; };
@@ -171,9 +179,11 @@
 		BB3A578C2BAB3E9C001AC9FD /* History */ = {
 			isa = PBXGroup;
 			children = (
+				F748FAEB2BBD8BEA00A3488B /* HistoryTableCell */,
 				F73B5A882B9CA7F100521C7F /* HistoryVC.swift */,
 				BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */,
 				BB85B8E52BBC28DA0099DE56 /* HistoryVC+TableView.swift */,
+				F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -217,7 +227,6 @@
 				BB3A578D2BAB3EBF001AC9FD /* MainTabBar */,
 				BB3A578C2BAB3E9C001AC9FD /* History */,
 				BB3A578B2BAB3E69001AC9FD /* Search */,
-				BB85B8E42BBC0B2C0099DE56 /* New Group */,
 				F7754E9C2BAB3582003956C0 /* Player */,
 				BB526F8C2BA28B89006E6322 /* Playlist */,
 				BB954FC42BA94C0A001F12C0 /* CreatePlist */,
@@ -264,6 +273,7 @@
 			children = (
 				F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */,
 				BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */,
+				F748FAE92BBD854E00A3488B /* UILabel+Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,13 +285,6 @@
 				BB8594F32BAEA92300E85A6F /* ConnectAppleMusicVC.storyboard */,
 			);
 			path = ConnectAppleMusic;
-			sourceTree = "<group>";
-		};
-		BB85B8E42BBC0B2C0099DE56 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		BB954FC42BA94C0A001F12C0 /* CreatePlist */ = {
@@ -357,6 +360,15 @@
 				1FD09DE62ECB2504FDAF6D4B /* Pods_IdentifyMusic.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F748FAEB2BBD8BEA00A3488B /* HistoryTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				F748FAEC2BBD8C0B00A3488B /* HistoryTableCell.swift */,
+				F748FAED2BBD8C0B00A3488B /* HistoryTableCell.xib */,
+			);
+			path = HistoryTableCell;
 			sourceTree = "<group>";
 		};
 		F7754E9C2BAB3582003956C0 /* Player */ = {
@@ -499,6 +511,7 @@
 				BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */,
 				BBAE80C42BB80E9B0083F621 /* PremiumVC.storyboard in Resources */,
 				BB1646042BB2BFC600E10257 /* PlayFullSongsVC.storyboard in Resources */,
+				F748FAEF2BBD8C0B00A3488B /* HistoryTableCell.xib in Resources */,
 				BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */,
 				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 				BBAE80CA2BB81B590083F621 /* LinkedAccountVC.storyboard in Resources */,
@@ -541,6 +554,7 @@
 				BB1645F42BB17EBA00E10257 /* Public.swift in Sources */,
 				BB85B8E12BBA35700099DE56 /* SearchVC+SearchBar.swift in Sources */,
 				BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */,
+				F748FAE82BBD82B300A3488B /* HistoryVC+SearchBar.swift in Sources */,
 				F7754EAC2BAB35DD003956C0 /* Constants.swift in Sources */,
 				BBAE80C82BB81B4B0083F621 /* LinkedAccountsVC.swift in Sources */,
 				F7754EAB2BAB35DD003956C0 /* AppleMusicAPI.swift in Sources */,
@@ -548,9 +562,11 @@
 				BB1645F22BB17DDC00E10257 /* PListOptionsVC.swift in Sources */,
 				F7754EAD2BAB35DD003956C0 /* Song.swift in Sources */,
 				BBF224C82BB16B6A00B99A66 /* SongOptionsVC.swift in Sources */,
+				F748FAEE2BBD8C0B00A3488B /* HistoryTableCell.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
 				BB8594F12BAEA90900E85A6F /* ConnectAppleMusicVC.swift in Sources */,
 				BBAE80C22BB80E910083F621 /* PremiumVC.swift in Sources */,
+				F748FAEA2BBD854E00A3488B /* UILabel+Gradient.swift in Sources */,
 				BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */,
 				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,
 				BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */,
