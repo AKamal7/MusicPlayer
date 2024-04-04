@@ -14,7 +14,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var settingBtn: UIButton!
     let player = MPMusicPlayerController.systemMusicPlayer
     
-    @IBOutlet weak var pulsyBtn: PulsatingButton!
+    @IBOutlet weak var pulsyBtn: UIButton!
     
     
     
@@ -22,13 +22,10 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pulsyBtn.pulse()
-        pulsyBtn.borderColor = UIColor(hex: "BC66FF", alpha: 1)
+        
+       
         setupView()
-        //        var playerQueue = PlayerQueue()
-        //        if let song = player.nowPlayingItem {
-        //            let id = song.playbackStoreID
-        //           }
+      
     }
     
     @IBAction func searchClicked(_ sender: UIButton) {
@@ -38,6 +35,7 @@ class SearchVC: UIViewController {
         tabBarController?.selectedIndex = 0
         setupSearchBar()
         setupSettingBtn()
+        setupPulsy()
     }
     private func setupSettingBtn() {
         
@@ -48,13 +46,35 @@ class SearchVC: UIViewController {
         
         
     }
-    
+    private func setupPulsy() {
+        
+        pulsyBtn.setImage(UIImage(named: "Component 1"), for: .normal)
+        pulsyBtn.isUserInteractionEnabled = true
+        pulsyBtn.isEnabled = true
+
+        let pulse1 = CASpringAnimation(keyPath: "transform.scale")
+        pulse1.duration = 0.6
+        pulse1.fromValue = 1.0
+        pulse1.toValue = 1.12
+        pulse1.autoreverses = true
+        pulse1.repeatCount = 1
+        pulse1.initialVelocity = 0.5
+        pulse1.damping = 0.8
+
+        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+
+         animation.values = [1.0, 1.2, 1.0]
+         animation.keyTimes = [0, 0.5, 1]
+         animation.duration = 1.0
+         animation.repeatCount = Float.infinity
+        pulsyBtn.layer.add(animation, forKey: "pulse")
+    }
     
     @objc func addButtonTapped() {
         
     }
     @IBAction func settingsBtnClicked(_ sender: UIButton) {
-        
+       
         
     }
     @IBAction func getPremiumTapped(_ sender: UIButton) {

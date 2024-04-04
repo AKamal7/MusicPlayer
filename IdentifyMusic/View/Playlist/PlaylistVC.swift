@@ -96,6 +96,7 @@ class PlaylistVC: UIViewController {
         
         
     }
+    
     private func setupNewPlylstView() {
         
         createNewPlylstView.backgroundColor = UIColor(hex: "FFFFFF", alpha: 0.04)

@@ -40,11 +40,14 @@ extension MainTabBar {
         self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
         self.tabBar.tintColor = UIColor(named: "mainColor")
         
-        let blurEffect = UIBlurEffect(style: .dark)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: .light)
+          let visualEffectView = UIVisualEffectView(effect: blurEffect)
+          
+          // Set the frame of the visual effect view to cover the entire screen
         visualEffectView.frame = tabBar.bounds
-        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tabBar.insertSubview(visualEffectView, at: 0)
+          
+          // Insert the visual effect view below the tab bar
+          view.insertSubview(visualEffectView, belowSubview: tabBar)
         
     }
     
