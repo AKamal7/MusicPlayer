@@ -15,6 +15,7 @@
 		BB1646042BB2BFC600E10257 /* PlayFullSongsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1646032BB2BFC600E10257 /* PlayFullSongsVC.storyboard */; };
 		BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */; };
 		BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */; };
+		BB4DB5352BBD61530081E62C /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */; };
 		BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */; };
 		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
 		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
@@ -67,6 +68,7 @@
 		BB1646032BB2BFC600E10257 /* PlayFullSongsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayFullSongsVC.storyboard; sourceTree = "<group>"; };
 		BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchVC.storyboard; sourceTree = "<group>"; };
 		BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryVC.storyboard; sourceTree = "<group>"; };
+		BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 		BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
 		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				F7754EAF2BAB3652003956C0 /* SelfSizedTableView.swift */,
 				BB85B8E22BBA60770099DE56 /* PulseAnimation.swift */,
+				BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				BBF224C82BB16B6A00B99A66 /* SongOptionsVC.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
 				BB8594F12BAEA90900E85A6F /* ConnectAppleMusicVC.swift in Sources */,
+				BB4DB5352BBD61530081E62C /* UIView+CALayer.swift in Sources */,
 				BBAE80C22BB80E910083F621 /* PremiumVC.swift in Sources */,
 				BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */,
 				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,

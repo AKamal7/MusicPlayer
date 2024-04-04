@@ -16,21 +16,23 @@ class SearchVC: UIViewController {
     
     @IBOutlet weak var pulsyBtn: PulsatingButton!
     
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pulsyBtn.pulse()
         pulsyBtn.borderColor = UIColor(hex: "BC66FF", alpha: 1)
         setupView()
-//        var playerQueue = PlayerQueue()
-//        if let song = player.nowPlayingItem {
-//            let id = song.playbackStoreID
-//           }
+        //        var playerQueue = PlayerQueue()
+        //        if let song = player.nowPlayingItem {
+        //            let id = song.playbackStoreID
+        //           }
     }
     
     @IBAction func searchClicked(_ sender: UIButton) {
-            }
+    }
     // MARK:- Private Methods
     private func setupView() {
         tabBarController?.selectedIndex = 0
@@ -43,7 +45,11 @@ class SearchVC: UIViewController {
         settingBtn.borderColor = UIColor(hex: "2b2b2b", alpha: 1)
         settingBtn.layer.cornerRadius = 12
         settingBtn.clipsToBounds = true
+        
+        
     }
+    
+    
     @objc func addButtonTapped() {
         
     }
@@ -62,7 +68,9 @@ class SearchVC: UIViewController {
         
     }
     
-
+    
+    
+    
 }
 
 
