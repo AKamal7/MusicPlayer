@@ -48,9 +48,10 @@ class SearchVC: UIViewController {
         
     }
     @IBAction func settingsBtnClicked(_ sender: UIButton) {
-        
-        
+        let vc = UIStoryboard(name: "SettingsVC", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+        navigationController?.pushViewController(vc, animated: true)
     }
+    
     @IBAction func getPremiumTapped(_ sender: UIButton) {
         
         let premiumVC = UIStoryboard(name: "PremiumVC", bundle: nil).instantiateViewController(withIdentifier: "PremiumVC") as! PremiumVC
