@@ -18,7 +18,7 @@ extension SearchVC: UISearchBarDelegate {
         }
     func setupSearchBar() {
         searchBar.delegate = self
-        searchBar.setImage(UIImage(named: "ph_magnifying-glass"), for: .search, state: .normal)
+        
         searchBar.searchTextField.clearButtonMode = .never
         searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
         searchBar.searchTextField.backgroundColor = UIColor(hex: "FFFFFF", alpha: 0)

@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-i4-Gyv">
-                                <rect key="frame" x="24" y="83" width="345" height="45"/>
+                                <rect key="frame" x="16" y="59" width="353" height="45"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HBa-Bo-dgT">
+                                    <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="HBa-Bo-dgT">
                                         <rect key="frame" x="0.0" y="0.0" width="288.66666666666669" height="45"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -28,7 +28,7 @@
                                         </connections>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-AH-10y">
-                                        <rect key="frame" x="296.66666666666669" y="0.0" width="48.333333333333314" height="45"/>
+                                        <rect key="frame" x="296.66666666666669" y="0.0" width="56.333333333333314" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="settings" title=""/>
                                         <connections>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-hd-fni">
-                                <rect key="frame" x="24" y="144" width="345" height="72"/>
+                                <rect key="frame" x="24" y="120" width="345" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxY-YG-kNY">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hg-82-kmJ">
-                                <rect key="frame" x="65" y="271" width="263" height="74"/>
+                                <rect key="frame" x="65" y="247" width="263" height="74"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 4" translatesAutoresizingMaskIntoConstraints="NO" id="uGI-43-Y5h">
                                         <rect key="frame" x="0.0" y="0.0" width="263" height="74"/>
@@ -119,35 +119,29 @@ or sing or hum the melody you have stuck in your head</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k2-8G-GXj">
-                                <rect key="frame" x="94.666666666666686" y="372" width="204" height="204"/>
+                                <rect key="frame" x="94.666666666666686" y="348" width="204" height="204"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-Oh-Zxl" customClass="PulsatingButton" customModule="IdentifyMusic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDz-fh-7yO">
                                         <rect key="frame" x="0.0" y="0.0" width="204" height="204"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="searchClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qTs-eO-2vo"/>
-                                        </connections>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Component 1-3" translatesAutoresizingMaskIntoConstraints="NO" id="hhP-ht-V1q">
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="204"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="rwj-Oh-Zxl" firstAttribute="centerY" secondItem="5k2-8G-GXj" secondAttribute="centerY" id="C87-9p-Lgg"/>
+                                    <constraint firstItem="lDz-fh-7yO" firstAttribute="width" secondItem="5k2-8G-GXj" secondAttribute="width" id="Cfl-5w-jgi"/>
                                     <constraint firstAttribute="height" constant="204" id="M2f-SK-2Ai"/>
-                                    <constraint firstItem="rwj-Oh-Zxl" firstAttribute="height" secondItem="5k2-8G-GXj" secondAttribute="height" id="SXG-XW-B2D"/>
-                                    <constraint firstItem="rwj-Oh-Zxl" firstAttribute="centerX" secondItem="5k2-8G-GXj" secondAttribute="centerX" id="ncl-K7-mGN"/>
+                                    <constraint firstItem="hhP-ht-V1q" firstAttribute="height" secondItem="lDz-fh-7yO" secondAttribute="height" id="M5v-gH-iXI"/>
+                                    <constraint firstItem="hhP-ht-V1q" firstAttribute="width" secondItem="lDz-fh-7yO" secondAttribute="width" id="cK8-O5-ogw"/>
+                                    <constraint firstItem="lDz-fh-7yO" firstAttribute="height" secondItem="5k2-8G-GXj" secondAttribute="height" id="kr3-eA-t1J"/>
                                     <constraint firstAttribute="width" constant="204" id="sIj-Dd-RwT"/>
-                                    <constraint firstItem="rwj-Oh-Zxl" firstAttribute="width" secondItem="5k2-8G-GXj" secondAttribute="width" id="y12-gh-DCZ"/>
+                                    <constraint firstItem="lDz-fh-7yO" firstAttribute="centerX" secondItem="5k2-8G-GXj" secondAttribute="centerX" id="sxn-1X-jGL"/>
+                                    <constraint firstItem="hhP-ht-V1q" firstAttribute="centerY" secondItem="lDz-fh-7yO" secondAttribute="centerY" id="v8Y-9a-Pah"/>
+                                    <constraint firstItem="lDz-fh-7yO" firstAttribute="centerY" secondItem="5k2-8G-GXj" secondAttribute="centerY" id="wX6-Yc-ezj"/>
+                                    <constraint firstItem="hhP-ht-V1q" firstAttribute="centerX" secondItem="lDz-fh-7yO" secondAttribute="centerX" id="xIO-eS-nRn"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -173,29 +167,30 @@ or sing or hum the melody you have stuck in your head</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1hg-82-kmJ" firstAttribute="centerX" secondItem="cVW-hd-fni" secondAttribute="centerX" id="5bs-Oo-aFV"/>
-                            <constraint firstItem="lr1-i4-Gyv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="6Mz-r6-Za0"/>
+                            <constraint firstItem="lr1-i4-Gyv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="6Mz-r6-Za0"/>
                             <constraint firstItem="1hg-82-kmJ" firstAttribute="top" secondItem="cVW-hd-fni" secondAttribute="bottom" constant="55" id="CCi-hq-vZx"/>
-                            <constraint firstItem="lr1-i4-Gyv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="CUb-6b-axh"/>
                             <constraint firstItem="cVW-hd-fni" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Dcf-da-vYP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lr1-i4-Gyv" secondAttribute="trailing" constant="24" id="atp-wz-OOh"/>
                             <constraint firstItem="5k2-8G-GXj" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="c80-3d-Wu4"/>
                             <constraint firstItem="cVW-hd-fni" firstAttribute="top" secondItem="lr1-i4-Gyv" secondAttribute="bottom" constant="16" id="n1t-08-wjP"/>
                             <constraint firstItem="5k2-8G-GXj" firstAttribute="top" secondItem="1hg-82-kmJ" secondAttribute="bottom" constant="27" id="ne6-vz-mkp"/>
+                            <constraint firstItem="lr1-i4-Gyv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pZX-fE-JZr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cVW-hd-fni" secondAttribute="trailing" constant="24" id="uP9-O3-doS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pulsyBtn" destination="rwj-Oh-Zxl" id="II5-Mg-Feh"/>
+                        <outlet property="pulsyBtn" destination="lDz-fh-7yO" id="Nas-ew-9Wj"/>
                         <outlet property="searchBar" destination="HBa-Bo-dgT" id="870-YX-jCt"/>
                         <outlet property="settingBtn" destination="Imf-AH-10y" id="HRD-cG-I2U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.58015267175573" y="-17.605633802816904"/>
+            <point key="canvasLocation" x="1958.0152671755725" y="-17.605633802816904"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Component 1-3" width="204" height="204"/>
         <image name="Frame 16" width="334" height="72"/>
         <image name="Rectangle 4" width="263" height="74"/>
         <image name="settings" width="24.333333969116211" height="24.333333969116211"/>

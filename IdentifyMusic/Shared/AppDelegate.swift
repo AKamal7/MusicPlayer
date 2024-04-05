@@ -21,9 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbar = MainTabBar.create()
         window?.rootViewController = tabbar
         
+        if #available(iOS 13.0, *) {
+            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+             statusBar.backgroundColor = UIColor(hex: "141414", alpha: 1)
+             UIApplication.shared.keyWindow?.addSubview(statusBar)
+        } else {
+             UIApplication.shared.statusBarView?.backgroundColor = UIColor(hex: "141414", alpha: 1)
+        }
         
         
         return true
     }
     
 }
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector(("statusBarManager"))) {
+            return value(forKey: "statusBarManager") as? UIView
+        }
+        return nil
+    }
+}
+
+

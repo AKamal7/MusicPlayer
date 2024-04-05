@@ -26,4 +26,11 @@ class Public {
     static func setupButton(button: UIButton, imgString: String) {
         button.setImage(UIImage(named: imgString), for: .normal)
     }
+    
+    static func setupLabelWithMedium(label: UILabel, text: String, size: CGFloat, color: UIColor) {
+        label.text = text
+        label.font = UIFont(name: "Heebo-Medium", size: size)
+        label.textColor = color
+    }
+    
 }
