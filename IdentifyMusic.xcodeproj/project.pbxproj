@@ -43,6 +43,7 @@
 		BBF224CA2BB16BA200B99A66 /* SongOptionsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF224C92BB16BA200B99A66 /* SongOptionsVC.storyboard */; };
 		BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */; };
 		BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */; };
+		BBFFA96B2BC016CC005BD5B5 /* Heebo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBFFA96A2BC016CC005BD5B5 /* Heebo-Medium.ttf */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
 		F748FAE82BBD82B300A3488B /* HistoryVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */; };
@@ -103,6 +104,7 @@
 		BBF224C92BB16BA200B99A66 /* SongOptionsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SongOptionsVC.storyboard; sourceTree = "<group>"; };
 		BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionCell.swift; sourceTree = "<group>"; };
 		BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendsCollectionCell.xib; sourceTree = "<group>"; };
+		BBFFA96A2BC016CC005BD5B5 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Medium.ttf"; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryVC+SearchBar.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */,
+				BBFFA96A2BC016CC005BD5B5 /* Heebo-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7754E9F2BAB3583003956C0 /* PlayerVC.storyboard in Resources */,
+				BBFFA96B2BC016CC005BD5B5 /* Heebo-Medium.ttf in Resources */,
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
 				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
 				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,

@@ -16,7 +16,7 @@ class TrendsCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         containerView.backgroundColor = UIColor(hex: "1f1f1f")
-        
+        Public.setupLabel(label: trendsLabel, text: "Trends", size: 14, color: .white)
     }
 
 }

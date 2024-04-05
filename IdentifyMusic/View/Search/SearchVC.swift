@@ -28,11 +28,16 @@ class SearchVC: UIViewController {
       
     }
     
+    override func applicationFinishedRestoringState() {
+        setupPulsy()
+    }
+    
     @IBAction func searchClicked(_ sender: UIButton) {
     }
     // MARK:- Private Methods
     private func setupView() {
         tabBarController?.selectedIndex = 0
+        self.view.backgroundColor = UIColor(hex: "141414", alpha: 1)
         setupSearchBar()
         setupSettingBtn()
         setupPulsy()
@@ -53,7 +58,7 @@ class SearchVC: UIViewController {
         pulsyBtn.isEnabled = true
 
         let pulse1 = CASpringAnimation(keyPath: "transform.scale")
-        pulse1.duration = 0.6
+        pulse1.duration = 1
         pulse1.fromValue = 1.0
         pulse1.toValue = 1.12
         pulse1.autoreverses = true
@@ -75,7 +80,9 @@ class SearchVC: UIViewController {
     }
     @IBAction func settingsBtnClicked(_ sender: UIButton) {
        
-        
+        let settings = UIStoryboard(name: "SettingsVC", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+        settings.modalPresentationStyle = .fullScreen
+        self.present(settings,animated: false,completion: nil)
     }
     @IBAction func getPremiumTapped(_ sender: UIButton) {
         
