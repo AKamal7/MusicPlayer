@@ -15,10 +15,12 @@
 		BB1646042BB2BFC600E10257 /* PlayFullSongsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1646032BB2BFC600E10257 /* PlayFullSongsVC.storyboard */; };
 		BB3A57902BAB3F2E001AC9FD /* SearchVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */; };
 		BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */; };
+		BB4DB5352BBD61530081E62C /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */; };
 		BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */; };
 		BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */; };
 		BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */; };
 		BB526FAC2BA2A23A006E6322 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */; };
+		BB7B47A02BBE9C5000DAE561 /* Extension+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B479F2BBE9C5000DAE561 /* Extension+RoundedCorners.swift */; };
 		BB8594F12BAEA90900E85A6F /* ConnectAppleMusicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8594F02BAEA90900E85A6F /* ConnectAppleMusicVC.swift */; };
 		BB8594F42BAEA92300E85A6F /* ConnectAppleMusicVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8594F32BAEA92300E85A6F /* ConnectAppleMusicVC.storyboard */; };
 		BB85B8E12BBA35700099DE56 /* SearchVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85B8E02BBA35700099DE56 /* SearchVC+SearchBar.swift */; };
@@ -73,10 +75,12 @@
 		BB1646032BB2BFC600E10257 /* PlayFullSongsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayFullSongsVC.storyboard; sourceTree = "<group>"; };
 		BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchVC.storyboard; sourceTree = "<group>"; };
 		BB3A57912BAB3F45001AC9FD /* HistoryVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryVC.storyboard; sourceTree = "<group>"; };
+		BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 		BB526F8D2BA28BB9006E6322 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
 		BB526F922BA28E0E006E6322 /* PlaylistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaylistVC.storyboard; sourceTree = "<group>"; };
 		BB526FA82BA29F0D006E6322 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
 		BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		BB7B479F2BBE9C5000DAE561 /* Extension+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RoundedCorners.swift"; sourceTree = "<group>"; };
 		BB8594F02BAEA90900E85A6F /* ConnectAppleMusicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectAppleMusicVC.swift; sourceTree = "<group>"; };
 		BB8594F32BAEA92300E85A6F /* ConnectAppleMusicVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectAppleMusicVC.storyboard; sourceTree = "<group>"; };
 		BB85B8E02BBA35700099DE56 /* SearchVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBar.swift"; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				F7754EA12BAB35A1003956C0 /* UiView+CornerRadius.swift */,
 				BB526FAB2BA2A23A006E6322 /* Extension + UIColor.swift */,
 				F748FAE92BBD854E00A3488B /* UILabel+Gradient.swift */,
+				BB7B479F2BBE9C5000DAE561 /* Extension+RoundedCorners.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 			children = (
 				F7754EAF2BAB3652003956C0 /* SelfSizedTableView.swift */,
 				BB85B8E22BBA60770099DE56 /* PulseAnimation.swift */,
+				BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 			files = (
 				BB1645F42BB17EBA00E10257 /* Public.swift in Sources */,
 				BB85B8E12BBA35700099DE56 /* SearchVC+SearchBar.swift in Sources */,
+				BB7B47A02BBE9C5000DAE561 /* Extension+RoundedCorners.swift in Sources */,
 				BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */,
 				F748FAE82BBD82B300A3488B /* HistoryVC+SearchBar.swift in Sources */,
 				F7754EAC2BAB35DD003956C0 /* Constants.swift in Sources */,
@@ -581,6 +588,7 @@
 				F748FAEE2BBD8C0B00A3488B /* HistoryTableCell.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
 				BB8594F12BAEA90900E85A6F /* ConnectAppleMusicVC.swift in Sources */,
+				BB4DB5352BBD61530081E62C /* UIView+CALayer.swift in Sources */,
 				BBAE80C22BB80E910083F621 /* PremiumVC.swift in Sources */,
 				F748FAEA2BBD854E00A3488B /* UILabel+Gradient.swift in Sources */,
 				BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */,

@@ -42,11 +42,11 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor(hex: "141414", alpha: 1)
         cell.clipsToBounds = true
         cell.containerView.backgroundColor = UIColor(hex: "1f1f1f")
-//        cell.containerView.layer.cornerRadius = 12
-        cell.containerView.roundCorners(corners: [.topRight, .bottomRight], radius: 14)
-        cell.containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 51)
+//        cell.containerView.roundCorners(corners: [.topRight, .bottomRight], radius: 100)
+//        cell.containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 51)
         cell.cellImgView.roundCorners(corners: .allCorners, radius: 32.5)
-        
+        cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
+        cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
         
         return cell
