@@ -7,174 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		028924A1CF3B4E5D48924C82370F9E44 /* Pods-IdentifyMusic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19EC1B8B6F406FA06214FC65C9786E63 /* ProgressHUD+TriangleDotShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324AF91238A96FD441B3FA8725DFCEC /* ProgressHUD+TriangleDotShift.swift */; };
-		1E70D9711242B3AC19DA9136EC66E2D1 /* ProgressHUD+PacmanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1AB0E891E926A2B3BFEDB6ECCF842 /* ProgressHUD+PacmanProgress.swift */; };
-		22A265D12317652A2F25AB25A93D44AE /* ProgressHUD+CircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A206EE177E884600CA3F11D3AD125CF /* ProgressHUD+CircleStrokeSpin.swift */; };
-		28B22108FB83B10D3E01F65383135EB5 /* ProgressHUD+CirclePulseSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E120381BEC6F113C5924CF62254647 /* ProgressHUD+CirclePulseSingle.swift */; };
-		2A82B4FE8A6912CD632C2E47CDC4E4A5 /* ProgressHUD+BarSweepToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37CC6F9808908A710D1572FC17C03C /* ProgressHUD+BarSweepToggle.swift */; };
-		3539ECBF8B961FE42A68B01A3AADF91B /* ProgressHUD+CircleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF5C0C45FD8A85DCBC1285F124D45D /* ProgressHUD+CircleRippleMultiple.swift */; };
-		37BF610B60A0DFC350E9DC14511E09A0 /* ProgressHUD+SquareCircuitSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BBC0BAFCC2302DDBDD0AB439186FC0 /* ProgressHUD+SquareCircuitSnake.swift */; };
-		3879E3E94921A9884C0A1E97A337DBD9 /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4F91CB858FA3E7AD956A76C0B8220 /* ProgressHUD+BallVerticalBounce.swift */; };
-		3A1F799C0B6DE2FA431F4F49E417BB7F /* ProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F367D52BD7A90FF5BD4121F445FDE8 /* ProgressHUD-dummy.m */; };
-		4F2262DDE8F5B1BEB5BE36ACB3B66CE1 /* ProgressHUD+SFSymbolBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1EDE420E392FE799CFCBAEC54432A /* ProgressHUD+SFSymbolBounce.swift */; };
-		5B421F09FDF965E84313F4972A090BF6 /* ProgressHUD+QuintupleDotDance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8577244EAD758551D1AB57330A0DC3 /* ProgressHUD+QuintupleDotDance.swift */; };
-		5C91BDC6BB9D271C8483C270C69027D7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB478A0FD6675EC408C1837A97CB9B0D /* ProgressHUD.swift */; };
-		68F9EF550BFD25E95D607655C70DC5C8 /* ProgressHUD+CircleBarSpinFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CF644257698A653547C975C093A9B /* ProgressHUD+CircleBarSpinFade.swift */; };
-		6C7F8473BF45C1D6906C54CAD4E6C44A /* ProgressHUD+LiveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F732F66E6A2913C5270C4F58F3C6F9E /* ProgressHUD+LiveIcon.swift */; };
-		803FA37FE2807B420914AFED975628BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		85D8C472389D912A4538FDD82E5970E3 /* Pods-IdentifyMusic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */; };
-		904BFEA904ACA4C5AC97260C7999670E /* ProgressHUD+DualDotSidestep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88218D111E8953B4A939859D85D1089 /* ProgressHUD+DualDotSidestep.swift */; };
-		90985370B109E9607ADC7D929D11DB48 /* ProgressHUD+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0035DEF594A6D7CD1478D0D1FB25BC36 /* ProgressHUD+Public.swift */; };
-		A84A3A21CD23AF532AD78AB177247DAC /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA200CBD2A0620A4566AC8747D7503B /* ProgressHUD+ActivityIndicator.swift */; };
-		ABB0C59CFAF36B3AFA1A27625EA54C46 /* ProgressHUD+CircleRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5638301E9C732A15F2AABD573D19891 /* ProgressHUD+CircleRotateChase.swift */; };
-		ACCA655A16ED1D29FDA81A391B7B8072 /* ProgressHUD+HorizontalBarScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7946C00885C3D21F264FE02FCE52D717 /* ProgressHUD+HorizontalBarScaling.swift */; };
-		B946C9FAD6CA44A50B8BD639F76806FB /* ProgressHUD+CirclePulseMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A2AC2E6062AE9658BE8ACA281ED74C /* ProgressHUD+CirclePulseMultiple.swift */; };
-		C47F3591BFFDC019D3A2E1F9CC349610 /* ProgressHUD+CircleRippleSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF8EF0537F8F6B172CAA4E6E7E4168 /* ProgressHUD+CircleRippleSingle.swift */; };
-		CCDF9BEDCBDE214A8C365737CD4A4DDB /* ProgressHUD+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA6232A3E25F9C38620B7157FED87 /* ProgressHUD+Banner.swift */; };
-		D965E1FEF32444A430A5150C5C9CBE26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		DD74B53B9F24F949728B15A7F508D9D6 /* ProgressHUD+HorizontalDotScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7B339DC6112F0CCB4E1C7812E62E6 /* ProgressHUD+HorizontalDotScaling.swift */; };
-		DFF83C5C7DCE85FCC1AB1456093B6494 /* ProgressHUD+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97542934005A25FBC5C181877C612B96 /* ProgressHUD+Enums.swift */; };
-		E490EB58EAF044E6BD7E0A9576625F37 /* ProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C151ADC523D1A5EDA43EA4B8EF73D05 /* ProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E51BFDF36F49754D25E35B5E1A399654 /* ProgressHUD+CircleArcDotSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA911DEBBC4CCC4C4137CCD4280741 /* ProgressHUD+CircleArcDotSpin.swift */; };
-		E964F0AAA735F3A58CE8509C40404B16 /* ProgressHUD+CircleDotSpinFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CE0E95494FC1D20F914BC32B6781B /* ProgressHUD+CircleDotSpinFade.swift */; };
-		F7CE0CBE09706BF0FB99AC2AD44B1252 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF9A79C396F6746C3B00130716EF7A /* ProgressView.swift */; };
-		FFF994826480BB690015EE4A46E260E2 /* ProgressHUD+SemiRingRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE6FEB604E207DD07C293A99671B9E /* ProgressHUD+SemiRingRotation.swift */; };
+		3563451599B306D288ED508C93EF8076 /* Pods-IdentifyMusic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46D76939CE651A3A97788878E9AF13E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D6C40A24520B6D538FADC2D047860763 /* Pods-IdentifyMusic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1B54C5518E190297A5C237299A38691C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 022D0373DF61EE4E133BADB43CE7ED57;
-			remoteInfo = ProgressHUD;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0035DEF594A6D7CD1478D0D1FB25BC36 /* ProgressHUD+Public.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+Public.swift"; path = "ProgressHUD/Sources/ProgressHUD+Public.swift"; sourceTree = "<group>"; };
-		0D3287058D2F13BD484A454154BEA62B /* ProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ProgressHUD; path = ProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1496BE0C8DD804A4025F8074ACF4F6D3 /* ProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ProgressHUD.modulemap; sourceTree = "<group>"; };
-		1F1DFB60618DFED7345D99B51E99F204 /* ProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		2A206EE177E884600CA3F11D3AD125CF /* ProgressHUD+CircleStrokeSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleStrokeSpin.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleStrokeSpin.swift"; sourceTree = "<group>"; };
-		2E37CC6F9808908A710D1572FC17C03C /* ProgressHUD+BarSweepToggle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+BarSweepToggle.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+BarSweepToggle.swift"; sourceTree = "<group>"; };
-		314CF644257698A653547C975C093A9B /* ProgressHUD+CircleBarSpinFade.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleBarSpinFade.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleBarSpinFade.swift"; sourceTree = "<group>"; };
-		32EA911DEBBC4CCC4C4137CCD4280741 /* ProgressHUD+CircleArcDotSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleArcDotSpin.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleArcDotSpin.swift"; sourceTree = "<group>"; };
-		3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.debug.xcconfig"; sourceTree = "<group>"; };
-		47E120381BEC6F113C5924CF62254647 /* ProgressHUD+CirclePulseSingle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CirclePulseSingle.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CirclePulseSingle.swift"; sourceTree = "<group>"; };
-		4AAF9A79C396F6746C3B00130716EF7A /* ProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = ProgressHUD/Sources/ProgressView.swift; sourceTree = "<group>"; };
-		50E4F91CB858FA3E7AD956A76C0B8220 /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+BallVerticalBounce.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
-		584CE0E95494FC1D20F914BC32B6781B /* ProgressHUD+CircleDotSpinFade.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleDotSpinFade.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleDotSpinFade.swift"; sourceTree = "<group>"; };
-		70A2AC2E6062AE9658BE8ACA281ED74C /* ProgressHUD+CirclePulseMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CirclePulseMultiple.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CirclePulseMultiple.swift"; sourceTree = "<group>"; };
-		72F367D52BD7A90FF5BD4121F445FDE8 /* ProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		14F4B73E203E2BFB1A4697B48019005A /* Pods-IdentifyMusic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7946C00885C3D21F264FE02FCE52D717 /* ProgressHUD+HorizontalBarScaling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+HorizontalBarScaling.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+HorizontalBarScaling.swift"; sourceTree = "<group>"; };
-		7BDE6FEB604E207DD07C293A99671B9E /* ProgressHUD+SemiRingRotation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+SemiRingRotation.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+SemiRingRotation.swift"; sourceTree = "<group>"; };
-		7EA200CBD2A0620A4566AC8747D7503B /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+ActivityIndicator.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
-		7F732F66E6A2913C5270C4F58F3C6F9E /* ProgressHUD+LiveIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+LiveIcon.swift"; path = "ProgressHUD/Sources/ProgressHUD+LiveIcon.swift"; sourceTree = "<group>"; };
-		816DEAE3F58FA05E75DEC7ACC48B8C78 /* ProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
-		8985745580B48AEFF46FC888A83B7B7C /* Pods-IdentifyMusic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-acknowledgements.plist"; sourceTree = "<group>"; };
-		926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IdentifyMusic-umbrella.h"; sourceTree = "<group>"; };
-		9396C32AA5D5DECDBDF460ACD6782071 /* ProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ProgressHUD.release.xcconfig; sourceTree = "<group>"; };
-		969C6274623A7475C1DA40B8518DAA3D /* ProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ProgressHUD-Info.plist"; sourceTree = "<group>"; };
-		97542934005A25FBC5C181877C612B96 /* ProgressHUD+Enums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+Enums.swift"; path = "ProgressHUD/Sources/ProgressHUD+Enums.swift"; sourceTree = "<group>"; };
-		9C151ADC523D1A5EDA43EA4B8EF73D05 /* ProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		8B0283687377AF4C6FB4776E6583CB89 /* Pods-IdentifyMusic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IdentifyMusic.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DD1EDE420E392FE799CFCBAEC54432A /* ProgressHUD+SFSymbolBounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+SFSymbolBounce.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+SFSymbolBounce.swift"; sourceTree = "<group>"; };
-		9FFF8EF0537F8F6B172CAA4E6E7E4168 /* ProgressHUD+CircleRippleSingle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleRippleSingle.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleRippleSingle.swift"; sourceTree = "<group>"; };
-		A2BBC0BAFCC2302DDBDD0AB439186FC0 /* ProgressHUD+SquareCircuitSnake.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+SquareCircuitSnake.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+SquareCircuitSnake.swift"; sourceTree = "<group>"; };
-		A324AF91238A96FD441B3FA8725DFCEC /* ProgressHUD+TriangleDotShift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+TriangleDotShift.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+TriangleDotShift.swift"; sourceTree = "<group>"; };
-		A56DA6232A3E25F9C38620B7157FED87 /* ProgressHUD+Banner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+Banner.swift"; path = "ProgressHUD/Sources/ProgressHUD+Banner.swift"; sourceTree = "<group>"; };
-		A88218D111E8953B4A939859D85D1089 /* ProgressHUD+DualDotSidestep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+DualDotSidestep.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+DualDotSidestep.swift"; sourceTree = "<group>"; };
-		AABF5C0C45FD8A85DCBC1285F124D45D /* ProgressHUD+CircleRippleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleRippleMultiple.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleRippleMultiple.swift"; sourceTree = "<group>"; };
-		B5E819267D19E7015D0AC0ED99760C57 /* Pods-IdentifyMusic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IdentifyMusic-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BD6583B9DC6C6D9E3504B8A4BC1A58DF /* Pods-IdentifyMusic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-Info.plist"; sourceTree = "<group>"; };
-		BF82AB19042AE7B76A0177D52C905D8E /* Pods-IdentifyMusic-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IdentifyMusic-frameworks.sh"; sourceTree = "<group>"; };
-		E4E1AB0E891E926A2B3BFEDB6ECCF842 /* ProgressHUD+PacmanProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+PacmanProgress.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+PacmanProgress.swift"; sourceTree = "<group>"; };
-		E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IdentifyMusic-dummy.m"; sourceTree = "<group>"; };
-		EB478A0FD6675EC408C1837A97CB9B0D /* ProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = ProgressHUD/Sources/ProgressHUD.swift; sourceTree = "<group>"; };
+		E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IdentifyMusic-dummy.m"; sourceTree = "<group>"; };
+		E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IdentifyMusic-umbrella.h"; sourceTree = "<group>"; };
+		E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-IdentifyMusic"; path = Pods_IdentifyMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.release.xcconfig"; sourceTree = "<group>"; };
-		F5638301E9C732A15F2AABD573D19891 /* ProgressHUD+CircleRotateChase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+CircleRotateChase.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+CircleRotateChase.swift"; sourceTree = "<group>"; };
-		F5B7B339DC6112F0CCB4E1C7812E62E6 /* ProgressHUD+HorizontalDotScaling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+HorizontalDotScaling.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+HorizontalDotScaling.swift"; sourceTree = "<group>"; };
-		FC821DB86123C3DAA85476EAD57C353E /* Pods-IdentifyMusic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IdentifyMusic.modulemap"; sourceTree = "<group>"; };
-		FE8577244EAD758551D1AB57330A0DC3 /* ProgressHUD+QuintupleDotDance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProgressHUD+QuintupleDotDance.swift"; path = "ProgressHUD/Sources/Animations/ProgressHUD+QuintupleDotDance.swift"; sourceTree = "<group>"; };
+		EE0C675E67B96B2F2212BBCAF4E1A0CB /* Pods-IdentifyMusic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IdentifyMusic-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE796319CF7A4F86C63843D8338776DA /* Pods-IdentifyMusic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-acknowledgements.plist"; sourceTree = "<group>"; };
+		F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2535771E2D8DEDFBF7FBDF3DE9806D61 /* Frameworks */ = {
+		3B8EAAC4351E561EB764437E31F0EC69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803FA37FE2807B420914AFED975628BC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93EA67A2ABFD4B7CE7E3FA776AD45631 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D965E1FEF32444A430A5150C5C9CBE26 /* Foundation.framework in Frameworks */,
+				46D76939CE651A3A97788878E9AF13E5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18C5E0E1D45438CD130DA491F9187062 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8346E6231E46B5E04E055AD305A48BB1 /* Pods-IdentifyMusic */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		44E7C20E95B3EA1D473EDD88457899DE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */,
-				0D3287058D2F13BD484A454154BEA62B /* ProgressHUD */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4F41C636F70ABD99BE5DCF35B56F1DAB /* ProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				EB478A0FD6675EC408C1837A97CB9B0D /* ProgressHUD.swift */,
-				7EA200CBD2A0620A4566AC8747D7503B /* ProgressHUD+ActivityIndicator.swift */,
-				50E4F91CB858FA3E7AD956A76C0B8220 /* ProgressHUD+BallVerticalBounce.swift */,
-				A56DA6232A3E25F9C38620B7157FED87 /* ProgressHUD+Banner.swift */,
-				2E37CC6F9808908A710D1572FC17C03C /* ProgressHUD+BarSweepToggle.swift */,
-				32EA911DEBBC4CCC4C4137CCD4280741 /* ProgressHUD+CircleArcDotSpin.swift */,
-				314CF644257698A653547C975C093A9B /* ProgressHUD+CircleBarSpinFade.swift */,
-				584CE0E95494FC1D20F914BC32B6781B /* ProgressHUD+CircleDotSpinFade.swift */,
-				70A2AC2E6062AE9658BE8ACA281ED74C /* ProgressHUD+CirclePulseMultiple.swift */,
-				47E120381BEC6F113C5924CF62254647 /* ProgressHUD+CirclePulseSingle.swift */,
-				AABF5C0C45FD8A85DCBC1285F124D45D /* ProgressHUD+CircleRippleMultiple.swift */,
-				9FFF8EF0537F8F6B172CAA4E6E7E4168 /* ProgressHUD+CircleRippleSingle.swift */,
-				F5638301E9C732A15F2AABD573D19891 /* ProgressHUD+CircleRotateChase.swift */,
-				2A206EE177E884600CA3F11D3AD125CF /* ProgressHUD+CircleStrokeSpin.swift */,
-				A88218D111E8953B4A939859D85D1089 /* ProgressHUD+DualDotSidestep.swift */,
-				97542934005A25FBC5C181877C612B96 /* ProgressHUD+Enums.swift */,
-				7946C00885C3D21F264FE02FCE52D717 /* ProgressHUD+HorizontalBarScaling.swift */,
-				F5B7B339DC6112F0CCB4E1C7812E62E6 /* ProgressHUD+HorizontalDotScaling.swift */,
-				7F732F66E6A2913C5270C4F58F3C6F9E /* ProgressHUD+LiveIcon.swift */,
-				E4E1AB0E891E926A2B3BFEDB6ECCF842 /* ProgressHUD+PacmanProgress.swift */,
-				0035DEF594A6D7CD1478D0D1FB25BC36 /* ProgressHUD+Public.swift */,
-				FE8577244EAD758551D1AB57330A0DC3 /* ProgressHUD+QuintupleDotDance.swift */,
-				7BDE6FEB604E207DD07C293A99671B9E /* ProgressHUD+SemiRingRotation.swift */,
-				9DD1EDE420E392FE799CFCBAEC54432A /* ProgressHUD+SFSymbolBounce.swift */,
-				A2BBC0BAFCC2302DDBDD0AB439186FC0 /* ProgressHUD+SquareCircuitSnake.swift */,
-				A324AF91238A96FD441B3FA8725DFCEC /* ProgressHUD+TriangleDotShift.swift */,
-				4AAF9A79C396F6746C3B00130716EF7A /* ProgressView.swift */,
-				B95712F8AAA52B99A5683C36580000A0 /* Support Files */,
-			);
-			name = ProgressHUD;
-			path = ProgressHUD;
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,44 +46,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8346E6231E46B5E04E055AD305A48BB1 /* Pods-IdentifyMusic */ = {
+		6299DB1AF680BE195CC3B93ED5512B84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC821DB86123C3DAA85476EAD57C353E /* Pods-IdentifyMusic.modulemap */,
-				B5E819267D19E7015D0AC0ED99760C57 /* Pods-IdentifyMusic-acknowledgements.markdown */,
-				8985745580B48AEFF46FC888A83B7B7C /* Pods-IdentifyMusic-acknowledgements.plist */,
-				E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */,
-				BF82AB19042AE7B76A0177D52C905D8E /* Pods-IdentifyMusic-frameworks.sh */,
-				BD6583B9DC6C6D9E3504B8A4BC1A58DF /* Pods-IdentifyMusic-Info.plist */,
-				926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */,
-				3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */,
-				F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */,
+				EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BDB98938F44CFED1C8582C396378301 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90272885F235A5D0A702944F14AD46CE /* Pods-IdentifyMusic */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		90272885F235A5D0A702944F14AD46CE /* Pods-IdentifyMusic */ = {
+			isa = PBXGroup;
+			children = (
+				8B0283687377AF4C6FB4776E6583CB89 /* Pods-IdentifyMusic.modulemap */,
+				EE0C675E67B96B2F2212BBCAF4E1A0CB /* Pods-IdentifyMusic-acknowledgements.markdown */,
+				EE796319CF7A4F86C63843D8338776DA /* Pods-IdentifyMusic-acknowledgements.plist */,
+				E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */,
+				14F4B73E203E2BFB1A4697B48019005A /* Pods-IdentifyMusic-Info.plist */,
+				E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */,
+				E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */,
+				F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */,
 			);
 			name = "Pods-IdentifyMusic";
 			path = "Target Support Files/Pods-IdentifyMusic";
-			sourceTree = "<group>";
-		};
-		B95712F8AAA52B99A5683C36580000A0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1496BE0C8DD804A4025F8074ACF4F6D3 /* ProgressHUD.modulemap */,
-				72F367D52BD7A90FF5BD4121F445FDE8 /* ProgressHUD-dummy.m */,
-				969C6274623A7475C1DA40B8518DAA3D /* ProgressHUD-Info.plist */,
-				1F1DFB60618DFED7345D99B51E99F204 /* ProgressHUD-prefix.pch */,
-				9C151ADC523D1A5EDA43EA4B8EF73D05 /* ProgressHUD-umbrella.h */,
-				816DEAE3F58FA05E75DEC7ACC48B8C78 /* ProgressHUD.debug.xcconfig */,
-				9396C32AA5D5DECDBDF460ACD6782071 /* ProgressHUD.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ProgressHUD";
-			sourceTree = "<group>";
-		};
-		B992E5722E78CFDF18945D86DD7F4FE9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4F41C636F70ABD99BE5DCF35B56F1DAB /* ProgressHUD */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -228,9 +83,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B992E5722E78CFDF18945D86DD7F4FE9 /* Pods */,
-				44E7C20E95B3EA1D473EDD88457899DE /* Products */,
-				18C5E0E1D45438CD130DA491F9187062 /* Targets Support Files */,
+				6299DB1AF680BE195CC3B93ED5512B84 /* Products */,
+				8BDB98938F44CFED1C8582C396378301 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,56 +99,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3441EAFE461B9067CF88598B9FF65B6C /* Headers */ = {
+		947927BA3152D2265402DAA3B746019E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028924A1CF3B4E5D48924C82370F9E44 /* Pods-IdentifyMusic-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9207585A68DE7E3D7B3045B705FE5E5E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E490EB58EAF044E6BD7E0A9576625F37 /* ProgressHUD-umbrella.h in Headers */,
+				3563451599B306D288ED508C93EF8076 /* Pods-IdentifyMusic-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		022D0373DF61EE4E133BADB43CE7ED57 /* ProgressHUD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 12764E48EF11A2AC97C4A69E9D9480C4 /* Build configuration list for PBXNativeTarget "ProgressHUD" */;
-			buildPhases = (
-				9207585A68DE7E3D7B3045B705FE5E5E /* Headers */,
-				D00B499FEC273B734572D5B55EBA6513 /* Sources */,
-				2535771E2D8DEDFBF7FBDF3DE9806D61 /* Frameworks */,
-				7BCA7DD16505108800805A20532A78A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ProgressHUD;
-			productName = ProgressHUD;
-			productReference = 0D3287058D2F13BD484A454154BEA62B /* ProgressHUD */;
-			productType = "com.apple.product-type.framework";
-		};
 		3322499A2CBF03EA7F33BC5AE381D6B4 /* Pods-IdentifyMusic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D1D258B917C1F1245F2F08DBCCB3234 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */;
+			buildConfigurationList = 5135A6470B3128F977CD3D7C9C88BC14 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */;
 			buildPhases = (
-				3441EAFE461B9067CF88598B9FF65B6C /* Headers */,
-				0749CCF83A24B22DC550A3D2EA37322B /* Sources */,
-				93EA67A2ABFD4B7CE7E3FA776AD45631 /* Frameworks */,
-				606D8FB081DF22E0500CA841F05B6F52 /* Resources */,
+				947927BA3152D2265402DAA3B746019E /* Headers */,
+				1CFED77AA262162255508EBC886A5D42 /* Sources */,
+				3B8EAAC4351E561EB764437E31F0EC69 /* Frameworks */,
+				DBEA8F963050DD2588E1244CC47710E1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				045094EDC923947F03AC943BB9A4D347 /* PBXTargetDependency */,
 			);
 			name = "Pods-IdentifyMusic";
 			productName = Pods_IdentifyMusic;
@@ -319,25 +146,17 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 44E7C20E95B3EA1D473EDD88457899DE /* Products */;
+			productRefGroup = 6299DB1AF680BE195CC3B93ED5512B84 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3322499A2CBF03EA7F33BC5AE381D6B4 /* Pods-IdentifyMusic */,
-				022D0373DF61EE4E133BADB43CE7ED57 /* ProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		606D8FB081DF22E0500CA841F05B6F52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7BCA7DD16505108800805A20532A78A8 /* Resources */ = {
+		DBEA8F963050DD2588E1244CC47710E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,98 +166,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0749CCF83A24B22DC550A3D2EA37322B /* Sources */ = {
+		1CFED77AA262162255508EBC886A5D42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85D8C472389D912A4538FDD82E5970E3 /* Pods-IdentifyMusic-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D00B499FEC273B734572D5B55EBA6513 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C91BDC6BB9D271C8483C270C69027D7 /* ProgressHUD.swift in Sources */,
-				A84A3A21CD23AF532AD78AB177247DAC /* ProgressHUD+ActivityIndicator.swift in Sources */,
-				3879E3E94921A9884C0A1E97A337DBD9 /* ProgressHUD+BallVerticalBounce.swift in Sources */,
-				CCDF9BEDCBDE214A8C365737CD4A4DDB /* ProgressHUD+Banner.swift in Sources */,
-				2A82B4FE8A6912CD632C2E47CDC4E4A5 /* ProgressHUD+BarSweepToggle.swift in Sources */,
-				E51BFDF36F49754D25E35B5E1A399654 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
-				68F9EF550BFD25E95D607655C70DC5C8 /* ProgressHUD+CircleBarSpinFade.swift in Sources */,
-				E964F0AAA735F3A58CE8509C40404B16 /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
-				B946C9FAD6CA44A50B8BD639F76806FB /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
-				28B22108FB83B10D3E01F65383135EB5 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
-				3539ECBF8B961FE42A68B01A3AADF91B /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
-				C47F3591BFFDC019D3A2E1F9CC349610 /* ProgressHUD+CircleRippleSingle.swift in Sources */,
-				ABB0C59CFAF36B3AFA1A27625EA54C46 /* ProgressHUD+CircleRotateChase.swift in Sources */,
-				22A265D12317652A2F25AB25A93D44AE /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
-				904BFEA904ACA4C5AC97260C7999670E /* ProgressHUD+DualDotSidestep.swift in Sources */,
-				DFF83C5C7DCE85FCC1AB1456093B6494 /* ProgressHUD+Enums.swift in Sources */,
-				ACCA655A16ED1D29FDA81A391B7B8072 /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
-				DD74B53B9F24F949728B15A7F508D9D6 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
-				6C7F8473BF45C1D6906C54CAD4E6C44A /* ProgressHUD+LiveIcon.swift in Sources */,
-				1E70D9711242B3AC19DA9136EC66E2D1 /* ProgressHUD+PacmanProgress.swift in Sources */,
-				90985370B109E9607ADC7D929D11DB48 /* ProgressHUD+Public.swift in Sources */,
-				5B421F09FDF965E84313F4972A090BF6 /* ProgressHUD+QuintupleDotDance.swift in Sources */,
-				FFF994826480BB690015EE4A46E260E2 /* ProgressHUD+SemiRingRotation.swift in Sources */,
-				4F2262DDE8F5B1BEB5BE36ACB3B66CE1 /* ProgressHUD+SFSymbolBounce.swift in Sources */,
-				37BF610B60A0DFC350E9DC14511E09A0 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
-				19EC1B8B6F406FA06214FC65C9786E63 /* ProgressHUD+TriangleDotShift.swift in Sources */,
-				3A1F799C0B6DE2FA431F4F49E417BB7F /* ProgressHUD-dummy.m in Sources */,
-				F7CE0CBE09706BF0FB99AC2AD44B1252 /* ProgressView.swift in Sources */,
+				D6C40A24520B6D538FADC2D047860763 /* Pods-IdentifyMusic-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		045094EDC923947F03AC943BB9A4D347 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ProgressHUD;
-			target = 022D0373DF61EE4E133BADB43CE7ED57 /* ProgressHUD */;
-			targetProxy = 1B54C5518E190297A5C237299A38691C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		240986CF12AA8E7F10F6A6EFEBA2338F /* Debug */ = {
+		02ACE3C61AA2ECA0FC3393E2BC455DD5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 816DEAE3F58FA05E75DEC7ACC48B8C78 /* ProgressHUD.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ProgressHUD/ProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ProgressHUD/ProgressHUD-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ProgressHUD/ProgressHUD.modulemap";
-				PRODUCT_MODULE_NAME = ProgressHUD;
-				PRODUCT_NAME = ProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8AE75C056D58885E9E3A86B11BBC8D8A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */;
+			baseConfigurationReference = F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -473,6 +214,43 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		48BE5582C7AB7CE63701B0B27B66AF9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -602,104 +380,23 @@
 			};
 			name = Release;
 		};
-		B52B161BF3C7C2ED96A9E28664AEECD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B57B09953DB018CB206D891E9478BFF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9396C32AA5D5DECDBDF460ACD6782071 /* ProgressHUD.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ProgressHUD/ProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ProgressHUD/ProgressHUD-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ProgressHUD/ProgressHUD.modulemap";
-				PRODUCT_MODULE_NAME = ProgressHUD;
-				PRODUCT_NAME = ProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		12764E48EF11A2AC97C4A69E9D9480C4 /* Build configuration list for PBXNativeTarget "ProgressHUD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				240986CF12AA8E7F10F6A6EFEBA2338F /* Debug */,
-				B57B09953DB018CB206D891E9478BFF4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D1D258B917C1F1245F2F08DBCCB3234 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B52B161BF3C7C2ED96A9E28664AEECD4 /* Debug */,
-				8AE75C056D58885E9E3A86B11BBC8D8A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
 				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5135A6470B3128F977CD3D7C9C88BC14 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48BE5582C7AB7CE63701B0B27B66AF9A /* Debug */,
+				02ACE3C61AA2ECA0FC3393E2BC455DD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
