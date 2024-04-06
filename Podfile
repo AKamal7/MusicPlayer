@@ -6,6 +6,6 @@ target 'IdentifyMusic' do
   use_frameworks!
 
   # Pods for IdentifyMusic
-
+pod 'ProgressHUD'
 
 end
