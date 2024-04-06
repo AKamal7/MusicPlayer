@@ -1,3 +1,4 @@
+
 //
 //  PlistVC + TableView.swift
 //  IdentifyMusic
@@ -10,13 +11,13 @@ import UIKit
 
 
 
-extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
+extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
     
 
    
     // Register TableView Cell
     func registerCell() {
-        tableView.register(UINib(nibName: "PlistTableCell", bundle: nil), forCellReuseIdentifier: "PlistTableCell")
+        tableView.register(UINib(nibName: "HistoryTableCell", bundle: nil), forCellReuseIdentifier: "HistoryTableCell")
     }
     
     // Setting up tableView
@@ -30,9 +31,10 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 50
     }
+    
     // Config cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlistTableCell", for: indexPath) as? PlistTableCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableCell", for: indexPath) as? HistoryTableCell else {
             return UITableViewCell()
         }
         
@@ -40,15 +42,28 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor(hex: "141414", alpha: 1)
         cell.clipsToBounds = true
         cell.containerView.backgroundColor = UIColor(hex: "1f1f1f")
-        cell.containerView.layer.cornerRadius = 12
+//        cell.containerView.roundCorners(corners: [.topRight, .bottomRight], radius: 100)
+//        cell.containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 51)
+        cell.cellImgView.roundCorners(corners: .allCorners, radius: 32.5)
+        cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
+        cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
-        cell.delegate = self
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
-        let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
-        self.navigationController?.pushViewController(vc, animated: false)
+        let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
+        modalPresentationStyle = .fullScreen
+        self.present(player, animated: false)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 122
+    }
+    
+    
+    
+    
 }

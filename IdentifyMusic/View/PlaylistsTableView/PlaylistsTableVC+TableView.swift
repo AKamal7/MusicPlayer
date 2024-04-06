@@ -10,7 +10,7 @@ import UIKit
 
 
 
-extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
+extension PlaylistsTableVC: UITableViewDelegate, UITableViewDataSource {
     
 
    

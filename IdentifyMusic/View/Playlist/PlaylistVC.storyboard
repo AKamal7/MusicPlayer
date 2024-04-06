@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-3i-f1Z">
-                                                <rect key="frame" x="24" y="24" width="345" height="44"/>
+                                                <rect key="frame" x="24" y="0.0" width="345" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="fc6-Pz-sfJ"/>
                                                 </constraints>
@@ -34,7 +34,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYw-Xo-GMU">
-                                                <rect key="frame" x="24" y="161" width="56" height="26"/>
+                                                <rect key="frame" x="24" y="137" width="56" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="56" id="J7c-Is-vsD"/>
                                                     <constraint firstAttribute="height" constant="26" id="PP3-Yf-TpZ"/>
@@ -44,7 +44,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9w-s9-yBt">
-                                                <rect key="frame" x="335" y="163.66666666666666" width="42" height="21"/>
+                                                <rect key="frame" x="335" y="139.66666666666666" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="qMp-Ed-oTv"/>
                                                     <constraint firstAttribute="height" constant="21" id="rgO-ji-mLZ"/>
@@ -58,13 +58,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-ur-F7H">
-                                                <rect key="frame" x="24.000000000000004" y="356" width="41.333333333333343" height="20.333333333333314"/>
+                                                <rect key="frame" x="24.000000000000004" y="332" width="41.333333333333343" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vd-bd-LfA">
-                                                <rect key="frame" x="335" y="355" width="42" height="21"/>
+                                                <rect key="frame" x="335" y="331" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="AcE-dj-mb0"/>
                                                     <constraint firstAttribute="width" constant="42" id="wTB-Hg-mOS"/>
@@ -78,11 +78,11 @@
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-91-hIf" customClass="SelfSizedTableView" customModule="IdentifyMusic" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="512.33333333333337" width="353" height="186.66666666666663"/>
+                                                <rect key="frame" x="24" y="488.33333333333343" width="353" height="210.66666666666669"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="otg-8L-RGa">
-                                                <rect key="frame" x="24" y="203" width="353" height="129"/>
+                                                <rect key="frame" x="24" y="179" width="353" height="129"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="129" id="FaC-eD-MDI"/>
@@ -105,7 +105,7 @@
                                                 </cells>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-Dh-8SY">
-                                                <rect key="frame" x="24" y="388.33333333333331" width="353" height="112"/>
+                                                <rect key="frame" x="24" y="364.33333333333331" width="353" height="112"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-NX-YvP">
                                                         <rect key="frame" x="16" y="16" width="80" height="80"/>
@@ -142,7 +142,7 @@
                                                 </constraints>
                                             </view>
                                             <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="yLa-wq-5Ej">
-                                                <rect key="frame" x="16" y="92" width="361" height="45"/>
+                                                <rect key="frame" x="16" y="68" width="361" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="S3Z-g5-Jre"/>
                                                 </constraints>
@@ -171,7 +171,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Dw0-91-hIf" secondAttribute="bottom" constant="11" id="fMp-vU-akW"/>
                                             <constraint firstItem="otg-8L-RGa" firstAttribute="top" secondItem="GYw-Xo-GMU" secondAttribute="bottom" constant="16" id="fqs-eX-JDe"/>
                                             <constraint firstItem="yLa-wq-5Ej" firstAttribute="leading" secondItem="4th-oF-5E2" secondAttribute="leading" constant="16" id="g3I-PE-8hF"/>
-                                            <constraint firstItem="qUR-3i-f1Z" firstAttribute="top" secondItem="4th-oF-5E2" secondAttribute="top" constant="24" id="ljz-Ny-cBx"/>
+                                            <constraint firstItem="qUR-3i-f1Z" firstAttribute="top" secondItem="4th-oF-5E2" secondAttribute="top" id="ljz-Ny-cBx"/>
                                             <constraint firstItem="dQq-Dh-8SY" firstAttribute="top" secondItem="GNn-ur-F7H" secondAttribute="bottom" constant="12" id="maQ-cB-bFm"/>
                                             <constraint firstItem="otg-8L-RGa" firstAttribute="trailing" secondItem="f9w-s9-yBt" secondAttribute="trailing" id="rRH-Ym-ltL"/>
                                             <constraint firstItem="f9w-s9-yBt" firstAttribute="top" secondItem="yLa-wq-5Ej" secondAttribute="bottom" constant="26.5" id="sLu-Na-7WP"/>
@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881.679389312977" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3808.3969465648852" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

@@ -20,7 +20,7 @@ class MainTabBar: UITabBarController {
         let mainTabBar = MainTabBar()
         let searchNavigation = mainTabBar.createServiceSearchVC()
         let favoriteNavigation = mainTabBar.createHistoryVC()
-        let appointmentsNavigation = mainTabBar.createPlaylistVC()
+        let appointmentsNavigation = UINavigationController(rootViewController: mainTabBar.createPlaylistVC())
         mainTabBar.viewControllers = [favoriteNavigation, searchNavigation, appointmentsNavigation]
         mainTabBar.selectedIndex = 1
         

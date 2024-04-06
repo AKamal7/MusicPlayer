@@ -41,10 +41,14 @@ class PlaylistVC: UIViewController {
     
     
     @IBAction func seeAllBtnClicked(_ sender: Any) {
+        let vc = UIStoryboard(name: "TrendsCollectionVC", bundle: nil).instantiateViewController(withIdentifier: "TrendsCollectionVC") as! TrendsCollectionVC
+        navigationController?.pushViewController(vc, animated: false)
         print("btn clicked")
     }
     @IBAction func seeAllPlyLstBtnClicked(_ sender: Any) {
         print("btn clicked")
+        let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
+        navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func createNewPlistBtn(_ sender: Any) {
         let createPlistVC = UIStoryboard(name: "CreatePlistVC", bundle: nil).instantiateViewController(withIdentifier: "CreatePlistVC") as! CreatePlistVC
@@ -60,7 +64,7 @@ class PlaylistVC: UIViewController {
 //        setupNavBar()
         setupSearchBar()
         Public.setupLabelWithMedium(label: trendsLabel, text: "Trends", size: 18, color: .white)
-        Public.setupLabelWithMedium(label: playlistLabel, text: "Trends", size: 18, color: .white)
+        Public.setupLabelWithMedium(label: playlistLabel, text: "My playlists", size: 18, color: .white)
         setupSeeAllButton(button: seeAllBtn)
         setupSeeAllButton(button: seeAllPlystBtn)
         setupNewPlylstView()
@@ -79,6 +83,8 @@ class PlaylistVC: UIViewController {
     }
     private func setupSeeAllButton(button: UIButton) {
         
+        
+       
         button.setImage(UIImage(named: "seeAll"), for: .normal)
         button.setTitle("", for: .normal)
         
