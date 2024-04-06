@@ -201,13 +201,6 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" prompt="  " id="yct-5R-zp6">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="myPlayListTitle" style="done" id="qJf-Nl-2MO">
-                            <inset key="imageInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="otg-8L-RGa" id="5yS-rO-UpI"/>
@@ -231,7 +224,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="myPlayListTitle" width="106" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

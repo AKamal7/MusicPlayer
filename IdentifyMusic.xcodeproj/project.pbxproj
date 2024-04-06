@@ -44,6 +44,8 @@
 		BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */; };
 		BBFE3CCA2BA8565600BA7863 /* TrendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */; };
 		BBFFA96B2BC016CC005BD5B5 /* Heebo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBFFA96A2BC016CC005BD5B5 /* Heebo-Medium.ttf */; };
+		BBFFA96E2BC11275005BD5B5 /* LunchScreenLoadVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFFA96D2BC11275005BD5B5 /* LunchScreenLoadVC.storyboard */; };
+		BBFFA9702BC11283005BD5B5 /* LunchScreenLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFA96F2BC11283005BD5B5 /* LunchScreenLoadVC.swift */; };
 		F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A862B9CA73F00521C7F /* MainTabBar.swift */; };
 		F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B5A882B9CA7F100521C7F /* HistoryVC.swift */; };
 		F748FAE82BBD82B300A3488B /* HistoryVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */; };
@@ -106,6 +108,8 @@
 		BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionCell.swift; sourceTree = "<group>"; };
 		BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendsCollectionCell.xib; sourceTree = "<group>"; };
 		BBFFA96A2BC016CC005BD5B5 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Medium.ttf"; sourceTree = "<group>"; };
+		BBFFA96D2BC11275005BD5B5 /* LunchScreenLoadVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LunchScreenLoadVC.storyboard; sourceTree = "<group>"; };
+		BBFFA96F2BC11283005BD5B5 /* LunchScreenLoadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreenLoadVC.swift; sourceTree = "<group>"; };
 		F73B5A862B9CA73F00521C7F /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		F73B5A882B9CA7F100521C7F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		F748FAE72BBD82B300A3488B /* HistoryVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryVC+SearchBar.swift"; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		BB526F8B2BA28B81006E6322 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBFFA96C2BC11256005BD5B5 /* LunchScreenLoad */,
 				F748FAF02BBF5A7200A3488B /* SettingsVC */,
 				BB3A578D2BAB3EBF001AC9FD /* MainTabBar */,
 				BB3A578C2BAB3E9C001AC9FD /* History */,
@@ -368,6 +373,15 @@
 				BBFE3CC82BA8565600BA7863 /* TrendsCollectionCell.xib */,
 			);
 			path = TrendsCollectionCell;
+			sourceTree = "<group>";
+		};
+		BBFFA96C2BC11256005BD5B5 /* LunchScreenLoad */ = {
+			isa = PBXGroup;
+			children = (
+				BBFFA96D2BC11275005BD5B5 /* LunchScreenLoadVC.storyboard */,
+				BBFFA96F2BC11283005BD5B5 /* LunchScreenLoadVC.swift */,
+			);
+			path = LunchScreenLoad;
 			sourceTree = "<group>";
 		};
 		E8192917C1A016F3D47D2867 /* Frameworks */ = {
@@ -530,6 +544,7 @@
 				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
 				BB526FA92BA29F0D006E6322 /* Heebo-Regular.ttf in Resources */,
 				F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */,
+				BBFFA96E2BC11275005BD5B5 /* LunchScreenLoadVC.storyboard in Resources */,
 				BBAE80CF2BB81F9D0083F621 /* NotAvailableVC.storyboard in Resources */,
 				F748FAF42BBF5A9200A3488B /* SettingsVC.storyboard in Resources */,
 				BB1645F92BB2BE4400E10257 /* PListOptionsVC.storyboard in Resources */,
@@ -580,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1645F42BB17EBA00E10257 /* Public.swift in Sources */,
+				BBFFA9702BC11283005BD5B5 /* LunchScreenLoadVC.swift in Sources */,
 				BB85B8E12BBA35700099DE56 /* SearchVC+SearchBar.swift in Sources */,
 				BB7B47A02BBE9C5000DAE561 /* Extension+RoundedCorners.swift in Sources */,
 				BB954FC12BA94987001F12C0 /* PlistVC + CollectionView.swift in Sources */,
@@ -763,10 +779,13 @@
 				DEVELOPMENT_TEAM = ZHXVY6M87Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access in order to continue using the app";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -793,10 +812,13 @@
 				DEVELOPMENT_TEAM = ZHXVY6M87Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access in order to continue using the app";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

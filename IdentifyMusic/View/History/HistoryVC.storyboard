@@ -185,20 +185,12 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" prompt="  " id="xH7-6Q-smB">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="History of searches" style="done" id="K2O-Y1-aZl">
-                            <inset key="imageInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="favoritesLabelOutlet" destination="1Da-Dj-i1y" id="o8t-Vx-jC4"/>
                         <outlet property="recentlyListenedLabelOutlet" destination="aXg-tY-ysL" id="g8s-IR-dnY"/>
                         <outlet property="searchBar" destination="6e5-qv-Q66" id="qnE-Fm-YQU"/>
                         <outlet property="tableView" destination="l1S-jw-uhS" id="4LT-vo-RPD"/>
-                        <outlet property="titleBarItem" destination="K2O-Y1-aZl" id="x5D-dN-v7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-Yc-sKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,7 +199,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="History of searches" width="172.33332824707031" height="19.666666030883789"/>
         <image name="favs" width="45" height="45.333332061767578"/>
         <image name="recentlyPlayed" width="24.333333969116211" height="24"/>
         <systemColor name="systemBackgroundColor">

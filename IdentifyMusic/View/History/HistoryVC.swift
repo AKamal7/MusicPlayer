@@ -22,7 +22,7 @@ class HistoryVC: UIViewController {
         tabBarController?.selectedIndex = 1
         setupTable()
         setupView()
-        setupNavBar()
+//        setupNavBar()
     }
     
     @IBAction func favBtnPressed(_ sender: UIButton) {

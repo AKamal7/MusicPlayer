@@ -36,6 +36,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CCT-ik-tun"/>
                                 </constraints>
@@ -164,7 +165,7 @@ or sing or hum the melody you have stuck in your head</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1hg-82-kmJ" firstAttribute="centerX" secondItem="cVW-hd-fni" secondAttribute="centerX" id="5bs-Oo-aFV"/>
                             <constraint firstItem="lr1-i4-Gyv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="6Mz-r6-Za0"/>
@@ -178,6 +179,7 @@ or sing or hum the melody you have stuck in your head</string>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cVW-hd-fni" secondAttribute="trailing" constant="24" id="uP9-O3-doS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ejp-ry-tKA"/>
                     <connections>
                         <outlet property="pulsyBtn" destination="lDz-fh-7yO" id="Nas-ew-9Wj"/>
                         <outlet property="searchBar" destination="HBa-Bo-dgT" id="870-YX-jCt"/>
@@ -186,7 +188,7 @@ or sing or hum the melody you have stuck in your head</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958.0152671755725" y="-17.605633802816904"/>
+            <point key="canvasLocation" x="2884.7328244274809" y="-17.605633802816904"/>
         </scene>
     </scenes>
     <resources>

@@ -23,7 +23,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         
         
-       
+        
         setupView()
       
     }

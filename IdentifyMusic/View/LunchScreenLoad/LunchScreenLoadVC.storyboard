@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lunch Screen LoadVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LunchScreenLoadVC" id="Y6W-OH-hqX" customClass="LunchScreenLoadVC" customModule="IdentifyMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music recognition_02-01 1" translatesAutoresizingMaskIntoConstraints="NO" id="CTE-Tz-g9S">
+                                <rect key="frame" x="94" y="336" width="205" height="205"/>
+                            </imageView>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-Hb-zZc" customClass="CustomSlider" customModule="IdentifyMusic" customModuleProvider="target">
+                                <rect key="frame" x="38" y="696" width="317" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.73725490199999999" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.73725490199999999" green="0.40000000000000002" blue="1" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQx-cM-sCh">
+                                <rect key="frame" x="40" y="663" width="313" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.062745098039215685" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cag-Hb-zZc" firstAttribute="top" secondItem="sQx-cM-sCh" secondAttribute="bottom" constant="12" id="6Gc-C5-r9j"/>
+                            <constraint firstItem="sQx-cM-sCh" firstAttribute="leading" secondItem="Cag-Hb-zZc" secondAttribute="leading" id="EsK-vZ-GRQ"/>
+                            <constraint firstItem="CTE-Tz-g9S" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.521628" id="Gn4-qI-uiM"/>
+                            <constraint firstItem="CTE-Tz-g9S" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="NLN-F1-2C7"/>
+                            <constraint firstItem="CTE-Tz-g9S" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="QXx-N3-K3s"/>
+                            <constraint firstItem="CTE-Tz-g9S" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.24061" id="RFa-R7-ynF"/>
+                            <constraint firstItem="sQx-cM-sCh" firstAttribute="trailing" secondItem="Cag-Hb-zZc" secondAttribute="trailing" id="UMJ-ay-5jj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Cag-Hb-zZc" secondAttribute="trailing" constant="40" id="g50-5e-cgm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Cag-Hb-zZc" secondAttribute="bottom" constant="92" id="h2Z-aV-7St"/>
+                            <constraint firstItem="Cag-Hb-zZc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="liM-P8-kSm"/>
+                            <constraint firstItem="sQx-cM-sCh" firstAttribute="centerX" secondItem="Cag-Hb-zZc" secondAttribute="centerX" id="tDL-7J-Ppf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingSloder" destination="Cag-Hb-zZc" id="Cx4-K2-8eM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.832061068702288" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="music recognition_02-01 1" width="205" height="205"/>
+    </resources>
+</document>

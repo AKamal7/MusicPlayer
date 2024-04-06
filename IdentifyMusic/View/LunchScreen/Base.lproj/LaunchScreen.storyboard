@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Signika-VariableFont_GRAD,wght.ttf">
-            <string>Signika-Light_Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,36 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music recognition_02-01 1" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-Tj-RWm">
-                                <rect key="frame" x="94" y="277" width="205" height="205"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BQY-Tj-RWm" secondAttribute="height" multiplier="1:1" id="bAr-kh-ITg"/>
-                                    <constraint firstAttribute="width" constant="205" id="qMG-sm-z4z"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEw-9r-Cm9">
-                                <rect key="frame" x="176" y="693" width="41" height="15"/>
-                                <fontDescription key="fontDescription" name="Signika-Light_Regular" family="Signika" pointSize="12"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 3" translatesAutoresizingMaskIntoConstraints="NO" id="mS7-L3-nSd">
-                                <rect key="frame" x="40" y="714" width="297" height="12"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="1ti-s7-pxg"/>
-                                </constraints>
+                                <rect key="frame" x="94" y="336" width="205" height="205"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.062745098039215685" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mS7-L3-nSd" secondAttribute="trailing" constant="56" id="2BU-E6-1Lo"/>
-                            <constraint firstItem="lEw-9r-Cm9" firstAttribute="centerX" secondItem="BQY-Tj-RWm" secondAttribute="centerX" id="Ax0-dc-H5X"/>
-                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="277" id="bYk-vE-px6"/>
-                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kYC-qZ-Abw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mS7-L3-nSd" secondAttribute="bottom" constant="92" id="kh7-YE-k6f"/>
-                            <constraint firstItem="mS7-L3-nSd" firstAttribute="top" secondItem="lEw-9r-Cm9" secondAttribute="bottom" constant="6" id="krn-dK-bos"/>
-                            <constraint firstItem="lEw-9r-Cm9" firstAttribute="top" relation="lessThanOrEqual" secondItem="BQY-Tj-RWm" secondAttribute="bottom" constant="250" id="mcG-cO-aum"/>
-                            <constraint firstItem="mS7-L3-nSd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zOw-1g-gvK"/>
+                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.521628" id="gKB-VN-l26"/>
+                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.24061" id="hVo-PX-PxP"/>
+                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jwO-OI-Os3"/>
+                            <constraint firstItem="BQY-Tj-RWm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pbX-UW-3Fi"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -61,7 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 3" width="334" height="12"/>
         <image name="music recognition_02-01 1" width="205" height="205"/>
     </resources>
 </document>

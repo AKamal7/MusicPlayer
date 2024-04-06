@@ -35,20 +35,23 @@ class MainTabBar: UITabBarController {
 extension MainTabBar {
     
     private func setupTabBar() {
-        self.tabBar.isTranslucent = true
-        self.tabBar.backgroundColor = .clear
-        self.tabBar.backgroundImage = UIImage()
-        self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
-        self.tabBar.tintColor = UIColor(named: "mainColor")
         
-        let blurEffect = UIBlurEffect(style: .light)
-          let visualEffectView = UIVisualEffectView(effect: blurEffect)
-          
+        
+        let blurEffect = UIBlurEffect(style: .systemMaterialDark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        visualEffectView.effect = blurEffect
           // Set the frame of the visual effect view to cover the entire screen
         visualEffectView.frame = tabBar.bounds
           
           // Insert the visual effect view below the tab bar
-          view.insertSubview(visualEffectView, belowSubview: tabBar)
+        tabBar.insertSubview(visualEffectView, at: 0)
+        self.tabBar.isTranslucent = true
+        self.tabBar.backgroundColor = .clear
+        self.tabBar.barStyle = .black
+        self.tabBar.backgroundImage = UIImage()
+        self.tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.4)
+        self.tabBar.tintColor = UIColor(named: "mainColor")
         
         // Bn3ml el container bta3na ya st el kol
         let containerView = UIView()

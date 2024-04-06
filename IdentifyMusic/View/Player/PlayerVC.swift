@@ -89,35 +89,6 @@ extension PlayerVC {
     }
 }
 
-class SliderBuffering:UISlider {
-    let bufferProgress =  UIProgressView(progressViewStyle: .bar)
-
-    override init (frame : CGRect) {
-        super.init(frame : frame)
-    }
-
-    convenience init () {
-        self.init(frame:CGRect.zero)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    func setup() {
-        self.minimumTrackTintColor = UIColor.clear
-        self.maximumTrackTintColor = UIColor.clear
-        bufferProgress.backgroundColor = UIColor.clear
-        bufferProgress.isUserInteractionEnabled = true
-        bufferProgress.progress = 0.50
-        bufferProgress.progressTintColor = .green
-        bufferProgress.trackTintColor = UIColor(hex: "D9D9D9",alpha: 0.12)
-        self.addSubview(bufferProgress)
-    }
-}
-
 class CustomSlider: UISlider {
     
     @IBInspectable var trackHeight: CGFloat = 3
