@@ -26,11 +26,15 @@ class HistoryTableCell: UITableViewCell {
 
     }
     private func setupView() {
+        selectionStyle = .none
         setupLabel(label: artistNameLabel, text: "The Strokes", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.56))
         setupLabel(label: dateLabel, text: "Found 1 hour ago", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.24))
         setupLabel(label: songNameLabel, text: "The New Abnormal", size: 14, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 1))
-        
-
+        containerView.backgroundColor = UIColor(hex: "1f1f1f")
+        containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 40)
+        containerView.layer.cornerRadius = 12
+        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        containerView.clipsToBounds = true
         setupImgView()
         setupButton()
         
@@ -48,6 +52,7 @@ class HistoryTableCell: UITableViewCell {
     
     private func setupImgView() {
         cellImgView.image = UIImage(named: "musicIcon")
+        cellImgView.cornerRadius = cellImgView.frame.size.height / 2
     }
     
    

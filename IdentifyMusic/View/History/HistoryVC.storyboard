@@ -33,8 +33,8 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l1S-jw-uhS" customClass="SelfSizedTableView" customModule="IdentifyMusic" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="265" width="345" height="434"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="0.0" y="265" width="393" height="434"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zwz-wI-ImW">
                                                 <rect key="frame" x="24" y="104" width="345" height="137"/>
@@ -142,14 +142,14 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="6e5-qv-Q66" firstAttribute="top" secondItem="67W-6h-5HM" secondAttribute="top" constant="24" id="6ZH-wt-FaD"/>
+                                            <constraint firstAttribute="trailing" secondItem="l1S-jw-uhS" secondAttribute="trailing" id="FKi-1R-WKw"/>
+                                            <constraint firstItem="l1S-jw-uhS" firstAttribute="leading" secondItem="67W-6h-5HM" secondAttribute="leading" id="FnB-ut-Xd7"/>
                                             <constraint firstItem="Zwz-wI-ImW" firstAttribute="trailing" secondItem="6e5-qv-Q66" secondAttribute="trailing" id="HKr-bd-bcg"/>
                                             <constraint firstAttribute="bottom" secondItem="l1S-jw-uhS" secondAttribute="bottom" constant="11" id="MAS-28-WMD"/>
                                             <constraint firstItem="Zwz-wI-ImW" firstAttribute="leading" secondItem="6e5-qv-Q66" secondAttribute="leading" id="WzQ-bJ-VOE"/>
                                             <constraint firstAttribute="trailing" secondItem="6e5-qv-Q66" secondAttribute="trailing" constant="24" id="arY-Yp-ssT"/>
                                             <constraint firstItem="6e5-qv-Q66" firstAttribute="leading" secondItem="67W-6h-5HM" secondAttribute="leading" constant="24" id="fno-le-qIa"/>
-                                            <constraint firstItem="l1S-jw-uhS" firstAttribute="trailing" secondItem="Zwz-wI-ImW" secondAttribute="trailing" id="gid-PZ-MCP"/>
                                             <constraint firstItem="l1S-jw-uhS" firstAttribute="top" secondItem="Zwz-wI-ImW" secondAttribute="bottom" constant="24" id="n2a-ae-27p"/>
-                                            <constraint firstItem="l1S-jw-uhS" firstAttribute="leading" secondItem="Zwz-wI-ImW" secondAttribute="leading" id="qYc-FF-CcV"/>
                                             <constraint firstItem="Zwz-wI-ImW" firstAttribute="top" secondItem="6e5-qv-Q66" secondAttribute="bottom" constant="24" id="tDf-kR-dSQ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>

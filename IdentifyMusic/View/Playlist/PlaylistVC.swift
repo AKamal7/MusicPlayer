@@ -48,7 +48,8 @@ class PlaylistVC: UIViewController {
     }
     @IBAction func createNewPlistBtn(_ sender: Any) {
         let createPlistVC = UIStoryboard(name: "CreatePlistVC", bundle: nil).instantiateViewController(withIdentifier: "CreatePlistVC") as! CreatePlistVC
-        self.navigationController?.pushViewController(createPlistVC, animated: true)
+        createPlistVC.modalPresentationStyle = .fullScreen
+        self.present(createPlistVC, animated: false, completion: nil)
     }
     
     // MARK:- Private Methods
