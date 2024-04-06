@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC283E29C073537248EC3F3F26142C29"
-               BuildableName = "EachNavigationBar.framework"
-               BlueprintName = "EachNavigationBar"
+               BlueprintIdentifier = "022D0373DF61EE4E133BADB43CE7ED57"
+               BuildableName = "ProgressHUD.framework"
+               BlueprintName = "ProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
