@@ -47,7 +47,7 @@ class PlaylistVC: UIViewController {
     }
     @IBAction func seeAllPlyLstBtnClicked(_ sender: Any) {
         print("btn clicked")
-        let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
+        let vc = UIStoryboard(name: "PlaylistsTableVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistsTableVC") as! PlaylistsTableVC
         navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func createNewPlistBtn(_ sender: Any) {
