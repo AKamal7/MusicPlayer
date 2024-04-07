@@ -27,6 +27,10 @@ class PremiumVC: UIViewController {
         
     }
     
+    @IBAction func dismissView(_ sender: UIButton) {
+        
+        self.dismiss(animated: false)
+    }
     
     
     private func setupView() {
@@ -39,7 +43,7 @@ class PremiumVC: UIViewController {
         Public.setupLabel(label: securedLabel, text: "Secure payment",    size: 14,    color: UIColor(hex: "FFFFFF",alpha: 0.40))
         
         Public.setupImgView(imgView: headerImgView,  imgString: "Frame 16")
-        Public.setupImgView(imgView: tickedImgView,  imgString: "gg_check-o")
+        Public.setupImgView(imgView: tickedImgView,  imgString: "gg_check-o-1")
         Public.setupImgView(imgView: securedImgView, imgString: "Group")
     }
 
