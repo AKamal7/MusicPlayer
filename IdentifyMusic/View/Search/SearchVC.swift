@@ -12,6 +12,20 @@ class SearchVC: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var settingBtn: UIButton!
+    
+    @IBOutlet weak var adView: UIView!
+    
+    @IBOutlet weak var instructionsView: UIView!
+    
+    @IBOutlet weak var pulsyContainerView: UIView!
+    
+    @IBOutlet weak var closeRecognitionBtn: UIButton!
+    
+    @IBOutlet weak var hummingResponseLbl: UILabel!
+    
+    @IBOutlet weak var assistLabel: UIView!
+    
+    
     let player = MPMusicPlayerController.systemMusicPlayer
     
     @IBOutlet weak var pulsyBtn: UIButton!
@@ -22,19 +36,41 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        closeRecognitionBtn.isHidden = true
+        hummingResponseLbl.isHidden = true
+        assistLabel.isHidden = true
         setupView()
-      
+        let timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.update), userInfo: nil, repeats: false)
+
     }
-    
+
+    @objc func update() {
+        self.view.backgroundColor = UIColor(hex: "2C1010", alpha: 1)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupPulsy()
+        
+       
+    }
+    @IBAction func pulsyBtnPressed(_ sender: UIButton) {
+        
+       
+        self.view.backgroundColor = UIColor(hex: "1E1029", alpha: 1)
+        adView.isHidden = true
+        searchBar.isHidden = true
+        settingBtn.isHidden = true
+        instructionsView.isHidden = true
+        closeRecognitionBtn.isHidden = false
+        hummingResponseLbl.isHidden = false
+        assistLabel.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+       hidePlayer()
     }
     
     @IBAction func searchClicked(_ sender: UIButton) {
+        
     }
     // MARK:- Private Methods
     private func setupView() {
@@ -44,6 +80,17 @@ class SearchVC: UIViewController {
         setupSettingBtn()
 //        setupPulsy()
     }
+    
+    private func hidePlayer() {
+        let hide = false
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "hidePlayer"), object: hide)
+    }
+    
+    private func showPlayer() {
+        let show = true
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "showPlayer"), object: show)
+    }
+    
     private func setupSettingBtn() {
         
         settingBtn.borderWidth = 1
@@ -71,15 +118,33 @@ class SearchVC: UIViewController {
         let animation = CAKeyframeAnimation(keyPath: "transform.scale")
         
          animation.values = [1.0, 1.2, 1.0]
-         animation.keyTimes = [0, 0.5, 1]
+        animation.keyTimes = [0, 0.5, 1]
          animation.duration = 1.0
          animation.repeatCount = Float.infinity
+      
         pulsyBtn.layer.add(animation, forKey: "pulse")
+   
     }
     
     @objc func addButtonTapped() {
         
     }
+    
+    @IBAction func closeRecogntionBtnPressed(_ sender: UIButton) {
+        self.view.backgroundColor = UIColor(hex: "1E1E1E", alpha: 1)
+        adView.isHidden = false
+        searchBar.isHidden = false
+        settingBtn.isHidden = false
+        instructionsView.isHidden = false
+        closeRecognitionBtn.isHidden = true
+        hummingResponseLbl.isHidden = true
+        assistLabel.isHidden = true
+        tabBarController?.tabBar.isHidden = false
+        showPlayer()
+
+        
+    }
+    
     @IBAction func settingsBtnClicked(_ sender: UIButton) {
        
         let settings = UIStoryboard(name: "SettingsVC", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC

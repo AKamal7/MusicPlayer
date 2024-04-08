@@ -25,6 +25,7 @@ class HistoryTableCell: UITableViewCell {
         setupView()
 
     }
+    
     private func setupView() {
         selectionStyle = .none
         setupLabel(label: artistNameLabel, text: "The Strokes", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.56))
@@ -39,6 +40,7 @@ class HistoryTableCell: UITableViewCell {
         setupButton()
         
     }
+    
     private func setupButton() {
         moreActionBtnOutlet.setImage(UIImage(named: "moreActions"), for: .normal)
         moreActionBtnOutlet.setTitle("", for: .normal)

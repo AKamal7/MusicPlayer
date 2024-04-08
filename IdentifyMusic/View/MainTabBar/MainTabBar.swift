@@ -9,10 +9,16 @@ import UIKit
 
 class MainTabBar: UITabBarController {
 
+    var isHearing: Bool = false
+    let containerView = UIView()
+
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerVisibilityHidden(notif:)), name: Notification.Name(rawValue: "hidePlayer"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerVisibilityShown(notif:)), name: Notification.Name(rawValue: "showPlayer"), object: nil)
     }
     
     // MARK:- Public Methods
@@ -28,6 +34,17 @@ class MainTabBar: UITabBarController {
         mainTabBar.tabBar.items!.last?.titlePositionAdjustment = UIOffset(horizontal: -30, vertical: 0.0);
         
         return mainTabBar
+    }
+    
+
+    @objc func playerVisibilityHidden(notif: Notification) {
+        let show = notif.object as? Bool ?? false
+        self.hidePlayer(hide: show)
+    }
+    
+    @objc func playerVisibilityShown(notif: Notification) {
+        let show = notif.object as? Bool ?? true
+        self.showPlayer(show: show)
     }
 }
 
@@ -54,7 +71,6 @@ extension MainTabBar {
         self.tabBar.tintColor = UIColor(named: "mainColor")
         
         // Bn3ml el container bta3na ya st el kol
-        let containerView = UIView()
         containerView.backgroundColor = UIColor(hex: "1E1E1E", alpha: 1)
         view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +94,7 @@ extension MainTabBar {
         containerView.addSubview(playButton)
         containerView.addSubview(favButton)
         
-        
+       
         
         // El 7rkat w el tkat
         songImage.image = UIImage(named: "Component 1")
@@ -126,6 +142,14 @@ extension MainTabBar {
         ])
         
         
+    }
+    
+    func hidePlayer(hide: Bool) {
+        self.containerView.isHidden = true
+    }
+    
+    func showPlayer(show: Bool) {
+        self.containerView.isHidden = false
     }
     
     private func createServiceSearchVC() -> UIViewController {

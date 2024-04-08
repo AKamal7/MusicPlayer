@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--SearchVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -41,6 +45,24 @@
                                     <constraint firstAttribute="height" constant="45" id="CCT-ik-tun"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAf-2b-ZNP">
+                                <rect key="frame" x="19" y="85" width="25" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="7zQ-aU-tcj"/>
+                                    <constraint firstAttribute="height" constant="32" id="SPr-f1-Ard"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeRecogntionBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VQM-yC-oOI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are listening..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4J-Pz-rmG">
+                                <rect key="frame" x="132.66666666666666" y="139" width="127.66666666666666" height="23.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-hd-fni">
                                 <rect key="frame" x="24" y="120" width="345" height="72"/>
                                 <subviews>
@@ -126,6 +148,9 @@ or sing or hum the melody you have stuck in your head</string>
                                         <rect key="frame" x="0.0" y="0.0" width="204" height="204"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <action selector="pulsyBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="esQ-MS-pqo"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Component 1-3" translatesAutoresizingMaskIntoConstraints="NO" id="hhP-ht-V1q">
                                         <rect key="frame" x="0.0" y="0.0" width="204" height="204"/>
@@ -150,18 +175,34 @@ or sing or hum the melody you have stuck in your head</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-9Q-SJQ">
-                                <rect key="frame" x="0.0" y="746" width="393" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ip-Nx-BKy">
+                                <rect key="frame" x="24" y="658" width="345" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-gz-Ih7">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you singing or humming?, We are trying to identify it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiJ-bK-eGe">
+                                        <rect key="frame" x="40" y="16.666666666666629" width="265" height="47"/>
+                                        <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="yiJ-bK-eGe" firstAttribute="leading" secondItem="8Ip-Nx-BKy" secondAttribute="leading" constant="40" id="bIs-3z-Vpg"/>
+                                    <constraint firstAttribute="height" constant="80" id="eSE-pA-7ZG"/>
+                                    <constraint firstAttribute="trailing" secondItem="yiJ-bK-eGe" secondAttribute="trailing" constant="40" id="eWq-fZ-hBc"/>
+                                    <constraint firstItem="yiJ-bK-eGe" firstAttribute="centerY" secondItem="8Ip-Nx-BKy" secondAttribute="centerY" id="rw0-kv-QDE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -171,17 +212,31 @@ or sing or hum the melody you have stuck in your head</string>
                             <constraint firstItem="lr1-i4-Gyv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="6Mz-r6-Za0"/>
                             <constraint firstItem="1hg-82-kmJ" firstAttribute="top" secondItem="cVW-hd-fni" secondAttribute="bottom" constant="55" id="CCi-hq-vZx"/>
                             <constraint firstItem="cVW-hd-fni" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Dcf-da-vYP"/>
+                            <constraint firstItem="f4J-Pz-rmG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="JN9-Mh-2J6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8Ip-Nx-BKy" secondAttribute="trailing" constant="24" id="JUp-Ro-Ih1"/>
+                            <constraint firstItem="SAf-2b-ZNP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="19" id="NH4-lv-VHn"/>
+                            <constraint firstItem="SAf-2b-ZNP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="O1W-Vt-6Vc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="8Ip-Nx-BKy" secondAttribute="bottom" constant="80" id="XjL-7M-m2q"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lr1-i4-Gyv" secondAttribute="trailing" constant="24" id="atp-wz-OOh"/>
+                            <constraint firstItem="8Ip-Nx-BKy" firstAttribute="top" relation="lessThanOrEqual" secondItem="5k2-8G-GXj" secondAttribute="bottom" constant="106" id="b0T-u4-S0n"/>
                             <constraint firstItem="5k2-8G-GXj" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="c80-3d-Wu4"/>
+                            <constraint firstItem="8Ip-Nx-BKy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="jBP-0A-m64"/>
                             <constraint firstItem="cVW-hd-fni" firstAttribute="top" secondItem="lr1-i4-Gyv" secondAttribute="bottom" constant="16" id="n1t-08-wjP"/>
                             <constraint firstItem="5k2-8G-GXj" firstAttribute="top" secondItem="1hg-82-kmJ" secondAttribute="bottom" constant="27" id="ne6-vz-mkp"/>
                             <constraint firstItem="lr1-i4-Gyv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pZX-fE-JZr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cVW-hd-fni" secondAttribute="trailing" constant="24" id="uP9-O3-doS"/>
+                            <constraint firstItem="f4J-Pz-rmG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="w3Z-nc-Vpj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ejp-ry-tKA"/>
                     <connections>
+                        <outlet property="adView" destination="cVW-hd-fni" id="Bfs-YF-bKB"/>
+                        <outlet property="assistLabel" destination="8Ip-Nx-BKy" id="sfO-4f-NK4"/>
+                        <outlet property="closeRecognitionBtn" destination="SAf-2b-ZNP" id="O2f-Nc-vL7"/>
+                        <outlet property="hummingResponseLbl" destination="f4J-Pz-rmG" id="ZnC-hu-axw"/>
+                        <outlet property="instructionsView" destination="1hg-82-kmJ" id="OQx-9d-LAb"/>
                         <outlet property="pulsyBtn" destination="lDz-fh-7yO" id="Nas-ew-9Wj"/>
+                        <outlet property="pulsyContainerView" destination="5k2-8G-GXj" id="49S-da-WOQ"/>
                         <outlet property="searchBar" destination="HBa-Bo-dgT" id="870-YX-jCt"/>
                         <outlet property="settingBtn" destination="Imf-AH-10y" id="HRD-cG-I2U"/>
                     </connections>
@@ -195,9 +250,7 @@ or sing or hum the melody you have stuck in your head</string>
         <image name="Component 1-3" width="204" height="204"/>
         <image name="Frame 16" width="334" height="72"/>
         <image name="Rectangle 4" width="263" height="74"/>
+        <image name="close" width="19" height="18"/>
         <image name="settings" width="24.333333969116211" height="24.333333969116211"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
