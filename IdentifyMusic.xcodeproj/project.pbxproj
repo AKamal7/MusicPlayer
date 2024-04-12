@@ -75,6 +75,13 @@
 		F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78571D02B9AC030000AC75E /* SearchVC.swift */; };
 		F78571D62B9AC032000AC75E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F78571D52B9AC032000AC75E /* Assets.xcassets */; };
 		F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78571D72B9AC032000AC75E /* LaunchScreen.storyboard */; };
+		F79E80C52BC630CA0028644C /* FilePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E80C42BC630CA0028644C /* FilePresentationController.swift */; };
+		F79E80C82BC631AC0028644C /* LyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E80C72BC631AC0028644C /* LyricsVC.swift */; };
+		F79E80CA2BC631B60028644C /* LyricsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F79E80C92BC631B60028644C /* LyricsVC.storyboard */; };
+		F7D7D97D2BC51CC500896EAB /* SearchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7D97C2BC51CC500896EAB /* SearchResultsVC.swift */; };
+		F7D7D97F2BC51CCE00896EAB /* SearchResultsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D7D97E2BC51CCE00896EAB /* SearchResultsVC.storyboard */; };
+		F7D7D9812BC51F1000896EAB /* SearchResults+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7D9802BC51F1000896EAB /* SearchResults+TableView.swift */; };
+		F7D7D9832BC51F8400896EAB /* SearchResults+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D7D9822BC51F8400896EAB /* SearchResults+SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +157,13 @@
 		F78571D52B9AC032000AC75E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F78571D82B9AC032000AC75E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F78571DA2B9AC032000AC75E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F79E80C42BC630CA0028644C /* FilePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePresentationController.swift; sourceTree = "<group>"; };
+		F79E80C72BC631AC0028644C /* LyricsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsVC.swift; sourceTree = "<group>"; };
+		F79E80C92BC631B60028644C /* LyricsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LyricsVC.storyboard; sourceTree = "<group>"; };
+		F7D7D97C2BC51CC500896EAB /* SearchResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsVC.swift; sourceTree = "<group>"; };
+		F7D7D97E2BC51CCE00896EAB /* SearchResultsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultsVC.storyboard; sourceTree = "<group>"; };
+		F7D7D9802BC51F1000896EAB /* SearchResults+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResults+TableView.swift"; sourceTree = "<group>"; };
+		F7D7D9822BC51F8400896EAB /* SearchResults+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResults+SearchBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +217,8 @@
 		BB3A578B2BAB3E69001AC9FD /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F78571D02B9AC030000AC75E /* SearchVC.swift */,
-				BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */,
-				BB85B8E02BBA35700099DE56 /* SearchVC+SearchBar.swift */,
+				F7D7D97B2BC51CB400896EAB /* SearchResultsVC */,
+				F7D7D97A2BC51CA600896EAB /* SearchVC */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -258,6 +271,7 @@
 		BB526F8B2BA28B81006E6322 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F79E80C62BC6319A0028644C /* LyricsVC */,
 				BB3A578D2BAB3EBF001AC9FD /* MainTabBar */,
 				BBFFA9722BC2093C005BD5B5 /* TrendsCollectionView */,
 				BBFFA9712BC20923005BD5B5 /* MusicTableView */,
@@ -500,6 +514,7 @@
 				F7754EAF2BAB3652003956C0 /* SelfSizedTableView.swift */,
 				BB85B8E22BBA60770099DE56 /* PulseAnimation.swift */,
 				BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */,
+				F79E80C42BC630CA0028644C /* FilePresentationController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -536,6 +551,36 @@
 				F78571DA2B9AC032000AC75E /* Info.plist */,
 			);
 			path = IdentifyMusic;
+			sourceTree = "<group>";
+		};
+		F79E80C62BC6319A0028644C /* LyricsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F79E80C72BC631AC0028644C /* LyricsVC.swift */,
+				F79E80C92BC631B60028644C /* LyricsVC.storyboard */,
+			);
+			path = LyricsVC;
+			sourceTree = "<group>";
+		};
+		F7D7D97A2BC51CA600896EAB /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				F78571D02B9AC030000AC75E /* SearchVC.swift */,
+				BB3A578F2BAB3F2E001AC9FD /* SearchVC.storyboard */,
+				BB85B8E02BBA35700099DE56 /* SearchVC+SearchBar.swift */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		F7D7D97B2BC51CB400896EAB /* SearchResultsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7D7D97C2BC51CC500896EAB /* SearchResultsVC.swift */,
+				F7D7D97E2BC51CCE00896EAB /* SearchResultsVC.storyboard */,
+				F7D7D9802BC51F1000896EAB /* SearchResults+TableView.swift */,
+				F7D7D9822BC51F8400896EAB /* SearchResults+SearchBar.swift */,
+			);
+			path = SearchResultsVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -600,6 +645,7 @@
 				F7754E9F2BAB3583003956C0 /* PlayerVC.storyboard in Resources */,
 				BBFFA9832BC214B5005BD5B5 /* TrendsCollectionVC.storyboard in Resources */,
 				BBFFA96B2BC016CC005BD5B5 /* Heebo-Medium.ttf in Resources */,
+				F79E80CA2BC631B60028644C /* LyricsVC.storyboard in Resources */,
 				BBFFA9762BC20977005BD5B5 /* MusicTableVC.storyboard in Resources */,
 				F78571D92B9AC032000AC75E /* LaunchScreen.storyboard in Resources */,
 				BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */,
@@ -617,6 +663,7 @@
 				BBAE80C42BB80E9B0083F621 /* PremiumVC.storyboard in Resources */,
 				BB1646042BB2BFC600E10257 /* PlayFullSongsVC.storyboard in Resources */,
 				F748FAEF2BBD8C0B00A3488B /* HistoryTableCell.xib in Resources */,
+				F7D7D97F2BC51CCE00896EAB /* SearchResultsVC.storyboard in Resources */,
 				BB3A57922BAB3F45001AC9FD /* HistoryVC.storyboard in Resources */,
 				BB526F932BA28E0E006E6322 /* PlaylistVC.storyboard in Resources */,
 				BBAE80CA2BB81B590083F621 /* LinkedAccountVC.storyboard in Resources */,
@@ -669,20 +716,25 @@
 				BB1646022BB2BFBD00E10257 /* PlayFullSongsVC.swift in Sources */,
 				BB1645F22BB17DDC00E10257 /* PListOptionsVC.swift in Sources */,
 				F7754EAD2BAB35DD003956C0 /* Song.swift in Sources */,
+				F7D7D97D2BC51CC500896EAB /* SearchResultsVC.swift in Sources */,
 				BBF224C82BB16B6A00B99A66 /* SongOptionsVC.swift in Sources */,
 				F748FAF22BBF5A8600A3488B /* SettingsVC.swift in Sources */,
 				F748FAEE2BBD8C0B00A3488B /* HistoryTableCell.swift in Sources */,
 				F78571D12B9AC030000AC75E /* SearchVC.swift in Sources */,
 				BB8594F12BAEA90900E85A6F /* ConnectAppleMusicVC.swift in Sources */,
 				BB4DB5352BBD61530081E62C /* UIView+CALayer.swift in Sources */,
+				F7D7D9832BC51F8400896EAB /* SearchResults+SearchBar.swift in Sources */,
 				BBAE80C22BB80E910083F621 /* PremiumVC.swift in Sources */,
 				F748FAEA2BBD854E00A3488B /* UILabel+Gradient.swift in Sources */,
 				BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */,
+				F79E80C82BC631AC0028644C /* LyricsVC.swift in Sources */,
 				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,
 				BBFFA97B2BC21305005BD5B5 /* PlaylistsTableVC.swift in Sources */,
 				BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */,
+				F7D7D9812BC51F1000896EAB /* SearchResults+TableView.swift in Sources */,
 				BB85B8E32BBA60770099DE56 /* PulseAnimation.swift in Sources */,
 				BBFFA9862BC2152F005BD5B5 /* TrendsCollection+CollectionView.swift in Sources */,
+				F79E80C52BC630CA0028644C /* FilePresentationController.swift in Sources */,
 				BB954FC62BA94C57001F12C0 /* CreatePlistVC.swift in Sources */,
 				F7754EB02BAB3652003956C0 /* SelfSizedTableView.swift in Sources */,
 				BBFFA9742BC20960005BD5B5 /* MusicTableVC.swift in Sources */,

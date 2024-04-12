@@ -31,6 +31,13 @@ class PlaylistVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.title = "My playlists"
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "141414", alpha: 1)
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = add
+        navigationItem.rightBarButtonItem?.tintColor = .white
+
         setupView()
         setupTable()
         
@@ -45,6 +52,7 @@ class PlaylistVC: UIViewController {
         navigationController?.pushViewController(vc, animated: false)
         print("btn clicked")
     }
+    
     @IBAction func seeAllPlyLstBtnClicked(_ sender: Any) {
         print("btn clicked")
         let vc = UIStoryboard(name: "PlaylistsTableVC", bundle: nil).instantiateViewController(withIdentifier: "PlaylistsTableVC") as! PlaylistsTableVC
@@ -59,7 +67,7 @@ class PlaylistVC: UIViewController {
     // MARK:- Private Methods
     private func setupView() {
         self.view.backgroundColor = UIColor(hex: "141414")
-        Public.setupLabelWithMedium(label: titleLabel, text: "My Playlist", size: 20, color: .white)
+//        Public.setupLabelWithMedium(label: titleLabel, text: "My Playlist", size: 20, color: .white)
         contentView.backgroundColor = UIColor(hex: "141414")
 //        setupNavBar()
         setupSearchBar()
@@ -73,6 +81,12 @@ class PlaylistVC: UIViewController {
         setupCollectionView()
         setupTable()
         
+    }
+    
+    @objc func addTapped() {
+        let createPlistVC = UIStoryboard(name: "CreatePlistVC", bundle: nil).instantiateViewController(withIdentifier: "CreatePlistVC") as! CreatePlistVC
+        createPlistVC.modalPresentationStyle = .fullScreen
+        self.present(createPlistVC, animated: false, completion: nil)
     }
     
 

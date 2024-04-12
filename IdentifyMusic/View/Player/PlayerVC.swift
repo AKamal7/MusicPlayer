@@ -13,7 +13,7 @@ class PlayerVC: UIViewController {
 
     var isPlaying: Bool = false
     var value: Float = 0.0
-    
+
     @IBOutlet weak var songImgView: UIImageView!
     @IBOutlet weak var centerDiscView: UIView!
     @IBOutlet weak var mainCenterDiscView: UIView!
@@ -22,15 +22,47 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var sliderView: CustomSlider!
     
+    @IBOutlet weak var lyricsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
+        
+        navigationItem.leftBarButtonItem = backBtn
+        navigationItem.leftBarButtonItem?.tintColor = .white
 
         setupView()
-        
+        swipeGesture()
     }
     
+    @objc func backTapped() {
+        navigationController?.popViewController(animated: true)
+    }
     
+
+    
+    func swipeGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:)))
+         panGesture.delaysTouchesBegan = false
+         panGesture.delaysTouchesEnded = false
+         lyricsView.addGestureRecognizer(panGesture)
+    }
+    
+    @objc func detectPan(recognizer: UIPanGestureRecognizer) {
+
+        switch recognizer.state {
+        case .began:
+            print("StartSwiping")
+            
+        case .changed:
+            print("AlreadySwiping")
+        
+
+          
+        default:
+            break
+        }
+    }
     
     @IBAction func moreActionsBtn(_ sender: UIButton) {
     }
@@ -136,4 +168,12 @@ class CustomSlider: UISlider {
         return newRect
     }
     
+}
+
+
+extension PlayerVC: UIViewControllerTransitioningDelegate {
+    // 2.
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        FilterPresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

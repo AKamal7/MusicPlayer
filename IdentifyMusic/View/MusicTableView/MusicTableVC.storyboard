@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Music TableVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,23 +22,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyT-t3-kjY">
+                                <rect key="frame" x="172.33333333333334" y="69" width="48.666666666666657" height="29.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pvh-7r-hZJ">
-                                <rect key="frame" x="0.0" y="12.666666666666686" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="108.66666666666669" width="393" height="709.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="2O1-x4-L5k"/>
-                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="4Se-Nl-QiG"/>
-                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="VaD-so-kYR"/>
-                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" id="gRx-7b-9K9"/>
+                            <constraint firstItem="qyT-t3-kjY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="ATJ-LA-SsM"/>
+                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="top" secondItem="qyT-t3-kjY" secondAttribute="bottom" constant="10" id="GfN-dE-RuD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pvh-7r-hZJ" secondAttribute="trailing" id="UEb-xg-3iF"/>
+                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iU3-0J-OSP"/>
+                            <constraint firstItem="pvh-7r-hZJ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="sTW-WX-5ir"/>
+                            <constraint firstItem="qyT-t3-kjY" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="tvf-BI-taF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Zc-6a-xq6"/>
                     <connections>
                         <outlet property="tableView" destination="pvh-7r-hZJ" id="6hB-Tf-eL5"/>
+                        <outlet property="titleLabel" destination="qyT-t3-kjY" id="sXs-TP-YeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

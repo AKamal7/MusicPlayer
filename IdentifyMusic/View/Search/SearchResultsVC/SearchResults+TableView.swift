@@ -1,17 +1,14 @@
-
 //
-//  PlistVC + TableView.swift
+//  SearchResults+TableView.swift
 //  IdentifyMusic
 //
-//  Created by Khaled Abo hassob on 19/3/2024.
+//  Created by ahmedkamal on 09/04/2024.
 //
 
 import Foundation
 import UIKit
 
-
-
-extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
+extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     
 
    
@@ -55,9 +52,8 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
-//        modalPresentationStyle = .fullScreen
-//        self.present(player, animated: false)
-        navigationController?.pushViewController(player, animated: false)
+        modalPresentationStyle = .fullScreen
+        self.present(player, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

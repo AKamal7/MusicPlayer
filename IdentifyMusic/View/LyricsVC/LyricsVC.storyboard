@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LyricsVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LyricsVC" id="Y6W-OH-hqX" customClass="LyricsVC" customModule="IdentifyMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demoImg" translatesAutoresizingMaskIntoConstraints="NO" id="3z3-Q4-uph">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gP-cE-4gl">
+                                <rect key="frame" x="24" y="83" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="118-H2-U9u"/>
+                                    <constraint firstAttribute="width" constant="44" id="MPP-JG-vgt"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At The Door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMQ-OI-faG">
+                                <rect key="frame" x="84" y="79" width="106" height="30"/>
+                                <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At The Door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-FV-oiJ">
+                                <rect key="frame" x="84" y="113" width="84.333333333333314" height="23.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQS-QL-YMQ">
+                                <rect key="frame" x="24" y="155.66666666666669" width="345" height="662.33333333333326"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-WR-6n6">
+                                        <rect key="frame" x="50" y="20" width="245" height="12"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="at2-Fv-nu7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dZZ-WR-6n6" firstAttribute="leading" secondItem="yQS-QL-YMQ" secondAttribute="leading" constant="50" id="SjR-Xa-rWR"/>
+                                    <constraint firstAttribute="trailing" secondItem="dZZ-WR-6n6" secondAttribute="trailing" constant="50" id="U0J-HT-G7u"/>
+                                    <constraint firstItem="dZZ-WR-6n6" firstAttribute="top" secondItem="yQS-QL-YMQ" secondAttribute="top" constant="20" id="ywB-zx-5Gy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3z3-Q4-uph" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0N8-1j-9V2"/>
+                            <constraint firstItem="3z3-Q4-uph" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Qt-zd-82x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3z3-Q4-uph" secondAttribute="bottom" id="51o-5w-XM3"/>
+                            <constraint firstItem="yQS-QL-YMQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="6GA-LD-GGh"/>
+                            <constraint firstItem="0gP-cE-4gl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="6rW-ei-p9S"/>
+                            <constraint firstItem="ieA-FV-oiJ" firstAttribute="top" secondItem="gMQ-OI-faG" secondAttribute="bottom" constant="4" id="DyO-xV-TG8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yQS-QL-YMQ" secondAttribute="bottom" id="GGq-un-Htx"/>
+                            <constraint firstItem="ieA-FV-oiJ" firstAttribute="leading" secondItem="gMQ-OI-faG" secondAttribute="leading" id="Gdt-F6-Wxt"/>
+                            <constraint firstItem="gMQ-OI-faG" firstAttribute="leading" secondItem="0gP-cE-4gl" secondAttribute="trailing" constant="16" id="Pd0-mf-Z98"/>
+                            <constraint firstItem="yQS-QL-YMQ" firstAttribute="top" secondItem="ieA-FV-oiJ" secondAttribute="bottom" constant="19" id="Pgf-da-jgc"/>
+                            <constraint firstItem="0gP-cE-4gl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="cHe-DQ-i4r"/>
+                            <constraint firstItem="gMQ-OI-faG" firstAttribute="top" secondItem="0gP-cE-4gl" secondAttribute="top" constant="-4" id="edp-Mr-Ty0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yQS-QL-YMQ" secondAttribute="trailing" constant="24" id="fvl-SG-P73"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3z3-Q4-uph" secondAttribute="trailing" id="s70-aq-ptW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="topView" destination="yQS-QL-YMQ" id="lKs-fK-qYq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="demoImg" width="430" height="482"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
