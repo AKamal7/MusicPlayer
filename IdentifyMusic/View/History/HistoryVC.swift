@@ -22,15 +22,28 @@ class HistoryVC: UIViewController {
         tabBarController?.selectedIndex = 1
         setupTable()
         setupView()
-//        setupNavBar()
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.title = "History"
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "141414", alpha: 1)
+
     }
     
-    @IBAction func favBtnPressed(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+    }
+    
+    
+    @IBAction func favBtnPressed(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
+        vc.titleText = "Favorites"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func recenylyListenedBtnPressed(_ sender: UIButton) {
-        
+        let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
+        vc.titleText = "Recently listened"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
@@ -50,6 +63,7 @@ extension HistoryVC {
         recentlyListenedLabelOutlet.textColor = gradientColor(bounds: recentlyListenedLabelOutlet.bounds, gradientLayer: recentlyPlayedGradient)
 
     }
+    
     private func setupNavBar() {
         
         let navC = self.navigationController

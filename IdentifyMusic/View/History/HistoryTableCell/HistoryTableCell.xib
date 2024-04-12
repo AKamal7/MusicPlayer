@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8Y-xf-dWi">
-                        <rect key="frame" x="24" y="10" width="373" height="101"/>
+                        <rect key="frame" x="24" y="20" width="373" height="81"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qij-We-zcl">
-                                <rect key="frame" x="8" y="18" width="65" height="65"/>
+                                <rect key="frame" x="8" y="8" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="AKw-qJ-lS7"/>
                                     <constraint firstAttribute="width" secondItem="qij-We-zcl" secondAttribute="height" multiplier="1:1" id="YUe-7c-0c0"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-Qk-x2B">
-                                <rect key="frame" x="85" y="18" width="41.333333333333343" height="65"/>
+                                <rect key="frame" x="85" y="8" width="41.333333333333343" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTZ-GU-DJu">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="19"/>
@@ -51,7 +51,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3R-Bh-oVF">
-                                <rect key="frame" x="328" y="33.666666666666664" width="30" height="33.999999999999993"/>
+                                <rect key="frame" x="328" y="23.666666666666664" width="30" height="34"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
                         </subviews>
@@ -75,8 +75,8 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="e8Y-xf-dWi" firstAttribute="top" secondItem="oGb-Ky-PGL" secondAttribute="top" constant="10" id="RFM-Xq-dYR"/>
-                    <constraint firstAttribute="bottom" secondItem="e8Y-xf-dWi" secondAttribute="bottom" constant="10" id="RvM-l1-27x"/>
+                    <constraint firstItem="e8Y-xf-dWi" firstAttribute="top" secondItem="oGb-Ky-PGL" secondAttribute="top" constant="20" id="RFM-Xq-dYR"/>
+                    <constraint firstAttribute="bottom" secondItem="e8Y-xf-dWi" secondAttribute="bottom" constant="20" id="RvM-l1-27x"/>
                     <constraint firstItem="e8Y-xf-dWi" firstAttribute="leading" secondItem="oGb-Ky-PGL" secondAttribute="leading" constant="24" id="ljG-gr-Ea9"/>
                     <constraint firstAttribute="trailing" secondItem="e8Y-xf-dWi" secondAttribute="trailing" constant="24" id="oSN-Ij-SZc"/>
                 </constraints>

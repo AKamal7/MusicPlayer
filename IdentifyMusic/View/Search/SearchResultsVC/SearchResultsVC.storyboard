@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Search ResultsVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultsVC" id="Y6W-OH-hqX" customClass="SearchResultsVC" customModule="IdentifyMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVg-Hb-GvD">
+                                <rect key="frame" x="24" y="83" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Sld-ue-pv8"/>
+                                    <constraint firstAttribute="width" constant="44" id="fHJ-pw-TIm"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="backButton"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results of Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLM-0s-R9x">
+                                <rect key="frame" x="84" y="93.333333333333329" width="126" height="23.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="POO-c4-SiQ">
+                                <rect key="frame" x="0.0" y="219" width="393" height="599"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ct1-kL-WbM">
+                                <rect key="frame" x="24" y="151" width="345" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FvG-5o-Jx6"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="HEd-NL-XCf"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ct1-kL-WbM" firstAttribute="top" secondItem="wVg-Hb-GvD" secondAttribute="bottom" constant="24" id="04D-0v-Tb1"/>
+                            <constraint firstItem="POO-c4-SiQ" firstAttribute="top" secondItem="ct1-kL-WbM" secondAttribute="bottom" constant="24" id="3CZ-If-WRt"/>
+                            <constraint firstItem="POO-c4-SiQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9Da-EL-6QF"/>
+                            <constraint firstItem="wVg-Hb-GvD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="9JS-yw-MQ0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ct1-kL-WbM" secondAttribute="trailing" constant="24" id="Ld7-tt-nYr"/>
+                            <constraint firstItem="hLM-0s-R9x" firstAttribute="leading" secondItem="wVg-Hb-GvD" secondAttribute="trailing" constant="16" id="a1J-D4-b9X"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="POO-c4-SiQ" secondAttribute="trailing" id="chW-yg-Br6"/>
+                            <constraint firstItem="wVg-Hb-GvD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="iOv-M3-qSQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="POO-c4-SiQ" secondAttribute="bottom" id="l7Y-8y-iDc"/>
+                            <constraint firstItem="ct1-kL-WbM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="wVP-it-yrX"/>
+                            <constraint firstItem="hLM-0s-R9x" firstAttribute="centerY" secondItem="wVg-Hb-GvD" secondAttribute="centerY" id="xg6-eH-lw0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ct1-kL-WbM" id="Pn5-7c-WnY"/>
+                        <outlet property="tableView" destination="POO-c4-SiQ" id="xh9-nh-9YV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButton" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

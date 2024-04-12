@@ -9,7 +9,10 @@ import UIKit
 
 class MusicTableVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    var titleText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,7 @@ class MusicTableVC: UIViewController {
     private func setupView() {
         
         view.backgroundColor = UIColor(hex: "141414")
-        
+        titleLabel.text = titleText
         
         setupTable()
         setupNavBar()
