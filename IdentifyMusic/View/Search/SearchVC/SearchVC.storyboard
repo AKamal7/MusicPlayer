@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,7 +134,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,9 +144,8 @@
                                             <action selector="getPremiumTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SRv-kc-fCw"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Frame 16" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-kw-B8s">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 16" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-kw-B8s">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20384933774834438" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -161,9 +160,13 @@
                                 <constraints>
                                     <constraint firstItem="cxY-YG-kNY" firstAttribute="height" secondItem="cVW-hd-fni" secondAttribute="height" id="1KW-P4-n2E"/>
                                     <constraint firstItem="cxY-YG-kNY" firstAttribute="centerY" secondItem="cVW-hd-fni" secondAttribute="centerY" id="4nO-Ie-iEw"/>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="width" secondItem="cVW-hd-fni" secondAttribute="width" id="AhK-p1-IQV"/>
                                     <constraint firstItem="cxY-YG-kNY" firstAttribute="centerX" secondItem="cVW-hd-fni" secondAttribute="centerX" id="VwY-Xr-QhM"/>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="centerY" secondItem="cVW-hd-fni" secondAttribute="centerY" id="WcE-Ed-gFb"/>
                                     <constraint firstItem="cxY-YG-kNY" firstAttribute="width" secondItem="cVW-hd-fni" secondAttribute="width" id="hcb-vE-CHz"/>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="height" secondItem="cVW-hd-fni" secondAttribute="height" id="mKo-Oj-0Au"/>
                                     <constraint firstAttribute="height" constant="72" id="mhc-iu-qHN"/>
+                                    <constraint firstItem="i0S-kw-B8s" firstAttribute="centerX" secondItem="cVW-hd-fni" secondAttribute="centerX" id="qKO-Jh-g1V"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

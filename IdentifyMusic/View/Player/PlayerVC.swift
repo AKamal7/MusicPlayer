@@ -115,8 +115,8 @@ extension PlayerVC {
     
     private func setupView() {
         songImgView.cornerRadius = songImgView.frame.width / 2
-        centerDiscView.cornerRadius = centerDiscView.frame.width / 2
-        mainCenterDiscView.cornerRadius = mainCenterDiscView.frame.width / 2
+        
+        
        
     }
 }

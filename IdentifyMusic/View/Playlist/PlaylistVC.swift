@@ -33,6 +33,7 @@ class PlaylistVC: UIViewController {
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.title = "My playlists"
+        
         navigationController?.navigationBar.barTintColor = UIColor(hex: "141414", alpha: 1)
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = add
