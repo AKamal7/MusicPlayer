@@ -22,47 +22,129 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var sliderView: CustomSlider!
     
+    @IBOutlet weak var songBckGroundHeight: NSLayoutConstraint!
     @IBOutlet weak var lyricsView: UIView!
     
+    @IBOutlet weak var lyricsHeaderView: UIView!
+    
+    @IBOutlet weak var lyricsTextView: UITextView!
+    
+    @IBOutlet weak var lyricsHeight: NSLayoutConstraint!
+    @IBOutlet weak var lyricsTopAnchor: NSLayoutConstraint!
+    
+    @IBOutlet weak var lyricsTextTitle: UILabel!
+    
+    @IBOutlet weak var lyricsBotBorder: UIView!
+    @IBOutlet weak var titleLabelsStack: UIStackView!
+    
+    @IBOutlet weak var lyricsBotConst: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
         
         navigationItem.leftBarButtonItem = backBtn
         navigationItem.leftBarButtonItem?.tintColor = .white
-
+        applyBlurEffect(to: lyricsView)
         setupView()
         swipeGesture()
+        titleLabelsStack.isHidden = true
     }
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
     }
     
+    private func applyBlurEffect(to view: UIView) {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(blurEffectView, belowSubview: view)
+        view.insertSubview(lyricsHeaderView, aboveSubview: view)
+        view.insertSubview(lyricsTextView, aboveSubview: view)
+  
+
+      }
+    
 
     
     func swipeGesture() {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        lyricsView.addGestureRecognizer(panGesture)
          panGesture.delaysTouchesBegan = false
          panGesture.delaysTouchesEnded = false
-         lyricsView.addGestureRecognizer(panGesture)
     }
     
-    @objc func detectPan(recognizer: UIPanGestureRecognizer) {
-
-        switch recognizer.state {
-        case .began:
-            print("StartSwiping")
-            
-        case .changed:
-            print("AlreadySwiping")
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        guard let view = gesture.view else { return }
         
+        switch gesture.state {
+        case .began, .changed:
+            
+            let translation = gesture.translation(in: view.superview)
+            let velocity = gesture.velocity(in: view.superview)
+            
+            // Check the direction of the pan gesture
+            if velocity.y < 0 {
+                let updatedHeight = min(max(300, 1000 - translation.y), 1000)
+                songBckGroundHeight?.constant = updatedHeight
+                lyricsTopAnchor.constant = 100
+                lyricsHeight.constant = self.view.frame.height
+                titleLabelsStack.isHidden = false
+                lyricsBotConst.constant = 80
+                
+            } else {
+                let updatedHeight = max(min(1000, 300 - translation.y), 300)
+                songBckGroundHeight?.constant = updatedHeight
+                lyricsTopAnchor.constant = 500
+                lyricsHeight.constant = 200
+                titleLabelsStack.isHidden = true
+//                lyricsBotConst.constant = 200
 
-          
+                
+            }
+            
+            // Update the image size based on the vertical translation and direction
+//            let newHeight = songBckGroundHeight?.constant ?? 300
+           
+            // Update the pan gesture translation
+            gesture.setTranslation(.zero, in: view.superview)
+            
+            // Animate the image size change
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+            
         default:
             break
         }
     }
+//
+//    @objc func detectPan(recognizer: UIPanGestureRecognizer) {
+//
+//        switch recognizer.state {
+//        case .began:
+//            print("StartSwiping")
+//            
+//        case .changed:
+//            if recognizer.accessibilityScroll(.down) {
+//                lyricsHeight.constant = 400
+//                songBckGroundHeight.constant = 500
+//                print("down")
+//
+//            } else if recognizer.accessibilityScroll(.up) {
+//                
+//                print("up")
+//                lyricsHeight.constant = 400
+//                songBckGroundHeight.constant = 500
+//
+//            }
+//         
+//          
+//        default:
+//            break
+//        }
+//    }
     
     @IBAction func moreActionsBtn(_ sender: UIButton) {
     }
@@ -114,8 +196,10 @@ class PlayerVC: UIViewController {
 extension PlayerVC {
     
     private func setupView() {
-        songImgView.cornerRadius = songImgView.frame.width / 2
-        
+        songImgView.cornerRadius = songImgView.frame.height / 2
+        centerDiscView.cornerRadius = centerDiscView.frame.width / 2
+        mainCenterDiscView.cornerRadius = mainCenterDiscView.frame.width / 2
+
         
        
     }

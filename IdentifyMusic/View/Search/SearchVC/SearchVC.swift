@@ -7,6 +7,7 @@
 
 import UIKit
 import MediaPlayer
+import Cider
 
 class SearchVC: UIViewController {
     
@@ -57,6 +58,10 @@ class SearchVC: UIViewController {
         
         setupView()
         
+        let cider = CiderClient(storefront: .unitedStates, developerToken: "developerToken")
+        cider.search(term: "Michael Jackson", types: [.albums, .songs]) { results, error in
+            print(error, "Errror")
+        }
     }
     
 

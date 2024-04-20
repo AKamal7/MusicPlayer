@@ -7,37 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3563451599B306D288ED508C93EF8076 /* Pods-IdentifyMusic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46D76939CE651A3A97788878E9AF13E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D6C40A24520B6D538FADC2D047860763 /* Pods-IdentifyMusic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */; };
+		0B05653346194AC709DE2C321709640B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6717A8DF82AF30752F1550D43637A2BE /* Genre.swift */; };
+		141047B2EC7CD0E4D10B57D5B9491448 /* PlayParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154FA6D0C28B35FA116378B6D653F1CC /* PlayParameters.swift */; };
+		1AA539C05453DD3BEC2DFBD5FCC37B57 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2C9D18D9B659B089BEAF0BEBD343D /* Album.swift */; };
+		2B26025288A2498AD4A011BAA4687502 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FDF4CFAA1B7A59D58F69704CBA8CBB /* Artwork.swift */; };
+		30F22DADF0711CFED9233FD786035D27 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87D75569A2EA053896BB950C3986C9 /* MediaType.swift */; };
+		36B742FA5B5A1388B2A544ED076A913B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB8ED2A295602435F223605DC2F30D /* Artist.swift */; };
+		38568C51854ACE91905491BA5CF81C11 /* Include.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6409FE81990EAB787A235AC1182880 /* Include.swift */; };
+		440A53118B86674ED861B0988F09ACFD /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C0B0A1BC2BA443416B47BEE0E228B /* Relationship.swift */; };
+		4BF89870EAD46BA2BEF8CBC075091A32 /* EditorialNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6C58A7280052F33F6F414263D3622 /* EditorialNotes.swift */; };
+		4E24C8A8E30D136EAF91DC4466ED55AB /* CiderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E703184DFF682098C5320B6A90F8E /* CiderClient.swift */; };
+		50CEEC956C3EFD269955F37F46D4BED1 /* Cider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0823D59D530358A9009BB7124EBAD887 /* Cider-dummy.m */; };
+		5291D326F9A55899BD5352FAE8094840 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190598A7253E21B1C083B6811677D84 /* SearchResults.swift */; };
+		5447E4421809C5B6DC161CA9B88763EE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2ADD6D3CA413811B0FA5C6D4F8188 /* Track.swift */; };
+		54B249EFCB466F154365E64F2E6BC68F /* AppleMusicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D9CF8DF8C564C69280D32837DE7B5 /* AppleMusicAPIError.swift */; };
+		5819D4EA82A85658FBBB2594E5B08513 /* ResponseRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D543B7C3FD72CA004AC3FAE43CD88 /* ResponseRoot.swift */; };
+		66C3FB079DC6D318F7B0BD21631B515A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B31C3A50B76A4B3A1DF85C441047E8 /* MusicVideo.swift */; };
+		7871D53E942B137CCAA7417BA84D5F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		901828F2D76A17B51F2A756FECDD770C /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15FAF65FC32A246BEC51B55A31BBC0 /* Playlist.swift */; };
+		947566A7AF61477304855DA8B4EA51DB /* ContentRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D282C073EEA7CC337EDA9AFD48FC2D /* ContentRating.swift */; };
+		B035B01DC9C7DA304F22BF2A13350C3D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37218BEC11059F14F5FE3ABBCC0B3FD /* Resource.swift */; };
+		C20EA78A628228FE32E6CF13B7374EAF /* CiderUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2A1667D446B5D933F686D2585C076 /* CiderUrlBuilder.swift */; };
+		C53C7BFCC27B262C2FE95D52DF008B66 /* Storefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246775EC5B1B1AA44F8A106FD59B7A79 /* Storefront.swift */; };
+		CB056701F45B5ECA4C6136278EA20F48 /* Pods-IdentifyMusic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */; };
+		EC592400CCF4C2B257B3CA22EEDCD64E /* Curator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1EC08C9E310F66239A546D306AAA3 /* Curator.swift */; };
+		EDF956750534115926F1E7A5EAD235DB /* UrlFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE7A0E365BB2F68FA7101538BD455BD /* UrlFetcher.swift */; };
+		EF44D6977883880F2522BBA35AAB64A6 /* Cider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFCC2B68232D26A9DED6973D4F83E0A5 /* Cider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4F7373649EEBB832B5C46254469C9E3 /* Pods-IdentifyMusic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F83CC2F067D88896BFD22EDC858C4BCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E985F45CA0F50DD6725B89B9D5395489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 030C142C68DEB320435D4CD4509CDEA6;
+			remoteInfo = Cider;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		14F4B73E203E2BFB1A4697B48019005A /* Pods-IdentifyMusic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-Info.plist"; sourceTree = "<group>"; };
+		014D9CF8DF8C564C69280D32837DE7B5 /* AppleMusicAPIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleMusicAPIError.swift; path = Sources/Cider/CoreObjects/AppleMusicAPIError.swift; sourceTree = "<group>"; };
+		0823D59D530358A9009BB7124EBAD887 /* Cider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cider-dummy.m"; sourceTree = "<group>"; };
+		0E87D75569A2EA053896BB950C3986C9 /* MediaType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaType.swift; path = Sources/Cider/ResourceObjects/MediaType.swift; sourceTree = "<group>"; };
+		154FA6D0C28B35FA116378B6D653F1CC /* PlayParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlayParameters.swift; path = Sources/Cider/ResourceObjects/PlayParameters.swift; sourceTree = "<group>"; };
+		246775EC5B1B1AA44F8A106FD59B7A79 /* Storefront.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storefront.swift; path = Sources/Cider/ResourceObjects/Storefront.swift; sourceTree = "<group>"; };
+		28A1EC08C9E310F66239A546D306AAA3 /* Curator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Curator.swift; path = Sources/Cider/ResourceObjects/Curator.swift; sourceTree = "<group>"; };
+		3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		4DC14A30DA7ED193EEDE907DC2FD7C03 /* Cider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cider-Info.plist"; sourceTree = "<group>"; };
+		50A2A1667D446B5D933F686D2585C076 /* CiderUrlBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CiderUrlBuilder.swift; path = Sources/Cider/Client/CiderUrlBuilder.swift; sourceTree = "<group>"; };
+		539F91AABA77F1118A6CF43A0D86231F /* Cider */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cider; path = Cider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FDF4CFAA1B7A59D58F69704CBA8CBB /* Artwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = Sources/Cider/ResourceObjects/Artwork.swift; sourceTree = "<group>"; };
+		5E15FAF65FC32A246BEC51B55A31BBC0 /* Playlist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Playlist.swift; path = Sources/Cider/ResourceObjects/Playlist.swift; sourceTree = "<group>"; };
+		6717A8DF82AF30752F1550D43637A2BE /* Genre.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Genre.swift; path = Sources/Cider/ResourceObjects/Genre.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8B0283687377AF4C6FB4776E6583CB89 /* Pods-IdentifyMusic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IdentifyMusic.modulemap"; sourceTree = "<group>"; };
+		79E6C58A7280052F33F6F414263D3622 /* EditorialNotes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditorialNotes.swift; path = Sources/Cider/ResourceObjects/EditorialNotes.swift; sourceTree = "<group>"; };
+		8985745580B48AEFF46FC888A83B7B7C /* Pods-IdentifyMusic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-acknowledgements.plist"; sourceTree = "<group>"; };
+		89A2ADD6D3CA413811B0FA5C6D4F8188 /* Track.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Track.swift; path = Sources/Cider/ResourceObjects/Track.swift; sourceTree = "<group>"; };
+		8C490B3C92D9008F91226346FBDCF4D9 /* Cider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cider.debug.xcconfig; sourceTree = "<group>"; };
+		9190598A7253E21B1C083B6811677D84 /* SearchResults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchResults.swift; path = Sources/Cider/CoreObjects/SearchResults.swift; sourceTree = "<group>"; };
+		926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IdentifyMusic-umbrella.h"; sourceTree = "<group>"; };
+		9BD0C82B2659F53DE89DF35C720139F9 /* Cider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cider.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IdentifyMusic-dummy.m"; sourceTree = "<group>"; };
-		E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IdentifyMusic-umbrella.h"; sourceTree = "<group>"; };
-		E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		A98C0B0A1BC2BA443416B47BEE0E228B /* Relationship.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Relationship.swift; path = Sources/Cider/CoreObjects/Relationship.swift; sourceTree = "<group>"; };
+		AF7FA78C826525C4E11CCBB806A87CF6 /* Cider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cider-prefix.pch"; sourceTree = "<group>"; };
+		B0B31C3A50B76A4B3A1DF85C441047E8 /* MusicVideo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MusicVideo.swift; path = Sources/Cider/ResourceObjects/MusicVideo.swift; sourceTree = "<group>"; };
+		B37218BEC11059F14F5FE3ABBCC0B3FD /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Cider/CoreObjects/Resource.swift; sourceTree = "<group>"; };
+		B5E819267D19E7015D0AC0ED99760C57 /* Pods-IdentifyMusic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IdentifyMusic-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BD6583B9DC6C6D9E3504B8A4BC1A58DF /* Pods-IdentifyMusic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-Info.plist"; sourceTree = "<group>"; };
+		BF82AB19042AE7B76A0177D52C905D8E /* Pods-IdentifyMusic-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IdentifyMusic-frameworks.sh"; sourceTree = "<group>"; };
+		BFE7A0E365BB2F68FA7101538BD455BD /* UrlFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrlFetcher.swift; path = Sources/Cider/Client/UrlFetcher.swift; sourceTree = "<group>"; };
+		C05FCD9242AA5A96F294A5EC9E833245 /* Cider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cider.modulemap; sourceTree = "<group>"; };
+		E6D282C073EEA7CC337EDA9AFD48FC2D /* ContentRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentRating.swift; path = Sources/Cider/ResourceObjects/ContentRating.swift; sourceTree = "<group>"; };
+		E8F2C9D18D9B659B089BEAF0BEBD343D /* Album.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Album.swift; path = Sources/Cider/ResourceObjects/Album.swift; sourceTree = "<group>"; };
+		E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IdentifyMusic-dummy.m"; sourceTree = "<group>"; };
+		EA6409FE81990EAB787A235AC1182880 /* Include.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Include.swift; path = Sources/Cider/Client/Include.swift; sourceTree = "<group>"; };
 		EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-IdentifyMusic"; path = Pods_IdentifyMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE0C675E67B96B2F2212BBCAF4E1A0CB /* Pods-IdentifyMusic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IdentifyMusic-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE796319CF7A4F86C63843D8338776DA /* Pods-IdentifyMusic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IdentifyMusic-acknowledgements.plist"; sourceTree = "<group>"; };
-		F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.release.xcconfig"; sourceTree = "<group>"; };
+		ECDB8ED2A295602435F223605DC2F30D /* Artist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Artist.swift; path = Sources/Cider/ResourceObjects/Artist.swift; sourceTree = "<group>"; };
+		ED4E703184DFF682098C5320B6A90F8E /* CiderClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CiderClient.swift; path = Sources/Cider/Client/CiderClient.swift; sourceTree = "<group>"; };
+		EE9D543B7C3FD72CA004AC3FAE43CD88 /* ResponseRoot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseRoot.swift; path = Sources/Cider/CoreObjects/ResponseRoot.swift; sourceTree = "<group>"; };
+		EFCC2B68232D26A9DED6973D4F83E0A5 /* Cider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cider-umbrella.h"; sourceTree = "<group>"; };
+		F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IdentifyMusic.release.xcconfig"; sourceTree = "<group>"; };
+		FC821DB86123C3DAA85476EAD57C353E /* Pods-IdentifyMusic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IdentifyMusic.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B8EAAC4351E561EB764437E31F0EC69 /* Frameworks */ = {
+		8E2A57B7A6DE4514A9CBE95CD47ED2A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46D76939CE651A3A97788878E9AF13E5 /* Foundation.framework in Frameworks */,
+				F83CC2F067D88896BFD22EDC858C4BCE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A281163C04CFB9FD9B7432849783F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7871D53E942B137CCAA7417BA84D5F3E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C5E0E1D45438CD130DA491F9187062 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8346E6231E46B5E04E055AD305A48BB1 /* Pods-IdentifyMusic */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -46,36 +128,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6299DB1AF680BE195CC3B93ED5512B84 /* Products */ = {
+		8346E6231E46B5E04E055AD305A48BB1 /* Pods-IdentifyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8BDB98938F44CFED1C8582C396378301 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				90272885F235A5D0A702944F14AD46CE /* Pods-IdentifyMusic */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		90272885F235A5D0A702944F14AD46CE /* Pods-IdentifyMusic */ = {
-			isa = PBXGroup;
-			children = (
-				8B0283687377AF4C6FB4776E6583CB89 /* Pods-IdentifyMusic.modulemap */,
-				EE0C675E67B96B2F2212BBCAF4E1A0CB /* Pods-IdentifyMusic-acknowledgements.markdown */,
-				EE796319CF7A4F86C63843D8338776DA /* Pods-IdentifyMusic-acknowledgements.plist */,
-				E00B919239AB1A2777504EB562FD4F92 /* Pods-IdentifyMusic-dummy.m */,
-				14F4B73E203E2BFB1A4697B48019005A /* Pods-IdentifyMusic-Info.plist */,
-				E4CEBD88BDE9F80F924383C5CCFD7198 /* Pods-IdentifyMusic-umbrella.h */,
-				E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */,
-				F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */,
+				FC821DB86123C3DAA85476EAD57C353E /* Pods-IdentifyMusic.modulemap */,
+				B5E819267D19E7015D0AC0ED99760C57 /* Pods-IdentifyMusic-acknowledgements.markdown */,
+				8985745580B48AEFF46FC888A83B7B7C /* Pods-IdentifyMusic-acknowledgements.plist */,
+				E9A62F64439770C554D849EBEB485556 /* Pods-IdentifyMusic-dummy.m */,
+				BF82AB19042AE7B76A0177D52C905D8E /* Pods-IdentifyMusic-frameworks.sh */,
+				BD6583B9DC6C6D9E3504B8A4BC1A58DF /* Pods-IdentifyMusic-Info.plist */,
+				926FE391560B291E77ECE7B21C876167 /* Pods-IdentifyMusic-umbrella.h */,
+				3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */,
+				F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */,
 			);
 			name = "Pods-IdentifyMusic";
 			path = "Target Support Files/Pods-IdentifyMusic";
+			sourceTree = "<group>";
+		};
+		8795653D81116F67ECFE0300D75A8F5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C05FCD9242AA5A96F294A5EC9E833245 /* Cider.modulemap */,
+				0823D59D530358A9009BB7124EBAD887 /* Cider-dummy.m */,
+				4DC14A30DA7ED193EEDE907DC2FD7C03 /* Cider-Info.plist */,
+				AF7FA78C826525C4E11CCBB806A87CF6 /* Cider-prefix.pch */,
+				EFCC2B68232D26A9DED6973D4F83E0A5 /* Cider-umbrella.h */,
+				8C490B3C92D9008F91226346FBDCF4D9 /* Cider.debug.xcconfig */,
+				9BD0C82B2659F53DE89DF35C720139F9 /* Cider.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cider";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -83,8 +165,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				6299DB1AF680BE195CC3B93ED5512B84 /* Products */,
-				8BDB98938F44CFED1C8582C396378301 /* Targets Support Files */,
+				F3A62A11772343D693B0FF1836FB2982 /* Pods */,
+				D307C2AA1926FC00A1FC5CD2AD7C1C5B /* Products */,
+				18C5E0E1D45438CD130DA491F9187062 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,32 +179,107 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D307C2AA1926FC00A1FC5CD2AD7C1C5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				539F91AABA77F1118A6CF43A0D86231F /* Cider */,
+				EC9D86C319E1870E68A7A5E16EAC7381 /* Pods-IdentifyMusic */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB0C951F8515F7DD6C6D03DAECEB5B0F /* Cider */ = {
+			isa = PBXGroup;
+			children = (
+				E8F2C9D18D9B659B089BEAF0BEBD343D /* Album.swift */,
+				014D9CF8DF8C564C69280D32837DE7B5 /* AppleMusicAPIError.swift */,
+				ECDB8ED2A295602435F223605DC2F30D /* Artist.swift */,
+				54FDF4CFAA1B7A59D58F69704CBA8CBB /* Artwork.swift */,
+				ED4E703184DFF682098C5320B6A90F8E /* CiderClient.swift */,
+				50A2A1667D446B5D933F686D2585C076 /* CiderUrlBuilder.swift */,
+				E6D282C073EEA7CC337EDA9AFD48FC2D /* ContentRating.swift */,
+				28A1EC08C9E310F66239A546D306AAA3 /* Curator.swift */,
+				79E6C58A7280052F33F6F414263D3622 /* EditorialNotes.swift */,
+				6717A8DF82AF30752F1550D43637A2BE /* Genre.swift */,
+				EA6409FE81990EAB787A235AC1182880 /* Include.swift */,
+				0E87D75569A2EA053896BB950C3986C9 /* MediaType.swift */,
+				B0B31C3A50B76A4B3A1DF85C441047E8 /* MusicVideo.swift */,
+				5E15FAF65FC32A246BEC51B55A31BBC0 /* Playlist.swift */,
+				154FA6D0C28B35FA116378B6D653F1CC /* PlayParameters.swift */,
+				A98C0B0A1BC2BA443416B47BEE0E228B /* Relationship.swift */,
+				B37218BEC11059F14F5FE3ABBCC0B3FD /* Resource.swift */,
+				EE9D543B7C3FD72CA004AC3FAE43CD88 /* ResponseRoot.swift */,
+				9190598A7253E21B1C083B6811677D84 /* SearchResults.swift */,
+				246775EC5B1B1AA44F8A106FD59B7A79 /* Storefront.swift */,
+				89A2ADD6D3CA413811B0FA5C6D4F8188 /* Track.swift */,
+				BFE7A0E365BB2F68FA7101538BD455BD /* UrlFetcher.swift */,
+				8795653D81116F67ECFE0300D75A8F5F /* Support Files */,
+			);
+			name = Cider;
+			path = Cider;
+			sourceTree = "<group>";
+		};
+		F3A62A11772343D693B0FF1836FB2982 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB0C951F8515F7DD6C6D03DAECEB5B0F /* Cider */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		947927BA3152D2265402DAA3B746019E /* Headers */ = {
+		9A8F5DB50B5406983D464958AB81B708 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3563451599B306D288ED508C93EF8076 /* Pods-IdentifyMusic-umbrella.h in Headers */,
+				F4F7373649EEBB832B5C46254469C9E3 /* Pods-IdentifyMusic-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B620339F6926874577C25E5A4EF78736 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF44D6977883880F2522BBA35AAB64A6 /* Cider-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3322499A2CBF03EA7F33BC5AE381D6B4 /* Pods-IdentifyMusic */ = {
+		030C142C68DEB320435D4CD4509CDEA6 /* Cider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5135A6470B3128F977CD3D7C9C88BC14 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */;
+			buildConfigurationList = 8C28CAAA2F7BBA899802DDC1F24024A4 /* Build configuration list for PBXNativeTarget "Cider" */;
 			buildPhases = (
-				947927BA3152D2265402DAA3B746019E /* Headers */,
-				1CFED77AA262162255508EBC886A5D42 /* Sources */,
-				3B8EAAC4351E561EB764437E31F0EC69 /* Frameworks */,
-				DBEA8F963050DD2588E1244CC47710E1 /* Resources */,
+				B620339F6926874577C25E5A4EF78736 /* Headers */,
+				28ABD2CD565C7B1F880D62BF3F2674BB /* Sources */,
+				9A281163C04CFB9FD9B7432849783F31 /* Frameworks */,
+				76A0F4FF1367E8938ADC4F77C7FB8F8A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Cider;
+			productName = Cider;
+			productReference = 539F91AABA77F1118A6CF43A0D86231F /* Cider */;
+			productType = "com.apple.product-type.framework";
+		};
+		3322499A2CBF03EA7F33BC5AE381D6B4 /* Pods-IdentifyMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87E51186058397CD83B70827461CCD3B /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */;
+			buildPhases = (
+				9A8F5DB50B5406983D464958AB81B708 /* Headers */,
+				303781140EB8F1A95F13308122898496 /* Sources */,
+				8E2A57B7A6DE4514A9CBE95CD47ED2A6 /* Frameworks */,
+				EF633C8D94F67ADF1F60F6999E36FA7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B5E6DE80904615CB68786D07681296E /* PBXTargetDependency */,
 			);
 			name = "Pods-IdentifyMusic";
 			productName = Pods_IdentifyMusic;
@@ -146,17 +304,25 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 6299DB1AF680BE195CC3B93ED5512B84 /* Products */;
+			productRefGroup = D307C2AA1926FC00A1FC5CD2AD7C1C5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				030C142C68DEB320435D4CD4509CDEA6 /* Cider */,
 				3322499A2CBF03EA7F33BC5AE381D6B4 /* Pods-IdentifyMusic */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DBEA8F963050DD2588E1244CC47710E1 /* Resources */ = {
+		76A0F4FF1367E8938ADC4F77C7FB8F8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF633C8D94F67ADF1F60F6999E36FA7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,22 +332,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1CFED77AA262162255508EBC886A5D42 /* Sources */ = {
+		28ABD2CD565C7B1F880D62BF3F2674BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C40A24520B6D538FADC2D047860763 /* Pods-IdentifyMusic-dummy.m in Sources */,
+				1AA539C05453DD3BEC2DFBD5FCC37B57 /* Album.swift in Sources */,
+				54B249EFCB466F154365E64F2E6BC68F /* AppleMusicAPIError.swift in Sources */,
+				36B742FA5B5A1388B2A544ED076A913B /* Artist.swift in Sources */,
+				2B26025288A2498AD4A011BAA4687502 /* Artwork.swift in Sources */,
+				50CEEC956C3EFD269955F37F46D4BED1 /* Cider-dummy.m in Sources */,
+				4E24C8A8E30D136EAF91DC4466ED55AB /* CiderClient.swift in Sources */,
+				C20EA78A628228FE32E6CF13B7374EAF /* CiderUrlBuilder.swift in Sources */,
+				947566A7AF61477304855DA8B4EA51DB /* ContentRating.swift in Sources */,
+				EC592400CCF4C2B257B3CA22EEDCD64E /* Curator.swift in Sources */,
+				4BF89870EAD46BA2BEF8CBC075091A32 /* EditorialNotes.swift in Sources */,
+				0B05653346194AC709DE2C321709640B /* Genre.swift in Sources */,
+				38568C51854ACE91905491BA5CF81C11 /* Include.swift in Sources */,
+				30F22DADF0711CFED9233FD786035D27 /* MediaType.swift in Sources */,
+				66C3FB079DC6D318F7B0BD21631B515A /* MusicVideo.swift in Sources */,
+				901828F2D76A17B51F2A756FECDD770C /* Playlist.swift in Sources */,
+				141047B2EC7CD0E4D10B57D5B9491448 /* PlayParameters.swift in Sources */,
+				440A53118B86674ED861B0988F09ACFD /* Relationship.swift in Sources */,
+				B035B01DC9C7DA304F22BF2A13350C3D /* Resource.swift in Sources */,
+				5819D4EA82A85658FBBB2594E5B08513 /* ResponseRoot.swift in Sources */,
+				5291D326F9A55899BD5352FAE8094840 /* SearchResults.swift in Sources */,
+				C53C7BFCC27B262C2FE95D52DF008B66 /* Storefront.swift in Sources */,
+				5447E4421809C5B6DC161CA9B88763EE /* Track.swift in Sources */,
+				EDF956750534115926F1E7A5EAD235DB /* UrlFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		303781140EB8F1A95F13308122898496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB056701F45B5ECA4C6136278EA20F48 /* Pods-IdentifyMusic-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6B5E6DE80904615CB68786D07681296E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cider;
+			target = 030C142C68DEB320435D4CD4509CDEA6 /* Cider */;
+			targetProxy = E985F45CA0F50DD6725B89B9D5395489 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		02ACE3C61AA2ECA0FC3393E2BC455DD5 /* Release */ = {
+		235B98F041BD400A76F8AA3F5929D9D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C1DF44A1AA5AB5580100DD2415FE76 /* Pods-IdentifyMusic.release.xcconfig */;
+			baseConfigurationReference = 9BD0C82B2659F53DE89DF35C720139F9 /* Cider.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -191,23 +395,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Cider/Cider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cider/Cider-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Cider/Cider.modulemap";
+				PRODUCT_MODULE_NAME = Cider;
+				PRODUCT_NAME = Cider;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -215,9 +418,44 @@
 			};
 			name = Release;
 		};
-		48BE5582C7AB7CE63701B0B27B66AF9A /* Debug */ = {
+		2C1CCC148E9D8420AC6729C5E5BC3DB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E976053031C22809C3628453379BC4EC /* Pods-IdentifyMusic.debug.xcconfig */;
+			baseConfigurationReference = 8C490B3C92D9008F91226346FBDCF4D9 /* Cider.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cider/Cider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cider/Cider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cider/Cider.modulemap";
+				PRODUCT_MODULE_NAME = Cider;
+				PRODUCT_NAME = Cider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5717EF78BB7C17752F7734A340033F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C3C6562E4F6622BA4897D8A27AD9F83 /* Pods-IdentifyMusic.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -380,6 +618,44 @@
 			};
 			name = Release;
 		};
+		E2078CE38EE113B075C9E41231930567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F13C963BD3443BB1FF0D0BDF1710A37C /* Pods-IdentifyMusic.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IdentifyMusic/Pods-IdentifyMusic.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,11 +668,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5135A6470B3128F977CD3D7C9C88BC14 /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */ = {
+		87E51186058397CD83B70827461CCD3B /* Build configuration list for PBXNativeTarget "Pods-IdentifyMusic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48BE5582C7AB7CE63701B0B27B66AF9A /* Debug */,
-				02ACE3C61AA2ECA0FC3393E2BC455DD5 /* Release */,
+				5717EF78BB7C17752F7734A340033F0E /* Debug */,
+				E2078CE38EE113B075C9E41231930567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C28CAAA2F7BBA899802DDC1F24024A4 /* Build configuration list for PBXNativeTarget "Cider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C1CCC148E9D8420AC6729C5E5BC3DB2 /* Debug */,
+				235B98F041BD400A76F8AA3F5929D9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

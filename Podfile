@@ -6,5 +6,5 @@ target 'IdentifyMusic' do
   use_frameworks!
 
   # Pods for IdentifyMusic
-
+pod 'Cider', '~> 0.10'
 end
