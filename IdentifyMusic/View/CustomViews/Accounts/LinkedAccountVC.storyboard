@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,34 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mda-JI-8pW">
-                                <rect key="frame" x="0.0" y="492" width="393" height="326"/>
+                                <rect key="frame" x="24" y="444" width="345" height="350"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfY-Td-LoS">
-                                        <rect key="frame" x="40" y="16" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfY-Td-LoS">
+                                        <rect key="frame" x="40" y="15.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-qE-HU1">
-                                        <rect key="frame" x="40" y="69" width="246" height="39"/>
+                                        <rect key="frame" x="40" y="68.333333333333371" width="246" height="39"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="solar_soundwave-bold" title="Listen to 30 sec preview" imagePadding="12"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUS-3h-hDa">
-                                        <rect key="frame" x="40" y="132" width="177" height="39"/>
+                                        <rect key="frame" x="40" y="131.33333333333337" width="177" height="39"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="ri_amazon-fill" title="Buy on amazon" imagePadding="12"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-dm-xaO">
-                                        <rect key="frame" x="40" y="195" width="249" height="45"/>
+                                        <rect key="frame" x="40" y="194.33333333333337" width="249" height="45"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="pngwing 3" title="Connect to Apple Music" imagePadding="12"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-Oc-L3u">
-                                        <rect key="frame" x="40" y="264" width="222" height="39"/>
+                                        <rect key="frame" x="40" y="263.33333333333337" width="222" height="39"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="logos_youtube-icon 1" title="Connect to Youtube" imagePadding="12"/>
@@ -62,17 +62,29 @@
                                     <constraint firstItem="KaD-qE-HU1" firstAttribute="leading" secondItem="TfY-Td-LoS" secondAttribute="leading" id="TIt-iQ-Ovl"/>
                                     <constraint firstItem="cCc-Oc-L3u" firstAttribute="top" secondItem="4gy-dm-xaO" secondAttribute="bottom" constant="24" id="e2r-ic-y5S"/>
                                     <constraint firstItem="4gy-dm-xaO" firstAttribute="top" secondItem="qUS-3h-hDa" secondAttribute="bottom" constant="24" id="et7-8g-dLz"/>
-                                    <constraint firstAttribute="height" constant="326" id="mOl-Dw-KHz"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TfY-Td-LoS" secondAttribute="trailing" constant="40" id="gxO-AQ-jaU"/>
+                                    <constraint firstAttribute="height" constant="350" id="mOl-Dw-KHz"/>
                                     <constraint firstItem="qUS-3h-hDa" firstAttribute="leading" secondItem="KaD-qE-HU1" secondAttribute="leading" id="tGi-Z6-Ec7"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mda-JI-8pW" secondAttribute="trailing" id="I3f-vH-0EE"/>
-                            <constraint firstItem="mda-JI-8pW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="m6T-dv-Ubh"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mda-JI-8pW" secondAttribute="bottom" id="xsM-QS-Nez"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mda-JI-8pW" secondAttribute="trailing" constant="24" id="I3f-vH-0EE"/>
+                            <constraint firstItem="mda-JI-8pW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="m6T-dv-Ubh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mda-JI-8pW" secondAttribute="bottom" constant="24" id="xsM-QS-Nez"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -97,6 +109,9 @@
         <image name="solar_soundwave-bold" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

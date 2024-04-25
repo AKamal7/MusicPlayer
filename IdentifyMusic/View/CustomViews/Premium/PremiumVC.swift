@@ -18,12 +18,16 @@ class PremiumVC: UIViewController {
     @IBOutlet weak var securedLabel: UILabel!
     @IBOutlet weak var subscribeBtn: UIButton!
     
+    weak var delegate: BlurVCDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         
-        
+        let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss(_:)))
+        self.view.addGestureRecognizer(tapToDismiss)
+        hidePlayer()
         
     }
     
@@ -47,16 +51,21 @@ class PremiumVC: UIViewController {
         Public.setupImgView(imgView: securedImgView, imgString: "Group")
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func hidePlayer() {
+        let hide = false
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "hidePlayer"), object: hide)
     }
-    */
     
+    private func showPlayer() {
+        let show = true
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "showPlayer"), object: show)
+    }
     
+    @objc func tapToDismiss(_ recognizer: UITapGestureRecognizer) {
+        delegate?.removeBlurView()
+        showPlayer()
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

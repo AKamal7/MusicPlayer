@@ -58,6 +58,7 @@ public struct CiderClient {
      */
     public func search(term: String, limit: Int? = nil, offset: Int? = nil, types: [MediaType]? = nil, completion: ((SearchResults?, Error?) -> Void)?) {
         let request = urlBuilder.searchRequest(term: term, limit: limit, offset: offset, types: types)
+        print(request.url, "Urllllll")
         fetch(request) { (results: ResponseRoot<SearchResults>?, error) in completion?(results?.results, error) }
     }
 

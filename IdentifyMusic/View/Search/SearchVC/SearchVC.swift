@@ -8,8 +8,19 @@
 import UIKit
 import MediaPlayer
 import Cider
+import CupertinoJWT
+import SwiftJWT
+import StoreKit
+
+struct DeveloperTokenClaims: Claims {
+    let iss: String
+    let iat: Date
+    let exp: Date
+}
 
 class SearchVC: UIViewController {
+   
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var settingBtn: UIButton!
@@ -58,12 +69,71 @@ class SearchVC: UIViewController {
         
         setupView()
         
-        let cider = CiderClient(storefront: .unitedStates, developerToken: "developerToken")
-        cider.search(term: "Michael Jackson", types: [.albums, .songs]) { results, error in
-            print(error, "Errror")
+        
+        let p8 = """
+            -----BEGIN PRIVATE KEY-----
+            MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg1rLpjJ1IxyLHl1dl
+            oo3IKO9x1Wv/4msdMXXll5nhhIigCgYIKoZIzj0DAQehRANCAATkIJJnP6Tfabtd
+            MXlkfJqAVeKGfQ0pAe3FIbxjdYgHfEBp4q+oCGklkBcHnYZO1XfzwW82xntW6bkU
+            0wWARvaV
+            -----END PRIVATE KEY-----
+            """
+        
+
+        let jwt = JWT(keyID: "SQ9L7MVJ9R", teamID: "ZHXVY6M87Z", issueDate: Date(), expireDuration: 60 * 60)
+
+        do {
+            let token = try jwt.sign(with: p8)
+            print(token, "tokeeen")
+            let cider = CiderClient(storefront: .unitedStates, developerToken: token)
+            cider.search(term: "Michael Jackson", types: [.albums, .songs]) { results, error in
+                print(error?.localizedDescription, "Errror")
+                print(results, "resultsss")
+                //            }
+            }
+        } catch {
+            print(error)
         }
+        
+        
+        SKCloudServiceController.requestAuthorization { (status) in
+               if status == .authorized {
+                   print(AppleMusicAPI().fetchStorefrontID())
+               }
+           }
+        
     }
     
+    func generateDeveloperToken(teamId: String, keyId: String, privateKey: String) throws -> String {
+        guard let privateKeyData = privateKey.data(using: .utf8) else {
+            throw NSError(domain: "PrivateKeyConversionError", code: 0, userInfo: nil)
+        }
+        
+        let signer = JWTSigner.es256(privateKey: privateKeyData)
+        
+        let now = Date()
+        let oneHourFromNow = now.addingTimeInterval(60 * 60)
+        
+        let claims = DeveloperTokenClaims(iss: teamId, iat: now, exp: oneHourFromNow)
+        
+        var jwt = JWT(claims: claims)
+        let jwtData = try jwt.sign(using: signer)
+        return jwtData
+    }
+    
+    func setBlurView() {
+        // Init a UIVisualEffectView which going to do the blur for us
+        let blurView = UIVisualEffectView()
+        // Make its frame equal the main view frame so that every pixel is under blurred
+        blurView.frame = view.frame
+        // Choose the style of the blur effect to regular.
+        // You can choose dark, light, or extraLight if you wants
+        blurView.effect = UIBlurEffect(style: .regular)
+        // Now add the blur view to the main view
+        //           view.addSubview(blurView)
+        view.addSubview(blurView)
+
+    }
 
     @objc func update() {
        noSongView()
@@ -250,11 +320,13 @@ class SearchVC: UIViewController {
     @IBAction func getPremiumTapped(_ sender: UIButton) {
         
         let premiumVC = UIStoryboard(name: "PremiumVC", bundle: nil).instantiateViewController(withIdentifier: "PremiumVC") as! PremiumVC
-        premiumVC.modalPresentationStyle = .overFullScreen
-        self.present(premiumVC,animated: false) {
-            
-        }
-        
+        premiumVC.modalPresentationStyle = .custom
+        self.present(premiumVC, animated: false, completion: nil)
+         
+        self.setBlurView()
+        premiumVC.delegate = self
+
+     
         
     }
     
@@ -266,4 +338,15 @@ class SearchVC: UIViewController {
 
 
 
-
+extension SearchVC: BlurVCDelegate {
+    
+    func removeBlurView() {
+         for subview in view.subviews {
+             if subview.isKind(of: UIVisualEffectView.self) {
+                 subview.removeFromSuperview()
+             }
+         }
+     }
+    
+    
+}

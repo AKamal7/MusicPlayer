@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //import SpotlightLyrics
 
@@ -23,6 +24,8 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var sliderView: CustomSlider!
     
     @IBOutlet weak var songBckGroundHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var songTop: NSLayoutConstraint!
     @IBOutlet weak var lyricsView: UIView!
     
     @IBOutlet weak var lyricsHeaderView: UIView!
@@ -38,6 +41,9 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var titleLabelsStack: UIStackView!
     
     @IBOutlet weak var lyricsBotConst: NSLayoutConstraint!
+    
+    var player: AVAudioPlayer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
@@ -48,6 +54,17 @@ class PlayerVC: UIViewController {
         setupView()
         swipeGesture()
         titleLabelsStack.isHidden = true
+        lyricsTopAnchor.constant = (self.view.frame.height * 0.63)
+        songBckGroundHeight?.constant = 300
+        lyricsHeight.constant = 400
+
+        
+             
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+
     }
     
     @objc func backTapped() {
@@ -63,9 +80,59 @@ class PlayerVC: UIViewController {
         view.insertSubview(lyricsHeaderView, aboveSubview: view)
         view.insertSubview(lyricsTextView, aboveSubview: view)
   
-
       }
     
+    func setBlurView() {
+        // Init a UIVisualEffectView which going to do the blur for us
+        let blurView = UIVisualEffectView()
+        // Make its frame equal the main view frame so that every pixel is under blurred
+        blurView.frame = view.frame
+        // Choose the style of the blur effect to regular.
+        // You can choose dark, light, or extraLight if you wants
+        blurView.effect = UIBlurEffect(style: .regular)
+        // Now add the blur view to the main view
+        //           view.addSubview(blurView)
+        view.addSubview(blurView)
+
+    }
+    
+//    func playAudio() {
+//        
+//        if let player = player, player.isPlaying {
+//            player.stop()
+//        } else {
+//            let urlString = "https://api.music.apple.com/v1/catalog/us/search?term=Michael+Jackson&types=albums,songs"
+//            
+//            do {
+//                    
+//               try AVAudioSession.sharedInstance().setMode(.default)
+//                try AVAudioSession.sharedInstance().setActive(true,options: .notifyOthersOnDeactivation)
+//                
+////                guard let urlString = urlString else {
+////                    return
+////                }
+//                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+//                guard let player = player else {
+//                    return
+//                }
+//                player.play()
+//            } catch {
+//                print("Error player")
+//            }
+//        }
+//        
+//       
+//
+//        }
+    
+ 
+    
+  
+
+//     func stopAudio() {
+//         // You can access the audioPlayer variable here
+//         audioPlayer?.stop()
+//     }
 
     
     func swipeGesture() {
@@ -76,8 +143,9 @@ class PlayerVC: UIViewController {
     }
     
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        guard let view = gesture.view else { return }
         
+        guard let view = gesture.view else { return }
+        lyricsTopAnchor.isActive = true
         switch gesture.state {
         case .began, .changed:
             
@@ -91,15 +159,17 @@ class PlayerVC: UIViewController {
                 lyricsTopAnchor.constant = 100
                 lyricsHeight.constant = self.view.frame.height
                 titleLabelsStack.isHidden = false
+
                 lyricsBotConst.constant = 80
                 
             } else {
                 let updatedHeight = max(min(1000, 300 - translation.y), 300)
                 songBckGroundHeight?.constant = updatedHeight
-                lyricsTopAnchor.constant = 500
+                lyricsTopAnchor.constant = (self.view.frame.height * 0.63)
                 lyricsHeight.constant = 200
                 titleLabelsStack.isHidden = true
-//                lyricsBotConst.constant = 200
+
+
 
                 
             }
@@ -119,34 +189,14 @@ class PlayerVC: UIViewController {
             break
         }
     }
-//
-//    @objc func detectPan(recognizer: UIPanGestureRecognizer) {
-//
-//        switch recognizer.state {
-//        case .began:
-//            print("StartSwiping")
-//            
-//        case .changed:
-//            if recognizer.accessibilityScroll(.down) {
-//                lyricsHeight.constant = 400
-//                songBckGroundHeight.constant = 500
-//                print("down")
-//
-//            } else if recognizer.accessibilityScroll(.up) {
-//                
-//                print("up")
-//                lyricsHeight.constant = 400
-//                songBckGroundHeight.constant = 500
-//
-//            }
-//         
-//          
-//        default:
-//            break
-//        }
-//    }
+
     
     @IBAction func moreActionsBtn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "LinkedAccountVC", bundle: nil).instantiateViewController(withIdentifier: "LinkedAccountsVC") as! LinkedAccountsVC
+        vc.modalPresentationStyle = .custom
+        self.present(vc,  animated: true)
+        setBlurView()
+        vc.delegate = self
     }
     
     @IBAction func playBtn(_ sender: UIButton) {
@@ -154,26 +204,32 @@ class PlayerVC: UIViewController {
             isPlaying = false
             songImgView.layer.removeAllAnimations()
             playBtn.setImage(UIImage(named: "play"), for: .normal)
-
+//            stopAudio()
         } else {
             isPlaying = true
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
+            
+//            playAudio()
 
         }
         
     }
     
     @IBAction func backwardBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func thirtySecPreviewBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func forwardBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func rewindBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func sliderChanged(_ sender: CustomSlider) {
@@ -260,4 +316,17 @@ extension PlayerVC: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         FilterPresentationController(presentedViewController: presented, presenting: presenting)
     }
+}
+
+extension PlayerVC: BlurVCDelegate {
+    
+    func removeBlurView() {
+         for subview in view.subviews {
+             if subview.isKind(of: UIVisualEffectView.self) {
+                 subview.removeFromSuperview()
+             }
+         }
+     }
+    
+    
 }

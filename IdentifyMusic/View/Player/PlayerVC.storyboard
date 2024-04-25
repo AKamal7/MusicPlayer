@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -83,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-eB-kaL">
-                                <rect key="frame" x="87.333333333333314" y="366.33333333333331" width="104" height="55"/>
+                                <rect key="frame" x="48" y="366.33333333333331" width="104" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-NU-w2E">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="29.666666666666668"/>
@@ -347,10 +348,10 @@
                             <constraint firstItem="6WX-Qv-6Rg" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" id="I3l-Ph-FbN"/>
                             <constraint firstItem="Z2L-0s-WNy" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" constant="48" id="K4q-rJ-3iV"/>
                             <constraint firstItem="vce-i8-hZY" firstAttribute="leading" secondItem="Z2L-0s-WNy" secondAttribute="leading" id="Nvc-fz-8uo"/>
-                            <constraint firstItem="Lip-wB-XcM" firstAttribute="top" secondItem="dri-2H-qE4" secondAttribute="top" constant="500" id="OxY-gl-FqW"/>
                             <constraint firstItem="Xxi-kg-6HB" firstAttribute="trailing" secondItem="Z2L-0s-WNy" secondAttribute="trailing" id="RyX-6q-xMZ"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="centerY" secondItem="REL-OI-M4K" secondAttribute="centerY" id="TqR-np-Kfj"/>
                             <constraint firstItem="6WX-Qv-6Rg" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" constant="80" id="Uof-Ag-WJ6"/>
+                            <constraint firstItem="kLN-eB-kaL" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" constant="48" id="WNi-9e-jza"/>
                             <constraint firstItem="Xxi-kg-6HB" firstAttribute="top" secondItem="Z2L-0s-WNy" secondAttribute="bottom" constant="7" id="Xjp-ih-BDY"/>
                             <constraint firstItem="sKD-VI-VsI" firstAttribute="leading" secondItem="REL-OI-M4K" secondAttribute="trailing" constant="18" id="c4J-Ii-1iH"/>
                             <constraint firstItem="WvG-Ac-ObG" firstAttribute="top" secondItem="gHU-3F-AcT" secondAttribute="bottom" constant="7" id="cEF-zB-aOm"/>
@@ -361,7 +362,7 @@
                             <constraint firstItem="Jjn-gg-4yC" firstAttribute="trailing" secondItem="WvG-Ac-ObG" secondAttribute="trailing" constant="36" id="igg-eK-OqD"/>
                             <constraint firstItem="dri-2H-qE4" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" id="j08-0k-tqA"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="centerY" secondItem="t9i-3P-v1s" secondAttribute="centerY" id="lsv-uj-AJr"/>
-                            <constraint firstItem="kLN-eB-kaL" firstAttribute="leading" secondItem="gHU-3F-AcT" secondAttribute="leading" constant="48" id="oaM-qS-8ag"/>
+                            <constraint firstItem="Lip-wB-XcM" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" constant="500" id="nlp-J0-fxh"/>
                             <constraint firstItem="Jjn-gg-4yC" firstAttribute="bottom" secondItem="Lip-wB-XcM" secondAttribute="bottom" constant="131" id="sMv-zV-DKV"/>
                             <constraint firstItem="dri-2H-qE4" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" id="u5h-d1-utj"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="leading" secondItem="t9i-3P-v1s" secondAttribute="trailing" constant="18.666666666666657" id="uck-qD-fcA"/>
@@ -379,7 +380,7 @@
                         <outlet property="lyricsHeight" destination="dg9-Ca-bdY" id="cUF-0Y-igK"/>
                         <outlet property="lyricsTextTitle" destination="g7a-ys-kjd" id="6mZ-h8-VID"/>
                         <outlet property="lyricsTextView" destination="8Fj-Hl-ikR" id="lHB-X7-o3p"/>
-                        <outlet property="lyricsTopAnchor" destination="OxY-gl-FqW" id="gJd-b1-gfx"/>
+                        <outlet property="lyricsTopAnchor" destination="nlp-J0-fxh" id="Wr2-Ka-CDF"/>
                         <outlet property="lyricsView" destination="Lip-wB-XcM" id="Rk8-Bo-YTy"/>
                         <outlet property="mainCenterDiscView" destination="uEp-nl-Rs3" id="jRi-Rc-wF9"/>
                         <outlet property="playBtn" destination="j11-Zh-Tyj" id="wMa-Bx-Vc2"/>
@@ -387,12 +388,28 @@
                         <outlet property="songBckGroundHeight" destination="cMy-CL-ygR" id="ntc-M6-xPm"/>
                         <outlet property="songImgView" destination="gHU-3F-AcT" id="x51-R3-eL9"/>
                         <outlet property="songNameLbl" destination="kLg-NU-w2E" id="y28-Ju-AqL"/>
+                        <outlet property="songTop" destination="j08-0k-tqA" id="d7o-eJ-Oqs"/>
                         <outlet property="titleLabelsStack" destination="6WX-Qv-6Rg" id="dtb-09-L96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqc-Eu-iOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119.8473282442749" y="-6.3380281690140849"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y8J-Lr-m29">
+            <objects>
+                <viewController id="205-Ly-gwy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Gy-RH-2s6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="m8r-wN-Lvc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="anf-LQ-YFw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="-67"/>
         </scene>
     </scenes>
     <resources>
@@ -402,5 +419,8 @@
         <image name="options" width="24" height="24"/>
         <image name="play" width="16.666666030883789" height="19.666666030883789"/>
         <image name="replay" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

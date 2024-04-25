@@ -43,7 +43,7 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
 //        cell.containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 51)
         cell.cellImgView.roundCorners(corners: .allCorners, radius: 32.5)
         cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
-        cell.containerView.clipsToBounds = true
+//        cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
         
         return cell
@@ -52,8 +52,9 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
-        modalPresentationStyle = .fullScreen
-        self.present(player, animated: false)
+//        modalPresentationStyle = .fullScreen
+//        self.present(player, animated: false)
+        navigationController?.pushViewController(player, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

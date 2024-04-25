@@ -32,6 +32,6 @@ extension HistoryVC: UISearchBarDelegate {
             string: "Search by name or artist...",
             attributes: [.foregroundColor: UIColor.gray]
         )
-        searchBar.setImage(UIImage(), for: .search, state: .normal)
+        searchBar.setImage(UIImage(named: "ph_magnifying-glass"), for: .search, state: .normal)
     }
 }

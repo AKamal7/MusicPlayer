@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,7 +138,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeB-8Q-CH1">
                                                 <rect key="frame" x="264" y="12.333333333333314" width="51" height="31"/>
                                             </switch>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rSL-8E-SnY">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing 3" translatesAutoresizingMaskIntoConstraints="NO" id="rSL-8E-SnY">
                                                 <rect key="frame" x="16" y="13" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30.129999999999999" id="QFn-pQ-CgL"/>
@@ -179,7 +179,7 @@
                                         <rect key="frame" x="8" y="106.66666666666669" width="329" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Youtube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAU-vk-pUO">
-                                                <rect key="frame" x="83" y="18.666666666666629" width="149" height="25"/>
+                                                <rect key="frame" x="58" y="18.666666666666629" width="149" height="25"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -187,7 +187,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTe-UA-o1n">
                                                 <rect key="frame" x="264" y="15.666666666666629" width="51" height="31"/>
                                             </switch>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="49o-VP-Nfl">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtubeMusic" translatesAutoresizingMaskIntoConstraints="NO" id="49o-VP-Nfl">
                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30.129999999999999" id="IXV-SK-ONq"/>
@@ -201,7 +201,6 @@
                                             <constraint firstAttribute="height" constant="56" id="HIf-fD-hgW"/>
                                             <constraint firstAttribute="trailing" secondItem="ZTe-UA-o1n" secondAttribute="trailing" constant="16" id="UE6-Rw-mbP"/>
                                             <constraint firstItem="49o-VP-Nfl" firstAttribute="leading" secondItem="Xfa-J9-bfD" secondAttribute="leading" constant="16" id="UR8-CW-gWx"/>
-                                            <constraint firstItem="SAU-vk-pUO" firstAttribute="leading" secondItem="49o-VP-Nfl" secondAttribute="trailing" constant="37" id="cSO-XT-26F"/>
                                             <constraint firstItem="SAU-vk-pUO" firstAttribute="centerY" secondItem="49o-VP-Nfl" secondAttribute="centerY" id="xdq-jH-T3E"/>
                                             <constraint firstItem="ZTe-UA-o1n" firstAttribute="centerY" secondItem="SAU-vk-pUO" secondAttribute="centerY" id="yJP-iX-XBB"/>
                                         </constraints>
@@ -230,6 +229,7 @@
                                     <constraint firstItem="Xfa-J9-bfD" firstAttribute="trailing" secondItem="3ja-oI-uIo" secondAttribute="trailing" id="gWb-Cf-CO1"/>
                                     <constraint firstItem="3ja-oI-uIo" firstAttribute="leading" secondItem="Lrx-wu-0Vu" secondAttribute="leading" constant="8" id="gxZ-is-dAI"/>
                                     <constraint firstItem="ihe-Qb-vtx" firstAttribute="leading" secondItem="Lrx-wu-0Vu" secondAttribute="leading" constant="8" id="tkm-M4-tO6"/>
+                                    <constraint firstItem="SAU-vk-pUO" firstAttribute="leading" secondItem="36w-pP-Qxm" secondAttribute="leading" id="xwp-TM-Zjn"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -307,4 +307,8 @@
             <point key="canvasLocation" x="3.8167938931297707" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pngwing 3" width="30.333333969116211" height="30.666666030883789"/>
+        <image name="youtubeMusic" width="34.333332061767578" height="24"/>
+    </resources>
 </document>

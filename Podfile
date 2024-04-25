@@ -7,4 +7,6 @@ target 'IdentifyMusic' do
 
   # Pods for IdentifyMusic
 pod 'Cider', '~> 0.10'
+pod 'CupertinoJWT'
+pod 'SwiftJWT'
 end

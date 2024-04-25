@@ -33,35 +33,40 @@ class AppleMusicAPI {
         lock.wait()
         return userToken
     }
-//    
-//    func fetchStorefrontID() -> String {
-//        // 1
-//        let lock = DispatchSemaphore(value: 0)
-//        var storefrontID: String!
-//     
-//        // 2
-//        let musicURL = URL(string: "https://api.music.apple.com/v1/me/storefront")!
-//        var musicRequest = URLRequest(url: musicURL)
-//        musicRequest.httpMethod = "GET"
-//        musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
-//        musicRequest.addValue(getUserToken(), forHTTPHeaderField: "Music-User-Token")
-//     
-//        // 3
-//        URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
-//            guard error == nil else { return }
-//     
-//            // 4
-//            if let json = try? JSON(data: data!) {
-//                print(json.rawString())
-//            }
-//        }.resume()
-//     
-//        // 5
-//        lock.wait()
-//        return storefrontID
-//    }
-//    
-//    
+
     
+    func fetchStorefrontID() -> String {
+        // 1
+        let lock = DispatchSemaphore(value: 0)
+        var storefrontID: String!
+     
+        // 2
+        let musicURL = URL(string: "https://api.music.apple.com/v1/me/storefront")!
+        var musicRequest = URLRequest(url: musicURL)
+        musicRequest.httpMethod = "GET"
+        musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
+        musicRequest.addValue(getUserToken(), forHTTPHeaderField: "Music-User-Token")
+        print(developerToken, "token")
+        print(getUserToken(), "User TOken")
+        // 3
+        URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
+            guard error == nil else { return }
+     
+            // 4
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any],
+                    let rawData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),
+                    let rawString = String(data: rawData, encoding: .utf8) {
+                    print(rawString)
+                }
+            } catch {
+                print("Error parsing JSON: \(error)")
+            }
+        }.resume()
+     
+        // 5
+        lock.wait()
+        return storefrontID
+    }
     
 }

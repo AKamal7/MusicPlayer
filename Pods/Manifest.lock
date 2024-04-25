@@ -1,16 +1,49 @@
 PODS:
+  - BlueCryptor (1.0.32)
+  - BlueECC (1.2.5)
+  - BlueRSA (1.0.200)
   - Cider (0.10.0)
+  - CupertinoJWT (0.2.0)
+  - KituraContracts (1.2.1):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.200):
+    - Logging (~> 1.1)
+  - Logging (1.4.0)
+  - SwiftJWT (3.6.200):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.2)
+    - LoggerAPI (~> 1.7)
 
 DEPENDENCIES:
   - Cider (~> 0.10)
+  - CupertinoJWT
+  - SwiftJWT
 
 SPEC REPOS:
   trunk:
+    - BlueCryptor
+    - BlueECC
+    - BlueRSA
     - Cider
+    - CupertinoJWT
+    - KituraContracts
+    - LoggerAPI
+    - Logging
+    - SwiftJWT
 
 SPEC CHECKSUMS:
+  BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
+  BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
+  BlueRSA: dfeef51db96bcc4edec654956c1581adbda4e6a3
   Cider: 7d9518cfa70692d41f8f860bd04da33510479362
+  CupertinoJWT: f712fdc2cc422aac8daa301ad1dce05ea9f6b6d6
+  KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
+  LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
+  Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
 
-PODFILE CHECKSUM: e51cf5b4b521d002b96fde6c7bdda01c8ba33b71
+PODFILE CHECKSUM: 8c08b61a6f3e6b4292eaaf5d2ad0e1d38f4f67bc
 
 COCOAPODS: 1.12.1

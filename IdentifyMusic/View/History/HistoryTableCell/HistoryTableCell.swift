@@ -31,6 +31,10 @@ class HistoryTableCell: UITableViewCell {
     
     private func setupView() {
         selectionStyle = .none
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24).isActive = true
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24).isActive = true
         setupLabel(label: artistNameLabel, text: "The Strokes", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.56))
         setupLabel(label: dateLabel, text: "Found 1 hour ago", size: 12, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 0.24))
         setupLabel(label: songNameLabel, text: "The New Abnormal", size: 14, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 1))
@@ -42,12 +46,19 @@ class HistoryTableCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.backgroundColor = UIColor(hex: "1f1f1f")
-        //        containerView.roundCorners(corners: [.bottomLeft, .topLeft], radius: 40)
-        //        containerView.layer.cornerRadius = 12
-        //        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        //
-        //        containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        containerView.layer.cornerRadius = 12.0
+
+        let maskPath = UIBezierPath(roundedRect: containerView.bounds,
+                                    byRoundingCorners: [.topLeft, .bottomLeft],
+                                    cornerRadii: CGSize(width: 40.0, height: 0.0))
+
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = maskPath.cgPath
+        containerView.layer.mask = maskLayer
+
     }
+    
+
 
  
     
