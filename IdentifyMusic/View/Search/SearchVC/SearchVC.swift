@@ -86,9 +86,15 @@ class SearchVC: UIViewController {
             let token = try jwt.sign(with: p8)
             print(token, "tokeeen")
             let cider = CiderClient(storefront: .unitedStates, developerToken: token)
-            cider.search(term: "Michael Jackson", types: [.albums, .songs]) { results, error in
+            cider.search(term: "Michael Jackson", types: [.songs]) { results, error in
                 print(error?.localizedDescription, "Errror")
-                print(results, "resultsss")
+//                print(results, "resultsss")
+                if let songs = results?.songs?.data {
+                    for song in songs {
+                        print(song.attributes?.name)
+                    }
+                }
+              
                 //            }
             }
         } catch {
@@ -96,11 +102,11 @@ class SearchVC: UIViewController {
         }
         
         
-        SKCloudServiceController.requestAuthorization { (status) in
-               if status == .authorized {
-                   print(AppleMusicAPI().fetchStorefrontID())
-               }
-           }
+//        SKCloudServiceController.requestAuthorization { (status) in
+//               if status == .authorized {
+//                   print(AppleMusicAPI().fetchStorefrontID())
+//               }
+//           }
         
     }
     
