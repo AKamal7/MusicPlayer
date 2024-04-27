@@ -7,12 +7,18 @@
 
 import Foundation
 import UIKit
-
-
+import MediaPlayer
+import Cider
+import CupertinoJWT
+import StoreKit
 
 extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     
-
+    
+    
+    func getData() {
+        
+    }
    
     // Register TableView Cell
     func registerCell() {
@@ -36,6 +42,38 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+     
+        
+        
+        let p8 = """
+            -----BEGIN PRIVATE KEY-----
+            MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg1rLpjJ1IxyLHl1dl
+            oo3IKO9x1Wv/4msdMXXll5nhhIigCgYIKoZIzj0DAQehRANCAATkIJJnP6Tfabtd
+            MXlkfJqAVeKGfQ0pAe3FIbxjdYgHfEBp4q+oCGklkBcHnYZO1XfzwW82xntW6bkU
+            0wWARvaV
+            -----END PRIVATE KEY-----
+            """
+        
+
+        let jwt = JWT(keyID: "SQ9L7MVJ9R", teamID: "ZHXVY6M87Z", issueDate: Date(), expireDuration: 60 * 60)
+
+        do {
+            let token = try jwt.sign(with: p8)
+            print(token, "tokeeen")
+            let cider = CiderClient(storefront: .unitedStates, developerToken: token)
+            cider.search(term: "Michael Jackson", types: [.playlists]) { results, error in
+                print(error?.localizedDescription, "Errror")
+//                print(results, "resultsss")
+                if let playlists = results?.playlists?.data {
+                    self.playlistsData = playlists
+                    
+                }
+            }
+        } catch {
+            print(error)
+        }
+        
+        
         // Config cell
         cell.backgroundColor = UIColor(hex: "141414", alpha: 1)
         cell.clipsToBounds = true
@@ -43,6 +81,11 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.containerView.layer.cornerRadius = 12
         cell.selectionStyle = .none
         cell.delegate = self
+        
+        for play in playlistsData {
+            cell.PlistNameLbl.text = play.attributes?.name
+        }
+        
         return cell
     }
     

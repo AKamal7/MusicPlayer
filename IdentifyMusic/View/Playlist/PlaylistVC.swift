@@ -7,7 +7,7 @@
 
 import UIKit
 import MusicKit
-
+import Cider
 
 class PlaylistVC: UIViewController {
     
@@ -15,7 +15,6 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var playlistView: UIView!
     @IBOutlet weak var contentView: UIView!
-//    @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var trendsLabel: UILabel!
@@ -26,6 +25,8 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var createNewPlylstView: UIView!
     @IBOutlet weak var musicIconView: UIImageView!
     @IBOutlet weak var creatPlistImgView: UIImageView!
+    
+    var playlistsData: [Cider.Playlist] = []
 
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {

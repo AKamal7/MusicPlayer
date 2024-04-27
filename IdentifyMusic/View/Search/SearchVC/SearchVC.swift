@@ -9,18 +9,9 @@ import UIKit
 import MediaPlayer
 import Cider
 import CupertinoJWT
-import SwiftJWT
 import StoreKit
 
-struct DeveloperTokenClaims: Claims {
-    let iss: String
-    let iat: Date
-    let exp: Date
-}
-
 class SearchVC: UIViewController {
-   
-    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var settingBtn: UIButton!
@@ -92,6 +83,7 @@ class SearchVC: UIViewController {
                 if let songs = results?.songs?.data {
                     for song in songs {
                         print(song.attributes?.name)
+    
                     }
                 }
               
@@ -110,22 +102,6 @@ class SearchVC: UIViewController {
         
     }
     
-    func generateDeveloperToken(teamId: String, keyId: String, privateKey: String) throws -> String {
-        guard let privateKeyData = privateKey.data(using: .utf8) else {
-            throw NSError(domain: "PrivateKeyConversionError", code: 0, userInfo: nil)
-        }
-        
-        let signer = JWTSigner.es256(privateKey: privateKeyData)
-        
-        let now = Date()
-        let oneHourFromNow = now.addingTimeInterval(60 * 60)
-        
-        let claims = DeveloperTokenClaims(iss: teamId, iat: now, exp: oneHourFromNow)
-        
-        var jwt = JWT(claims: claims)
-        let jwtData = try jwt.sign(using: signer)
-        return jwtData
-    }
     
     func setBlurView() {
         // Init a UIVisualEffectView which going to do the blur for us
