@@ -17,34 +17,6 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func getData() {
-        
-    }
-   
-    // Register TableView Cell
-    func registerCell() {
-        tableView.register(UINib(nibName: "PlistTableCell", bundle: nil), forCellReuseIdentifier: "PlistTableCell")
-    }
-    
-    // Setting up tableView
-    func setupTable() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = Colors.mainBackground
-        registerCell()
-    }
-    // Number of rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
-    }
-    // Config cell
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlistTableCell", for: indexPath) as? PlistTableCell else {
-            return UITableViewCell()
-        }
-        
-     
-        
-        
         let p8 = """
             -----BEGIN PRIVATE KEY-----
             MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg1rLpjJ1IxyLHl1dl
@@ -61,17 +33,49 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
             let token = try jwt.sign(with: p8)
             print(token, "tokeeen")
             let cider = CiderClient(storefront: .unitedStates, developerToken: token)
-            cider.search(term: "Michael Jackson", types: [.playlists]) { results, error in
+            cider.search(term: "Michael Jackson", types: [.songs]) { results, error in
                 print(error?.localizedDescription, "Errror")
 //                print(results, "resultsss")
-                if let playlists = results?.playlists?.data {
+                if let playlists = results?.songs?.data {
                     self.playlistsData = playlists
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                   
                     
                 }
             }
         } catch {
             print(error)
         }
+    }
+   
+    // Register TableView Cell
+    func registerCell() {
+        tableView.register(UINib(nibName: "PlistTableCell", bundle: nil), forCellReuseIdentifier: "PlistTableCell")
+    }
+    
+    // Setting up tableView
+    func setupTable() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = Colors.mainBackground
+        registerCell()
+    }
+    // Number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playlistsData.count    }
+    // Config cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlistTableCell", for: indexPath) as? PlistTableCell else {
+            return UITableViewCell()
+        }
+        
+     
+        
+        
+        
         
         
         // Config cell
@@ -82,9 +86,7 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.delegate = self
         
-        for play in playlistsData {
-            cell.PlistNameLbl.text = play.attributes?.name
-        }
+        cell.PlistNameLbl.text = playlistsData[indexPath.row].attributes?.name
         
         return cell
     }
