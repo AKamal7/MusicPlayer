@@ -45,7 +45,6 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
         cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
 //        cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
-//        qaaaa
         return cell
     }
     
