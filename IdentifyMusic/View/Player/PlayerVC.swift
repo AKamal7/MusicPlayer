@@ -7,10 +7,12 @@
 
 import UIKit
 import AVFoundation
+import Cider
 
 //import SpotlightLyrics
 
 class PlayerVC: UIViewController {
+    var songsData: Cider.Track?
 
     var isPlaying: Bool = false
     var value: Float = 0.0
@@ -95,44 +97,6 @@ class PlayerVC: UIViewController {
         view.addSubview(blurView)
 
     }
-    
-//    func playAudio() {
-//        
-//        if let player = player, player.isPlaying {
-//            player.stop()
-//        } else {
-//            let urlString = "https://api.music.apple.com/v1/catalog/us/search?term=Michael+Jackson&types=albums,songs"
-//            
-//            do {
-//                    
-//               try AVAudioSession.sharedInstance().setMode(.default)
-//                try AVAudioSession.sharedInstance().setActive(true,options: .notifyOthersOnDeactivation)
-//                
-////                guard let urlString = urlString else {
-////                    return
-////                }
-//                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-//                guard let player = player else {
-//                    return
-//                }
-//                player.play()
-//            } catch {
-//                print("Error player")
-//            }
-//        }
-//        
-//       
-//
-//        }
-    
- 
-    
-  
-
-//     func stopAudio() {
-//         // You can access the audioPlayer variable here
-//         audioPlayer?.stop()
-//     }
 
     
     func swipeGesture() {
@@ -168,15 +132,8 @@ class PlayerVC: UIViewController {
                 lyricsTopAnchor.constant = (self.view.frame.height * 0.63)
                 lyricsHeight.constant = 200
                 titleLabelsStack.isHidden = true
-
-
-
-                
             }
             
-            // Update the image size based on the vertical translation and direction
-//            let newHeight = songBckGroundHeight?.constant ?? 300
-           
             // Update the pan gesture translation
             gesture.setTranslation(.zero, in: view.superview)
             
@@ -190,7 +147,6 @@ class PlayerVC: UIViewController {
         }
     }
 
-    
     @IBAction func moreActionsBtn(_ sender: UIButton) {
         let vc = UIStoryboard(name: "LinkedAccountVC", bundle: nil).instantiateViewController(withIdentifier: "LinkedAccountsVC") as! LinkedAccountsVC
         vc.modalPresentationStyle = .custom
@@ -204,14 +160,21 @@ class PlayerVC: UIViewController {
             isPlaying = false
             songImgView.layer.removeAllAnimations()
             playBtn.setImage(UIImage(named: "play"), for: .normal)
-//            stopAudio()
+            player?.pause()
         } else {
             isPlaying = true
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
             
-//            playAudio()
-
+            let url = "\(songsData?.attributes?.url ?? URL(fileURLWithPath: ""))"
+            
+            guard let songURL = URL(string: url) else {
+                return
+            }
+            
+            let player = AVPlayer(url: songURL)
+            player.play()
+            print(url, "Song URL")
         }
         
     }
@@ -233,14 +196,7 @@ class PlayerVC: UIViewController {
     }
     
     @IBAction func sliderChanged(_ sender: CustomSlider) {
-//        sliderView.bufferProgress.progress += 0.1
-//        if sender.value > self.value {
-//                    sender.setValue(self.value, animated: false)
-//                } else {
-//                    self.value = sliderView.bufferProgress.progress
-//                }
         self.sliderView.value = sender.value
-        //self.sliderView.thumbImage(for: .normal)
         print(sender.value, "value")
     }
     

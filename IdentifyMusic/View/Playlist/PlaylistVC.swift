@@ -26,7 +26,7 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var musicIconView: UIImageView!
     @IBOutlet weak var creatPlistImgView: UIImageView!
     
-    var playlistsData: [Cider.Track] = []
+    var playlistsData: [Cider.Playlist] = []
 
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class PlaylistVC: UIViewController {
         setupView()
         setupTable()
         
-        getData()
+//        getData()
         
     }
     

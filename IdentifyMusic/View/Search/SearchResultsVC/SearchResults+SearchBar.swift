@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Cider
 
 extension SearchResultsVC: UISearchBarDelegate {
     
@@ -14,6 +15,7 @@ extension SearchResultsVC: UISearchBarDelegate {
             guard !searchText.isEmpty else {
                 return
             }
+        setupSearchResults()
         }
     
     func setupSearchBar() {
@@ -32,5 +34,23 @@ extension SearchResultsVC: UISearchBarDelegate {
             attributes: [.foregroundColor: UIColor.gray]
         )
         searchBar.setImage(UIImage(), for: .search, state: .normal)
+    }
+    
+    func setupSearchResults() {
+        
+        let cider = CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
+        cider.search(term: searchBar.text ?? "",limit: 5, types: [.songs]) { results, error in
+            print(error?.localizedDescription, "ErRRRrror")
+            
+            if let songs = results?.songs?.data {
+                self.songsData = songs
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                print(songs, "DATAA")
+            }
+            
+            //            }
+        }
     }
 }

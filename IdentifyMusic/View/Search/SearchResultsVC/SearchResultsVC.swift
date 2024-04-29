@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Cider
 
 class SearchResultsVC: UIViewController {
+    
+    var songsData: [Cider.Track] = []
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!

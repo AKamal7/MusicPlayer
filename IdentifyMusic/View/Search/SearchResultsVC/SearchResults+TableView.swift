@@ -26,7 +26,7 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     }
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return songsData.count
     }
     
     // Config cell
@@ -39,20 +39,18 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor(hex: "141414", alpha: 1)
         cell.clipsToBounds = true
         cell.containerView.backgroundColor = UIColor(hex: "1f1f1f")
-//        cell.containerView.roundCorners(corners: [.topRight, .bottomRight], radius: 100)
-//        cell.containerView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 51)
         cell.cellImgView.roundCorners(corners: .allCorners, radius: 32.5)
         cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
-//        cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
+        cell.songNameLabel.text = songsData[indexPath.row].attributes?.name
+        cell.artistNameLabel.text = songsData[indexPath.row].attributes?.artistName
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
-//        modalPresentationStyle = .fullScreen
-//        self.present(player, animated: false)
         navigationController?.pushViewController(player, animated: false)
     }
     

@@ -15,41 +15,6 @@ import StoreKit
 extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     
     
-    
-    func getData() {
-        let p8 = """
-            -----BEGIN PRIVATE KEY-----
-            MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg1rLpjJ1IxyLHl1dl
-            oo3IKO9x1Wv/4msdMXXll5nhhIigCgYIKoZIzj0DAQehRANCAATkIJJnP6Tfabtd
-            MXlkfJqAVeKGfQ0pAe3FIbxjdYgHfEBp4q+oCGklkBcHnYZO1XfzwW82xntW6bkU
-            0wWARvaV
-            -----END PRIVATE KEY-----
-            """
-        
-
-        let jwt = JWT(keyID: "SQ9L7MVJ9R", teamID: "ZHXVY6M87Z", issueDate: Date(), expireDuration: 60 * 60)
-
-        do {
-            let token = try jwt.sign(with: p8)
-            print(token, "tokeeen")
-            let cider = CiderClient(storefront: .unitedStates, developerToken: token)
-            cider.search(term: "Michael Jackson", types: [.songs]) { results, error in
-                print(error?.localizedDescription, "Errror")
-//                print(results, "resultsss")
-                if let playlists = results?.songs?.data {
-                    self.playlistsData = playlists
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    
-                   
-                    
-                }
-            }
-        } catch {
-            print(error)
-        }
-    }
    
     // Register TableView Cell
     func registerCell() {
@@ -65,19 +30,14 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     }
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlistsData.count    }
+        return playlistsData.count  
+    }
     // Config cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlistTableCell", for: indexPath) as? PlistTableCell else {
             return UITableViewCell()
         }
-        
-     
-        
-        
-        
-        
-        
+
         // Config cell
         cell.backgroundColor = UIColor(hex: "141414", alpha: 1)
         cell.clipsToBounds = true
@@ -88,6 +48,9 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.PlistNameLbl.text = playlistsData[indexPath.row].attributes?.name
         
+        for play in playlistsData {
+            cell.PlistNameLbl.text = play.attributes?.name
+        }
         return cell
     }
     
