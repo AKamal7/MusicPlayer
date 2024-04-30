@@ -930,7 +930,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZHXVY6M87Z;
+				DEVELOPMENT_TEAM = V636VR7928;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access in order to continue using the app";
@@ -963,7 +963,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZHXVY6M87Z;
+				DEVELOPMENT_TEAM = V636VR7928;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdentifyMusic/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow access in order to continue using the app";

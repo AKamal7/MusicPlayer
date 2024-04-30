@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Cider
+import MediaPlayer
 
 //import SpotlightLyrics
 
@@ -38,10 +39,24 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var lyricsBotConst: NSLayoutConstraint!
     @IBOutlet weak var durationLiveLabel: UILabel!
     @IBOutlet weak var fullDurationLabel: UILabel!
+    
     var player: AVPlayer?
+    var timer: Timer!
+    var musicPlayer: MPMusicPlayerController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+        if let songId = songData?.attributes?.playParams?.id {
+            self.musicPlayer.setQueue(with: [songId])
+            self.musicPlayer.prepareToPlay()
+        }
+        if let songData {
+            if let attributes = songData.attributes {
+                songNameLbl.text = attributes.name
+                artistNameLbl.text = attributes.artistName
+            }
+        }
         let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
         
         navigationItem.leftBarButtonItem = backBtn
@@ -53,8 +68,10 @@ class PlayerVC: UIViewController {
         lyricsTopAnchor.constant = (self.view.frame.height * 0.63)
         songBckGroundHeight?.constant = 300
         lyricsHeight.constant = 400
-
-        
+        fullDurationLabel.text  = musicPlayer.nowPlayingItem?.playbackDuration.MinuteSeconds
+        durationLiveLabel.text  = "00:00"
+        sliderView.maximumValue = Float(musicPlayer.nowPlayingItem?.playbackDuration ?? 0)
+        startTimer()
              
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +82,36 @@ class PlayerVC: UIViewController {
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func startTimer(){
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil,repeats: true)
+            timer.fire()
+        }
+    }
+
+    func stopTimer(){
+        timer.invalidate()
+
+    }
+    
+    @objc func update(){
+        if musicPlayer.playbackState == .playing{
+            durationLiveLabel.text  = musicPlayer.currentPlaybackTime.MinuteSeconds
+            sliderView.value = Float(musicPlayer.currentPlaybackTime)
+        } else if musicPlayer.playbackState == .paused {
+            isPlaying = false
+            songImgView.layer.removeAllAnimations()
+            playBtn.setImage(UIImage(named: "play"), for: .normal)
+        } else {
+            isPlaying = false
+            songImgView.layer.removeAllAnimations()
+            playBtn.setImage(UIImage(named: "play"), for: .normal)
+            self.durationLiveLabel.text = "00:00"
+            self.sliderView.value = 0
+        }
+
     }
     
     private func applyBlurEffect(to view: UIView) {
@@ -154,29 +201,23 @@ class PlayerVC: UIViewController {
             isPlaying = false
             songImgView.layer.removeAllAnimations()
             playBtn.setImage(UIImage(named: "play"), for: .normal)
-            player?.pause()
+            musicPlayer.pause()
+//            player?.pause()
         } else {
             isPlaying = true
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            
-            //let url = "https://music.apple.com/eg/\(songData?.attributes?.playParams?.kind ?? "")/\(songData?.attributes?.playParams?.id ?? "")"
-            guard let url = songData?.attributes?.previews[0].url else { return }
-            
-            guard let songURL = URL(string: url) else {
-                return
-            }
-            print(url, "SONG URL")
-            
-            self.player = AVPlayer(url: songURL)
-            player?.play()
-            print(url, "Song URL")
+            self.musicPlayer.play()
         }
         
     }
     
     @IBAction func backwardBtn(_ sender: UIButton) {
-        
+        if self.musicPlayer.currentPlaybackTime < 5 {
+            self.musicPlayer.skipToPreviousItem()
+        } else {
+            self.musicPlayer.skipToBeginning()
+        }
     }
     
     @IBAction func thirtySecPreviewBtn(_ sender: UIButton) {
@@ -193,6 +234,8 @@ class PlayerVC: UIViewController {
     
     @IBAction func sliderChanged(_ sender: CustomSlider) {
         self.sliderView.value = sender.value
+        self.musicPlayer.currentPlaybackTime = TimeInterval(sliderView.value)
+        self.durationLiveLabel.text = TimeInterval(sliderView.value).MinuteSeconds
         print(sender.value, "value")
     }
     
@@ -291,5 +334,26 @@ extension PlayerVC: BlurVCDelegate {
         
         
         
+    }
+}
+
+extension TimeInterval {
+    var MinuteSeconds: String {
+        String(format:"%02d:%02d", minute, second)
+    }
+    var minuteSecondMS: String {
+        String(format:"%d:%02d.%03d", minute, second, millisecond)
+    }
+    var hour: Int {
+        Int((self/3600).truncatingRemainder(dividingBy: 3600))
+    }
+    var minute: Int {
+        Int((self/60).truncatingRemainder(dividingBy: 60))
+    }
+    var second: Int {
+        Int(truncatingRemainder(dividingBy: 60))
+    }
+    var millisecond: Int {
+        Int((self*1000).truncatingRemainder(dividingBy: 1000))
     }
 }
