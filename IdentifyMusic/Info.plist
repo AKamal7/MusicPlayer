@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Access to your Apple Music Account is needed</string>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Heebo-Medium.ttf</string>

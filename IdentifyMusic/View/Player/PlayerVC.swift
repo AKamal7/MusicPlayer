@@ -12,7 +12,7 @@ import Cider
 //import SpotlightLyrics
 
 class PlayerVC: UIViewController {
-    var songsData: Cider.Track?
+    var songData: Cider.Track?
 
     var isPlaying: Bool = false
     var value: Float = 0.0
@@ -44,7 +44,7 @@ class PlayerVC: UIViewController {
     
     @IBOutlet weak var lyricsBotConst: NSLayoutConstraint!
     
-    var player: AVAudioPlayer?
+    var player: AVPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,14 +166,16 @@ class PlayerVC: UIViewController {
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
             
-            let url = "\(songsData?.attributes?.url ?? URL(fileURLWithPath: ""))"
+            //let url = "https://music.apple.com/eg/\(songData?.attributes?.playParams?.kind ?? "")/\(songData?.attributes?.playParams?.id ?? "")"
+            guard let url = songData?.attributes?.previews[0].url else { return }
             
             guard let songURL = URL(string: url) else {
                 return
             }
+            print(url, "SONG URL")
             
-            let player = AVPlayer(url: songURL)
-            player.play()
+            self.player = AVPlayer(url: songURL)
+            player?.play()
             print(url, "Song URL")
         }
         
@@ -211,7 +213,12 @@ extension PlayerVC {
         songImgView.cornerRadius = songImgView.frame.height / 2
         centerDiscView.cornerRadius = centerDiscView.frame.width / 2
         mainCenterDiscView.cornerRadius = mainCenterDiscView.frame.width / 2
-
+        if let attributes = songData?.attributes {
+            let imgString = attributes.artwork.url.replacingOccurrences(of: "{w}", with: "\(attributes.artwork.width)")
+            let imgStringEnhanced = imgString.replacingOccurrences(of: "{h}", with: "\(attributes.artwork.height)")
+            let imgUrl = URL(string: imgStringEnhanced)
+            songImgView.sd_setImage(with: imgUrl)
+        }
         
        
     }

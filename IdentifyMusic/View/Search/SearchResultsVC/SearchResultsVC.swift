@@ -11,10 +11,9 @@ import SDWebImage
 
 class SearchResultsVC: UIViewController {
     
-    var songsData: Cider.ResponseRoot<Track>?
+    var songsData: Cider.ResponseRoot<Track>!
     var offset = 0
     var isPagination = false
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     

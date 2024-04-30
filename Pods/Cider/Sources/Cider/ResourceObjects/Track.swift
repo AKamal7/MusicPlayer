@@ -27,10 +27,15 @@ public struct TrackAttributes: Codable {
     public let trackNumber: Int
     public let url: URL
     public let workName: String? // Classical music only
+    public let previews: [PreviewModel]
 }
 
 public struct TrackRelationships: Codable {
     public let albums: Relationship<Album>
     public let artists: Relationship<Artist>
     public let genres: Relationship<Genre>?
+}
+
+public struct PreviewModel: Codable {
+    public let url: String
 }

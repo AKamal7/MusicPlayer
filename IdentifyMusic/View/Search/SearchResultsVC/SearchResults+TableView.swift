@@ -70,6 +70,8 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
+        guard let songs = songsData?.data else { return }
+        player.songData = songs[indexPath.row]
         navigationController?.pushViewController(player, animated: false)
     }
     

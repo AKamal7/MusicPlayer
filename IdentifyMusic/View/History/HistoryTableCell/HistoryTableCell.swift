@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 import Cider
-
+import MediaPlayer
 class HistoryTableCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
@@ -85,11 +85,12 @@ class HistoryTableCell: UITableViewCell {
             let imgString = attributes.artwork.url.replacingOccurrences(of: "{w}", with: "\(attributes.artwork.width)")
             let imgStringEnhanced = imgString.replacingOccurrences(of: "{h}", with: "\(attributes.artwork.height)")
             let imgUrl = URL(string: imgStringEnhanced)
-            
             cellImgView.sd_setImage(with: imgUrl)
         }
         
     }
+    
+    
     
    
     
