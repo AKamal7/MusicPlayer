@@ -50,7 +50,7 @@ class PlaylistVC: UIViewController {
         authenticateUser { usertoken, error in
             print( "eroor",error)
             print("usertoken",usertoken)
-            self.userToken = "Bearer \(usertoken ?? "")"
+            self.userToken = "\(usertoken ?? "")"
             
             self.fetchUserPlaylists(userToken: self.userToken) { results, error in
                 print("rrrrrrrrr",results )

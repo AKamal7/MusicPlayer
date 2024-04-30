@@ -99,7 +99,8 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: "\(baseURL)/v1/me/library/playlists")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization")
+        request.addValue("\(userToken)", forHTTPHeaderField: "Music-User-Token")
         
         // Perform the request
         URLSession.shared.dataTask(with: request) { data, response, error in
