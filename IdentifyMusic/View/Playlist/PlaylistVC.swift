@@ -52,10 +52,8 @@ class PlaylistVC: UIViewController {
             print("usertoken",usertoken)
             self.userToken = "\(usertoken ?? "")"
             
-            self.fetchUserPlaylists(userToken: self.userToken) { results, error in
-                print("rrrrrrrrr",results )
-                
-                print("errorrr", error)
+            self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
+                print("PLaylists", playlists)
             }
         }
         

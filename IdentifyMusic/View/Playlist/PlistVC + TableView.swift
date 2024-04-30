@@ -93,46 +93,74 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     
     // Function to fetch user playlists using the obtained user token
     
-    func fetchUserPlaylists(userToken: String, completion: @escaping ([String]?, Error?) -> Void) {
-        // Construct the request to fetch user playlists using the user token
+//    func fetchUserPlaylists(userToken: String, completion: @escaping ([String]?, Error?) -> Void) {
+//        // Construct the request to fetch user playlists using the user token
+//        let baseURL = "https://api.music.apple.com"
+//        let url = URL(string: "\(baseURL)/v1/me/library/playlists")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//        request.addValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization")
+//        request.addValue("\(userToken)", forHTTPHeaderField: "Music-User-Token")
+//        
+//        // Perform the request
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//            // Check for any errors
+//            if let error = error {
+//                completion(nil, error)
+//                return
+//            }
+//            
+//            // Parse the response data
+//            guard let data = data else {
+//                completion(nil, NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
+//                return
+//            }
+//            
+//            do {
+//                // Decode the JSON response
+//                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+//                if let playlistsData = json?["data"] as? [[String: Any]] {
+//                    // Extract playlist names from the response
+//                    let playlistNames = playlistsData.compactMap { $0["attributes"] as? [String: Any] } .compactMap { $0["name"] as? String }
+//                    completion(playlistNames, nil)
+//                } else {
+//                    // Unable to parse playlists data
+//                    completion(nil, NSError(domain: "MusicManager", code: 1, userInfo: [NSLocalizedDescriptionKey: "Error parsing playlists data"]))
+//                }
+//            } catch {
+//                // Error decoding JSON
+//                completion(nil, error)
+//            }
+//        }.resume()
+//    }
+
+
+    func fetchMyPlaylists(userToken: String, completion: @escaping ([Playlist]?, Error?) -> Void) {
         let baseURL = "https://api.music.apple.com"
-        let url = URL(string: "\(baseURL)/v1/me/library/playlists")!
+        let endpoint = "/v1/me/library/playlists"
+        let url = URL(string: "\(baseURL)\(endpoint)")!
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization")
         request.addValue("\(userToken)", forHTTPHeaderField: "Music-User-Token")
         
-        // Perform the request
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            // Check for any errors
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            // Parse the response data
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                completion(nil, NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
+                completion(nil, error ?? NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
                 return
             }
             
             do {
-                // Decode the JSON response
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let playlistsData = json?["data"] as? [[String: Any]] {
-                    // Extract playlist names from the response
-                    let playlistNames = playlistsData.compactMap { $0["attributes"] as? [String: Any] } .compactMap { $0["name"] as? String }
-                    completion(playlistNames, nil)
-                } else {
-                    // Unable to parse playlists data
-                    completion(nil, NSError(domain: "MusicManager", code: 1, userInfo: [NSLocalizedDescriptionKey: "Error parsing playlists data"]))
-                }
+                let playlistResponse = try JSONDecoder().decode(PlaylistResponse.self, from: data)
+                completion(playlistResponse.data, nil)
             } catch {
-                // Error decoding JSON
                 completion(nil, error)
             }
-        }.resume()
+        }
+        task.resume()
     }
+
     
     
     
