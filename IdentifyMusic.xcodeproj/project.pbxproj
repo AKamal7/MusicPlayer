@@ -39,6 +39,8 @@
 		BBAE80CA2BB81B590083F621 /* LinkedAccountVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAE80C92BB81B590083F621 /* LinkedAccountVC.storyboard */; };
 		BBAE80CD2BB81F930083F621 /* NotAvailableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE80CC2BB81F930083F621 /* NotAvailableVC.swift */; };
 		BBAE80CF2BB81F9D0083F621 /* NotAvailableVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAE80CE2BB81F9D0083F621 /* NotAvailableVC.storyboard */; };
+		BBC79A432BE0BE8400E9E1FF /* MusadoraKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBC79A422BE0BE8400E9E1FF /* MusadoraKit */; };
+		BBC79A452BE0BEC200E9E1FF /* MusicAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC79A442BE0BEC200E9E1FF /* MusicAuthorizationManager.swift */; };
 		BBF224C82BB16B6A00B99A66 /* SongOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF224C72BB16B6A00B99A66 /* SongOptionsVC.swift */; };
 		BBF224CA2BB16BA200B99A66 /* SongOptionsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF224C92BB16BA200B99A66 /* SongOptionsVC.storyboard */; };
 		BBFE3CC92BA8565600BA7863 /* TrendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */; };
@@ -119,6 +121,7 @@
 		BBAE80C92BB81B590083F621 /* LinkedAccountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LinkedAccountVC.storyboard; sourceTree = "<group>"; };
 		BBAE80CC2BB81F930083F621 /* NotAvailableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAvailableVC.swift; sourceTree = "<group>"; };
 		BBAE80CE2BB81F9D0083F621 /* NotAvailableVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotAvailableVC.storyboard; sourceTree = "<group>"; };
+		BBC79A442BE0BEC200E9E1FF /* MusicAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAuthorizationManager.swift; sourceTree = "<group>"; };
 		BBF224C72BB16B6A00B99A66 /* SongOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongOptionsVC.swift; sourceTree = "<group>"; };
 		BBF224C92BB16BA200B99A66 /* SongOptionsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SongOptionsVC.storyboard; sourceTree = "<group>"; };
 		BBFE3CC72BA8565600BA7863 /* TrendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsCollectionCell.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A37DCD47369310179A05B9E /* Pods_IdentifyMusic.framework in Frameworks */,
+				BBC79A432BE0BE8400E9E1FF /* MusadoraKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,13 +496,6 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
-		F7754EA52BAB35DD003956C0 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		F7754EA82BAB35DD003956C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +511,7 @@
 				BB85B8E22BBA60770099DE56 /* PulseAnimation.swift */,
 				BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */,
 				F79E80C42BC630CA0028644C /* FilePresentationController.swift */,
+				BBC79A442BE0BEC200E9E1FF /* MusicAuthorizationManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -542,7 +540,6 @@
 				BB526F8A2BA28B53006E6322 /* Shared */,
 				F7E7DE852BE03A750039482B /* Managers */,
 				F7754EA82BAB35DD003956C0 /* Model */,
-				F7754EA52BAB35DD003956C0 /* Networking */,
 				F7754EB12BAB367A003956C0 /* Classes */,
 				BB526F8B2BA28B81006E6322 /* View */,
 				BB526FAA2BA2A220006E6322 /* Extensions */,
@@ -609,6 +606,9 @@
 			dependencies = (
 			);
 			name = IdentifyMusic;
+			packageProductDependencies = (
+				BBC79A422BE0BE8400E9E1FF /* MusadoraKit */,
+			);
 			productName = IdentifyMusic;
 			productReference = F78571C92B9AC030000AC75E /* IdentifyMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -637,6 +637,9 @@
 				Base,
 			);
 			mainGroup = F78571C02B9AC030000AC75E;
+			packageReferences = (
+				BBC79A412BE0BE8300E9E1FF /* XCRemoteSwiftPackageReference "MusadoraKit" */,
+			);
 			productRefGroup = F78571CA2B9AC030000AC75E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -743,6 +746,7 @@
 				BB1645F22BB17DDC00E10257 /* PListOptionsVC.swift in Sources */,
 				F7754EAD2BAB35DD003956C0 /* Song.swift in Sources */,
 				F7D7D97D2BC51CC500896EAB /* SearchResultsVC.swift in Sources */,
+				BBC79A452BE0BEC200E9E1FF /* MusicAuthorizationManager.swift in Sources */,
 				BBF224C82BB16B6A00B99A66 /* SongOptionsVC.swift in Sources */,
 				F748FAF22BBF5A8600A3488B /* SettingsVC.swift in Sources */,
 				F748FAEE2BBD8C0B00A3488B /* HistoryTableCell.swift in Sources */,
@@ -1001,6 +1005,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBC79A412BE0BE8300E9E1FF /* XCRemoteSwiftPackageReference "MusadoraKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rryam/MusadoraKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBC79A422BE0BE8400E9E1FF /* MusadoraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC79A412BE0BE8300E9E1FF /* XCRemoteSwiftPackageReference "MusadoraKit" */;
+			productName = MusadoraKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F78571C12B9AC030000AC75E /* Project object */;
 }

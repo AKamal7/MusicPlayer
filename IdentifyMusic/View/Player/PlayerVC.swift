@@ -26,24 +26,18 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var sliderView: CustomSlider!
     
     @IBOutlet weak var songBckGroundHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var songTop: NSLayoutConstraint!
     @IBOutlet weak var lyricsView: UIView!
-    
     @IBOutlet weak var lyricsHeaderView: UIView!
-    
     @IBOutlet weak var lyricsTextView: UITextView!
-    
     @IBOutlet weak var lyricsHeight: NSLayoutConstraint!
     @IBOutlet weak var lyricsTopAnchor: NSLayoutConstraint!
-    
     @IBOutlet weak var lyricsTextTitle: UILabel!
-    
     @IBOutlet weak var lyricsBotBorder: UIView!
     @IBOutlet weak var titleLabelsStack: UIStackView!
-    
     @IBOutlet weak var lyricsBotConst: NSLayoutConstraint!
-    
+    @IBOutlet weak var durationLiveLabel: UILabel!
+    @IBOutlet weak var fullDurationLabel: UILabel!
     var player: AVPlayer?
 
     override func viewDidLoad() {
@@ -209,6 +203,13 @@ class PlayerVC: UIViewController {
 //Private funcs
 extension PlayerVC {
     
+    func formatMmSs(counter: Int) -> String {
+        let minutes = Int(counter) / 60 % 60
+        let seconds = Int(counter) % 60
+        let milliseconds = Int(counter*1000) % 1000
+        return String(format: "%02d:%02d:%03d", minutes, seconds, milliseconds)
+    }
+    
     private func setupView() {
         songImgView.cornerRadius = songImgView.frame.height / 2
         centerDiscView.cornerRadius = centerDiscView.frame.width / 2
@@ -218,6 +219,8 @@ extension PlayerVC {
             let imgStringEnhanced = imgString.replacingOccurrences(of: "{h}", with: "\(attributes.artwork.height)")
             let imgUrl = URL(string: imgStringEnhanced)
             songImgView.sd_setImage(with: imgUrl)
+            durationLiveLabel.text = formatMmSs(counter: songData?.attributes?.durationInMillis ?? 0)
+            
         }
         
        
@@ -230,8 +233,7 @@ class CustomSlider: UISlider {
     
     @IBInspectable var thumbRadius: CGFloat = 20
     
-    // Custom thumb view which will be converted to UIImage
-    // and set as thumb. You can customize it's colors, border, etc.
+    
     private lazy var thumbView: UIView = {
         let thumb = UIView()
         thumb.backgroundColor = .white//thumbTintColor
@@ -248,14 +250,12 @@ class CustomSlider: UISlider {
     }
     
     private func thumbImage(radius: CGFloat) -> UIImage {
-        // Set proper frame
-        // y: radius / 2 will correctly offset the thumb
+      
         
         thumbView.frame = CGRect(x: 0, y: radius / 2, width: radius, height: radius)
         thumbView.layer.cornerRadius = radius / 2
         
-        // Convert thumbView to UIImage
-        // See this: https://stackoverflow.com/a/41288197/7235585
+       
         
         let renderer = UIGraphicsImageRenderer(bounds: thumbView.bounds)
         return renderer.image { rendererContext in
@@ -264,8 +264,7 @@ class CustomSlider: UISlider {
     }
     
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
-        // Set custom track height
-        // As seen here: https://stackoverflow.com/a/49428606/7235585
+        
         var newRect = super.trackRect(forBounds: bounds)
         newRect.size.height = trackHeight
         return newRect
@@ -284,12 +283,13 @@ extension PlayerVC: UIViewControllerTransitioningDelegate {
 extension PlayerVC: BlurVCDelegate {
     
     func removeBlurView() {
-         for subview in view.subviews {
-             if subview.isKind(of: UIVisualEffectView.self) {
-                 subview.removeFromSuperview()
-             }
-         }
-     }
-    
-    
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        
+        
+    }
 }

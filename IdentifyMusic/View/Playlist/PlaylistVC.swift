@@ -8,7 +8,8 @@
 import UIKit
 import MusicKit
 import Cider
-
+import StoreKit
+import MusadoraKit
 class PlaylistVC: UIViewController {
     
     // MARK:- Variables
@@ -26,6 +27,8 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var musicIconView: UIImageView!
     @IBOutlet weak var creatPlistImgView: UIImageView!
     
+    
+    var userToken: String = ""
     var playlistsData: [Cider.Playlist] = []
 
     // MARK:- LifeCycle Methods
@@ -43,7 +46,18 @@ class PlaylistVC: UIViewController {
         setupView()
         setupTable()
         
-//        getData()
+        
+        authenticateUser { usertoken, error in
+            print( "eroor",error)
+            print("usertoken",usertoken)
+            self.userToken = "Bearer \(usertoken ?? "")"
+            
+            self.fetchUserPlaylists(userToken: self.userToken) { results, error in
+                print("rrrrrrrrr",results )
+                
+                print("errorrr", error)
+            }
+        }
         
     }
     
@@ -92,6 +106,7 @@ class PlaylistVC: UIViewController {
         self.present(createPlistVC, animated: false, completion: nil)
     }
     
+    // Function to authenticate the user using MusicKit
 
     
     private func setupWhiteLabel(label: UILabel, text: String) {

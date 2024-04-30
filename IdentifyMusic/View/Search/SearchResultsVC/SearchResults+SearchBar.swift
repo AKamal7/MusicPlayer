@@ -42,7 +42,7 @@ extension SearchResultsVC: UISearchBarDelegate {
     func setupSearchResults() {
         
         let cider = CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
-//        cider.song(id: <#T##String#>, completion: <#T##((Track?, Error?) -> Void)?#>)
+        
         cider.search(term: searchBar.text ?? "", limit: 25, offset: self.offset, types: [.songs]) { results, error in
             //print(error?.localizedDescription, "ErRRRrror")
             

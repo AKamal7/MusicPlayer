@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let token = try jwt.sign(with: p8)
             UserDefaultsManager.shared().token = token
             print(UserDefaultsManager.shared().token, "tokeeen")
+            SKCloudServiceController().requestUserToken(forDeveloperToken: token) { userToken, error in
+                print("Flagtoken2",userToken)
+            }
 
         } catch {
             print(error)

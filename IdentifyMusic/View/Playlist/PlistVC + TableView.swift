@@ -11,6 +11,7 @@ import MediaPlayer
 import Cider
 import CupertinoJWT
 import StoreKit
+import MusadoraKit
 
 extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -59,4 +60,79 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    func authenticateUser(completion: @escaping (String?, Error?) -> Void) {
+        // Present the SKCloudServiceSetupViewController to the user for authorization
+        SKCloudServiceController.requestAuthorization { status in
+            switch status {
+            case .authorized:
+                // Authorization successful
+                // Now, obtain the user token
+                SKCloudServiceController().requestUserToken(forDeveloperToken: UserDefaultsManager.shared().token ?? "") { userToken, error in
+                    if let userToken = userToken {
+                        // Authentication successful, pass user token and nil error
+                        print("flagToke", userToken)
+                        completion(userToken, nil)
+                    } else {
+                        
+                        // Unable to obtain user token, pass error
+                        completion(nil, error ?? NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to obtain user token"]))
+                    }
+                }
+            case .denied, .restricted:
+                // Authorization denied or restricted, indicate error
+                completion(nil, NSError(domain: "MusicManager", code: 1, userInfo: [NSLocalizedDescriptionKey: "Authorization denied or restricted"]))
+            case .notDetermined:
+                // Authorization not determined yet, handle as needed
+                completion(nil, NSError(domain: "MusicManager", code: 2, userInfo: [NSLocalizedDescriptionKey: "Authorization not determined"]))
+            @unknown default:
+                // Unknown case, handle as needed
+                completion(nil, NSError(domain: "MusicManager", code: 3, userInfo: [NSLocalizedDescriptionKey: "Unknown authorization status"]))
+            }
+        }
+    }
+    
+    // Function to fetch user playlists using the obtained user token
+    
+    func fetchUserPlaylists(userToken: String, completion: @escaping ([String]?, Error?) -> Void) {
+        // Construct the request to fetch user playlists using the user token
+        let baseURL = "https://api.music.apple.com"
+        let url = URL(string: "\(baseURL)/v1/me/library/playlists")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
+        
+        // Perform the request
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // Check for any errors
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            // Parse the response data
+            guard let data = data else {
+                completion(nil, NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
+                return
+            }
+            
+            do {
+                // Decode the JSON response
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                if let playlistsData = json?["data"] as? [[String: Any]] {
+                    // Extract playlist names from the response
+                    let playlistNames = playlistsData.compactMap { $0["attributes"] as? [String: Any] } .compactMap { $0["name"] as? String }
+                    completion(playlistNames, nil)
+                } else {
+                    // Unable to parse playlists data
+                    completion(nil, NSError(domain: "MusicManager", code: 1, userInfo: [NSLocalizedDescriptionKey: "Error parsing playlists data"]))
+                }
+            } catch {
+                // Error decoding JSON
+                completion(nil, error)
+            }
+        }.resume()
+    }
+    
+    
+    
 }
