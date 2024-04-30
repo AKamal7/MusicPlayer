@@ -30,6 +30,7 @@ class PlaylistVC: UIViewController {
     
     var userToken: String = ""
     var playlistsData: [Cider.Playlist] = []
+    var fetchedPlaylists: [Playlist] = []
 
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -54,6 +55,21 @@ class PlaylistVC: UIViewController {
             
             self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
                 print("PLaylists", playlists)
+                
+                
+                if let playlists = playlists {
+                    self.fetchedPlaylists = playlists
+                    print("Fetched \(self.fetchedPlaylists.count) playlists:")
+                    for playlist in self.fetchedPlaylists {
+                        print("Name: \(playlist.attributes.name)")
+                        print("Last Modified Date: \(playlist.attributes.lastModifiedDate)")
+                        // Print other playlist attributes as needed...
+                    }
+                    // Now you can use fetchedPlaylists variable elsewhere in your app
+                } else {
+                    print("No playlists fetched")
+                }
+            
             }
         }
         
