@@ -133,6 +133,8 @@ class SearchVC: UIViewController {
         tapLbl.isHidden = true
         pulsyBtn.isEnabled = false
         pulsyAnimation()
+        recognizeSong()
+        print("111...")
     }
     
     private func noSongView() {
@@ -271,6 +273,74 @@ class SearchVC: UIViewController {
         
     }
     
+    func recognizeSong() {
+        let apiUrlString = "https://api.audd.io/"
+        let apiKey = "5239c12f53949b82c14d2fd822102c01" // Replace with your Audd.io API key
+
+        guard let apiUrl = URL(string: apiUrlString) else {
+            print("Invalid URL")
+            return
+        }
+
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        print(apiUrl, "API URLLL")
+        // Set the required parameters
+        let parameters: [String: Any] = [
+            "api_token": apiKey,
+            // Add either "url" or "file" parameter based on the recognition method you're using
+            // Example using URL:
+            "url": "https://commondatastorage.googleapis.com/codeskulptor-demos/pyman_assets/ateapill.ogg",
+            // Example using file:
+            // "file": fileData
+            "return": "apple_music"
+        ]
+
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            request.httpBody = jsonData
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                } else if let data = data {
+                    // Parse the response JSON
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        // Handle the recognition response
+                        self.handleRecognitionResponse(json)
+                        print(data,"RecognitionDAtaa")
+                    }
+                }
+            }
+
+            task.resume()
+        } catch {
+            print("Error creating JSON data: \(error)")
+        }
+    }
+    
+    func handleRecognitionResponse(_ response: [String: Any]) {
+        // Process the recognition response here
+        // You can extract the recognized song information from the response dictionary
+        // For example, you can access the "title", "artist", or "album" fields
+
+        if let title = response["title"] as? String {
+            print("Title: \(title)")
+        }
+
+        if let artist = response["artist"] as? String {
+            print("Artist: \(artist)")
+        }
+
+        if let album = response["album"] as? String {
+            print("Album: \(album)")
+        }
+        
+        print(response, "Response")
+
+        // Continue with further processing or UI updates based on the recognition results
+    }
     
     
     
