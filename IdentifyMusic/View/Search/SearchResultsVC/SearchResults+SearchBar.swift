@@ -12,8 +12,11 @@ import Cider
 extension SearchResultsVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.offset = 0
             guard !searchText.isEmpty else {
                 return
+               
+
             }
         setupSearchResults()
         }
@@ -39,18 +42,65 @@ extension SearchResultsVC: UISearchBarDelegate {
     func setupSearchResults() {
         
         let cider = CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
-        cider.search(term: searchBar.text ?? "",limit: 5, types: [.songs]) { results, error in
-            print(error?.localizedDescription, "ErRRRrror")
+        cider.song(id: <#T##String#>, completion: <#T##((Track?, Error?) -> Void)?#>)
+        cider.search(term: searchBar.text ?? "", limit: 25, offset: self.offset, types: [.songs]) { results, error in
+            //print(error?.localizedDescription, "ErRRRrror")
             
-            if let songs = results?.songs?.data {
+            if let songs = results?.songs {
                 self.songsData = songs
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                print(songs, "DATAA")
+                if songs.next != nil {
+                    self.isPagination = true
+                    guard let next = songs.next else { return }
+                    guard let offsetServer = self.getQueryStringParameter(url: next, param: "offset") else { return }
+                    self.offset = Int(offsetServer) ?? 0
+                } else {
+                    self.isPagination = false
+                }
             }
             
-            //            }
+            
+
         }
     }
+    
+    func loadMoreResults(offset: Int) {
+        
+        let cider = CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
+        cider.search(term: searchBar.text ?? "", limit: 25, offset: offset, types: [.songs]) { results, error in
+            //print(error?.localizedDescription, "ErRRRrror")
+            print("calleeeeeeed")
+            if let songs = results?.songs {
+                if let data = songs.data {
+                    self.songsData?.data! += data
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    print("we are here for more")
+                }
+                
+                if songs.next != nil {
+                    self.isPagination = true
+                    guard let next = songs.next else { return }
+                    guard let offsetServer = self.getQueryStringParameter(url: next, param: "offset") else { return }
+                    self.offset = Int(offsetServer) ?? 0
+                } else {
+                    self.isPagination = false
+                    print(self.songsData?.data?.count ?? 0, "count")
+                }
+               
+                print(songs, "DATAA")
+            }
+        }
+    }
+    
+    func getQueryStringParameter(url: String, param: String) -> String? {
+      guard let url = URLComponents(string: url) else { return nil }
+      return url.queryItems?.first(where: { $0.name == param })?.value
+    }
+    
+    
+    
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage
+import Cider
 
 class HistoryTableCell: UITableViewCell {
 
@@ -76,6 +78,17 @@ class HistoryTableCell: UITableViewCell {
     private func setupImgView() {
         cellImgView.image = UIImage(named: "musicIcon")
         cellImgView.cornerRadius = cellImgView.frame.size.height / 2
+    }
+    
+    func setupCell(model: Cider.Track) {
+        if let attributes = model.attributes {
+            let imgString = attributes.artwork.url.replacingOccurrences(of: "{w}", with: "\(attributes.artwork.width)")
+            let imgStringEnhanced = imgString.replacingOccurrences(of: "{h}", with: "\(attributes.artwork.height)")
+            let imgUrl = URL(string: imgStringEnhanced)
+            
+            cellImgView.sd_setImage(with: imgUrl)
+        }
+        
     }
     
    

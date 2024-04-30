@@ -9,4 +9,5 @@ target 'IdentifyMusic' do
 pod 'Cider', '~> 0.10'
 pod 'CupertinoJWT'
 pod 'SwiftJWT'
+pod 'SDWebImage'
 end

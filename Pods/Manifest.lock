@@ -9,6 +9,9 @@ PODS:
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
+  - SDWebImage (5.18.11):
+    - SDWebImage/Core (= 5.18.11)
+  - SDWebImage/Core (5.18.11)
   - SwiftJWT (3.6.200):
     - BlueCryptor (~> 1.0)
     - BlueECC (~> 1.1)
@@ -19,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - Cider (~> 0.10)
   - CupertinoJWT
+  - SDWebImage
   - SwiftJWT
 
 SPEC REPOS:
@@ -31,6 +35,7 @@ SPEC REPOS:
     - KituraContracts
     - LoggerAPI
     - Logging
+    - SDWebImage
     - SwiftJWT
 
 SPEC CHECKSUMS:
@@ -42,8 +47,9 @@ SPEC CHECKSUMS:
   KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  SDWebImage: a3ba0b8faac7228c3c8eadd1a55c9c9fe5e16457
   SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
 
-PODFILE CHECKSUM: 8c08b61a6f3e6b4292eaaf5d2ad0e1d38f4f67bc
+PODFILE CHECKSUM: e9f1bc403d66cf9b01d80010f50b8fea319f0aba
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.12.1

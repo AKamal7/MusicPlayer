@@ -10,8 +10,6 @@ import UIKit
 
 extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     
-
-   
     // Register TableView Cell
     func registerCell() {
         tableView.register(UINib(nibName: "HistoryTableCell", bundle: nil), forCellReuseIdentifier: "HistoryTableCell")
@@ -24,9 +22,15 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
         tableView.backgroundColor = Colors.mainBackground
         registerCell()
     }
+    
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songsData.count
+        if let data = songsData?.data {
+            return data.count
+        } else {
+            return 0
+        }
+        //return songsData.data?.count ?? 0
     }
     
     // Config cell
@@ -42,10 +46,25 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
         cell.cellImgView.roundCorners(corners: .allCorners, radius: 32.5)
         cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
         cell.selectionStyle = .none
-        cell.songNameLabel.text = songsData[indexPath.row].attributes?.name
-        cell.artistNameLabel.text = songsData[indexPath.row].attributes?.artistName
-
+        guard let songs = songsData?.data else { return UITableViewCell() }
+        cell.songNameLabel.text = songs[indexPath.row].attributes?.name
+        cell.artistNameLabel.text = songs[indexPath.row].attributes?.artistName
+        cell.dateLabel.isHidden = true
+        cell.setupCell(model: songs[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let data = songsData?.data {
+            print("11111111", isPagination)
+            if indexPath.row == data.count - 2 {
+                print("22222222", isPagination)
+                if isPagination {
+                    print("33333333")
+                    self.loadMoreResults(offset: self.offset)
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
