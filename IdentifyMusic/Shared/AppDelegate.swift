@@ -8,8 +8,16 @@
 import UIKit
 import CupertinoJWT
 import StoreKit
+import AVFoundation
+import MediaPlayer
+import Cider
 
+var isPlaying: Bool = false
 var isAuthorized = false
+var player: AVPlayer!
+var musicPlayer: MPMusicPlayerController!
+var nowPlayingTrack: Cider.Track?
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -16,7 +16,7 @@ import StoreKit
 class PlayerVC: UIViewController {
     var songData: Cider.Track?
 
-    var isPlaying: Bool = false
+    
     var value: Float = 0.0
 
     @IBOutlet weak var songImgView: UIImageView!
@@ -41,9 +41,7 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var durationLiveLabel: UILabel!
     @IBOutlet weak var fullDurationLabel: UILabel!
     
-    var player: AVPlayer!
     var timer: Timer!
-    var musicPlayer: MPMusicPlayerController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,14 +54,14 @@ class PlayerVC: UIViewController {
         if isAuthorized {
             musicPlayer = MPMusicPlayerController.applicationMusicPlayer
             if let songId = songData?.attributes?.playParams?.id {
-                self.musicPlayer.setQueue(with: [songId])
-                self.musicPlayer.prepareToPlay()
+                musicPlayer.setQueue(with: [songId])
+                musicPlayer.prepareToPlay()
             }
         } else {
             if let url = songData?.attributes?.previews[0].url {
                 if  let songURL = URL(string: url) {
-                        self.player = AVPlayer(url: songURL)
-                        self.player.volume = 1
+                        player = AVPlayer(url: songURL)
+                        player.volume = 1
                     
                     print(url, "adsfgasdga")
                 }
@@ -111,6 +109,9 @@ class PlayerVC: UIViewController {
     
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name("UpdatePlayer"),
+                                                object: nil,
+                                                userInfo: nil)
     }
     
     @objc func playerDidFinishPlaying(sender: Notification) {
@@ -139,6 +140,9 @@ class PlayerVC: UIViewController {
     @objc func update(){
         if isAuthorized {
             if musicPlayer.playbackState == .playing{
+                isPlaying = true
+//                songImgView.rotate360Degrees()
+                playBtn.setImage(UIImage(named: "pause"), for: .normal)
                 durationLiveLabel.text  = musicPlayer.currentPlaybackTime.MinuteSeconds
                 sliderView.value = Float(musicPlayer.currentPlaybackTime)
             } else if musicPlayer.playbackState == .paused {
@@ -273,23 +277,24 @@ class PlayerVC: UIViewController {
             isPlaying = true
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
+            
             if isAuthorized {
-                self.musicPlayer.play()
+                musicPlayer.play()
             } else {
-                self.player.play()
+                player.play()
                 
             }
             
         }
-        
+       
     }
     
     @IBAction func backwardBtn(_ sender: UIButton) {
         if isAuthorized {
-            if self.musicPlayer.currentPlaybackTime < 5 {
-                self.musicPlayer.skipToPreviousItem()
+            if musicPlayer.currentPlaybackTime < 5 {
+                musicPlayer.skipToPreviousItem()
             } else {
-                self.musicPlayer.skipToBeginning()
+                musicPlayer.skipToBeginning()
             }
         }
         
@@ -310,7 +315,7 @@ class PlayerVC: UIViewController {
     @IBAction func sliderChanged(_ sender: CustomSlider) {
         self.sliderView.value = sender.value
         if isAuthorized {
-            self.musicPlayer.currentPlaybackTime = TimeInterval(sliderView.value)
+            musicPlayer.currentPlaybackTime = TimeInterval(sliderView.value)
             self.durationLiveLabel.text = TimeInterval(sliderView.value).MinuteSeconds
         } else {
             let currentTimeInSeconds = CMTimeGetSeconds(player.currentTime())
@@ -325,7 +330,7 @@ class PlayerVC: UIViewController {
             }
             durationLiveLabel.text = "\(minsStr):\(secsStr)"
             
-            self.player.seek(to: CMTime(seconds: Double(sender.value), preferredTimescale: 1))
+            player.seek(to: CMTime(seconds: Double(sender.value), preferredTimescale: 1))
             
         }
         
@@ -478,19 +483,3 @@ extension CMTime {
     }
 }
 
-final class Player {
-    
-    static var share = Player()
-    var player = AVPlayer()
-    
-    private init() {}
-    
-    func play(url: URL) {
-        player = AVPlayer(url: url)
-        player.allowsExternalPlayback = true
-        player.appliesMediaSelectionCriteriaAutomatically = true
-        player.automaticallyWaitsToMinimizeStalling = true
-        player.volume = 1
-        player.play()
-    }
-}

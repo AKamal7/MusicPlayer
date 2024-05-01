@@ -71,6 +71,7 @@ extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
         guard let songs = songsData?.data else { return }
+        nowPlayingTrack = songs[indexPath.row]
         player.songData = songs[indexPath.row]
         navigationController?.pushViewController(player, animated: false)
     }
