@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import Cider
 import MediaPlayer
+import StoreKit
 
 //import SpotlightLyrics
 
@@ -40,23 +41,36 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var durationLiveLabel: UILabel!
     @IBOutlet weak var fullDurationLabel: UILabel!
     
-    var player: AVPlayer?
+    var player: AVPlayer!
     var timer: Timer!
     var musicPlayer: MPMusicPlayerController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        musicPlayer = MPMusicPlayerController.applicationMusicPlayer
-        if let songId = songData?.attributes?.playParams?.id {
-            self.musicPlayer.setQueue(with: [songId])
-            self.musicPlayer.prepareToPlay()
-        }
         if let songData {
             if let attributes = songData.attributes {
                 songNameLbl.text = attributes.name
                 artistNameLbl.text = attributes.artistName
             }
         }
+        if isAuthorized {
+            musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+            if let songId = songData?.attributes?.playParams?.id {
+                self.musicPlayer.setQueue(with: [songId])
+                self.musicPlayer.prepareToPlay()
+            }
+        } else {
+            if let url = songData?.attributes?.previews[0].url {
+                if  let songURL = URL(string: url) {
+                        self.player = AVPlayer(url: songURL)
+                        self.player.volume = 1
+                    
+                    print(url, "adsfgasdga")
+                }
+            }
+            
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinishPlaying), name: AVPlayerItem.didPlayToEndTimeNotification, object: player.currentItem)
         let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
         
         navigationItem.leftBarButtonItem = backBtn
@@ -68,11 +82,23 @@ class PlayerVC: UIViewController {
         lyricsTopAnchor.constant = (self.view.frame.height * 0.63)
         songBckGroundHeight?.constant = 300
         lyricsHeight.constant = 400
-        fullDurationLabel.text  = musicPlayer.nowPlayingItem?.playbackDuration.MinuteSeconds
+        print(isAuthorized, "adsgfasdgas")
+        if isAuthorized {
+            fullDurationLabel.text  = musicPlayer.nowPlayingItem?.playbackDuration.MinuteSeconds
+        } else {
+            fullDurationLabel.text = "00:30"
+        }
+        
         durationLiveLabel.text  = "00:00"
-        sliderView.maximumValue = Float(musicPlayer.nowPlayingItem?.playbackDuration ?? 0)
+        if isAuthorized {
+            sliderView.maximumValue = Float(musicPlayer.nowPlayingItem?.playbackDuration ?? 0)
+        } else {
+            if let currentItem = player.currentItem {
+                sliderView.maximumValue = Float(CMTimeGetSeconds(currentItem.asset.duration))
+            }
+            
+        }
         startTimer()
-             
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,9 +110,20 @@ class PlayerVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func playerDidFinishPlaying(sender: Notification) {
+        // Your code here
+        isPlaying = false
+        songImgView.layer.removeAllAnimations()
+        playBtn.setImage(UIImage(named: "play"), for: .normal)
+        self.durationLiveLabel.text = "00:00"
+        self.sliderView.value = 0
+        player.pause()
+        player.seek(to: .zero)
+    }
+    
     func startTimer(){
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil,repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(update), userInfo: nil,repeats: true)
             timer.fire()
         }
     }
@@ -97,20 +134,43 @@ class PlayerVC: UIViewController {
     }
     
     @objc func update(){
-        if musicPlayer.playbackState == .playing{
-            durationLiveLabel.text  = musicPlayer.currentPlaybackTime.MinuteSeconds
-            sliderView.value = Float(musicPlayer.currentPlaybackTime)
-        } else if musicPlayer.playbackState == .paused {
-            isPlaying = false
-            songImgView.layer.removeAllAnimations()
-            playBtn.setImage(UIImage(named: "play"), for: .normal)
+        if isAuthorized {
+            if musicPlayer.playbackState == .playing{
+                durationLiveLabel.text  = musicPlayer.currentPlaybackTime.MinuteSeconds
+                sliderView.value = Float(musicPlayer.currentPlaybackTime)
+            } else if musicPlayer.playbackState == .paused {
+                isPlaying = false
+                songImgView.layer.removeAllAnimations()
+                playBtn.setImage(UIImage(named: "play"), for: .normal)
+            } else {
+                isPlaying = false
+                songImgView.layer.removeAllAnimations()
+                playBtn.setImage(UIImage(named: "play"), for: .normal)
+                self.durationLiveLabel.text = "00:00"
+                self.sliderView.value = 0
+                
+            }
         } else {
-            isPlaying = false
-            songImgView.layer.removeAllAnimations()
-            playBtn.setImage(UIImage(named: "play"), for: .normal)
-            self.durationLiveLabel.text = "00:00"
-            self.sliderView.value = 0
+            let currentTimeInSeconds = CMTimeGetSeconds(player.currentTime())
+                // 2 Alternatively, you could able to get current time from `currentItem` - videoPlayer.currentItem.duration
+
+                let mins = currentTimeInSeconds / 60
+                let secs = currentTimeInSeconds.truncatingRemainder(dividingBy: 60)
+                let timeformatter = NumberFormatter()
+                timeformatter.minimumIntegerDigits = 2
+                timeformatter.minimumFractionDigits = 0
+                timeformatter.roundingMode = .down
+            guard let minsStr = timeformatter.string(from: NSNumber(value: mins)), let secsStr = timeformatter.string(from: NSNumber(value: secs)) else {
+                   return
+               }
+               durationLiveLabel.text = "\(minsStr):\(secsStr)"
+               sliderView.value = Float(currentTimeInSeconds)
+//            if player. == .readyToPlay {
+//                durationLiveLabel.text  = player?.currentItem?.currentTime().positionalTime
+////                sliderView.value = Float(player?.currentItem?.currentTime().seconds ?? 0)
+//            }
         }
+        
 
     }
     
@@ -201,23 +261,35 @@ class PlayerVC: UIViewController {
             isPlaying = false
             songImgView.layer.removeAllAnimations()
             playBtn.setImage(UIImage(named: "play"), for: .normal)
-            musicPlayer.pause()
-//            player?.pause()
+            if isAuthorized {
+                musicPlayer.pause()
+            } else {
+                player.pause()
+            }
         } else {
             isPlaying = true
             songImgView.rotate360Degrees()
             playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            self.musicPlayer.play()
+            if isAuthorized {
+                self.musicPlayer.play()
+            } else {
+                self.player.play()
+                
+            }
+            
         }
         
     }
     
     @IBAction func backwardBtn(_ sender: UIButton) {
-        if self.musicPlayer.currentPlaybackTime < 5 {
-            self.musicPlayer.skipToPreviousItem()
-        } else {
-            self.musicPlayer.skipToBeginning()
+        if isAuthorized {
+            if self.musicPlayer.currentPlaybackTime < 5 {
+                self.musicPlayer.skipToPreviousItem()
+            } else {
+                self.musicPlayer.skipToBeginning()
+            }
         }
+        
     }
     
     @IBAction func thirtySecPreviewBtn(_ sender: UIButton) {
@@ -234,10 +306,39 @@ class PlayerVC: UIViewController {
     
     @IBAction func sliderChanged(_ sender: CustomSlider) {
         self.sliderView.value = sender.value
-        self.musicPlayer.currentPlaybackTime = TimeInterval(sliderView.value)
-        self.durationLiveLabel.text = TimeInterval(sliderView.value).MinuteSeconds
+        if isAuthorized {
+            self.musicPlayer.currentPlaybackTime = TimeInterval(sliderView.value)
+            self.durationLiveLabel.text = TimeInterval(sliderView.value).MinuteSeconds
+        } else {
+            let currentTimeInSeconds = CMTimeGetSeconds(player.currentTime())
+                let mins = currentTimeInSeconds / 60
+                let secs = currentTimeInSeconds.truncatingRemainder(dividingBy: 60)
+                let timeformatter = NumberFormatter()
+                timeformatter.minimumIntegerDigits = 2
+                timeformatter.minimumFractionDigits = 0
+                timeformatter.roundingMode = .down
+            guard let minsStr = timeformatter.string(from: NSNumber(value: mins)), let secsStr = timeformatter.string(from: NSNumber(value: secs)) else {
+                return
+            }
+            durationLiveLabel.text = "\(minsStr):\(secsStr)"
+            
+            self.player.seek(to: CMTime(seconds: Double(sender.value), preferredTimescale: 1))
+            
+        }
+        
+        
         print(sender.value, "value")
     }
+    
+//    func humanReadable(time:Double) -> String {
+//        let formatter = DateComponentsFormatter()
+//        formatter.allowedUnits = [.hour, .minute, .second]
+//        formatter.unitsStyle = .full
+//        if let str = formatter.string(from: time) {
+//            return str
+//        }
+//        return "" // empty string if number fails
+//    }
     
     
     
@@ -355,5 +456,38 @@ extension TimeInterval {
     }
     var millisecond: Int {
         Int((self*1000).truncatingRemainder(dividingBy: 1000))
+    }
+}
+
+extension CMTime {
+    var roundedSeconds: TimeInterval {
+        return seconds.rounded()
+    }
+    var hours:  Int { return Int(roundedSeconds / 3600) }
+    var minute: Int { return Int(roundedSeconds.truncatingRemainder(dividingBy: 3600) / 60) }
+    var second: Int { return Int(roundedSeconds.truncatingRemainder(dividingBy: 60)) }
+    var positionalTime: String {
+        return hours > 0 ?
+            String(format: "%d:%02d:%02d",
+                   hours, minute, second) :
+            String(format: "%02d:%02d",
+                   minute, second)
+    }
+}
+
+final class Player {
+    
+    static var share = Player()
+    var player = AVPlayer()
+    
+    private init() {}
+    
+    func play(url: URL) {
+        player = AVPlayer(url: url)
+        player.allowsExternalPlayback = true
+        player.appliesMediaSelectionCriteriaAutomatically = true
+        player.automaticallyWaitsToMinimizeStalling = true
+        player.volume = 1
+        player.play()
     }
 }

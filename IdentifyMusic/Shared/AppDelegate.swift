@@ -9,6 +9,8 @@ import UIKit
 import CupertinoJWT
 import StoreKit
 
+var isAuthorized = false
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -51,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultsManager.shared().token = token
             print(UserDefaultsManager.shared().token, "tokeeen")
             SKCloudServiceController().requestUserToken(forDeveloperToken: token) { userToken, error in
+                if userToken != nil {
+                    isAuthorized = true
+                } else {
+                    isAuthorized = false
+                }
                 print("Flagtoken2",userToken)
             }
 

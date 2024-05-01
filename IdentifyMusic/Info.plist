@@ -9,6 +9,11 @@
 		<string>Heebo-Medium.ttf</string>
 		<string>Heebo-Regular.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
