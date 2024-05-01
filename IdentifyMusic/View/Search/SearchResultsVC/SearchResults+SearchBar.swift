@@ -100,6 +100,11 @@ extension SearchResultsVC: UISearchBarDelegate {
       return url.queryItems?.first(where: { $0.name == param })?.value
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        print("end searching --> Close Keyboard")
+        self.searchBar.endEditing(true)
+    }
+    
     
     
 }
