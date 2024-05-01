@@ -6,12 +6,19 @@
 //
 
 import UIKit
-
+import Cider
 class MainTabBar: UITabBarController {
     
     var isHearing: Bool = false
     let containerView = UIView()
-
+    
+    // UI
+    var songImage  : UIImageView!
+    var songName   : UILabel!
+    var songArtist : UILabel!
+    var favButton  : UIButton!
+    var playButton : UIButton!
+    
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,16 @@ class MainTabBar: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(playerVisibilityHidden(notif:)), name: Notification.Name(rawValue: "hidePlayer"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerVisibilityShown(notif:)), name: Notification.Name(rawValue: "showPlayer"), object: nil)
+        if isPlaying == false {
+            hidePlayer(hide: true)
+        }
+        setupObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupPlayerData()
+        print("viewillappear")
     }
     
     // MARK:- Public Methods
@@ -36,7 +53,34 @@ class MainTabBar: UITabBarController {
         return mainTabBar
     }
     
-
+    deinit {
+         clearObserver()
+     }
+     
+     func setupObserver() {
+         NotificationCenter.default.addObserver(self,
+                                                selector: #selector(handleNotification(_:)),
+                                                name: NSNotification.Name("UpdatePlayer"),
+                                                object: nil)
+         
+        
+     }
+     
+     func clearObserver() {
+         NotificationCenter.default.removeObserver(self)
+     }
+     
+     @objc func handleNotification(_ sender: Notification) {
+         if isPlaying {
+             setupPlayerData()
+             showPlayer(show: true)
+//             playButton.setImage(UIImage(named:"pause"), for: .normal)
+         } else {
+//             playButton.setImage(UIImage(named:"play"), for: .normal)
+         }
+         print("Khaled")
+     }
+        
     @objc func playerVisibilityHidden(notif: Notification) {
         let show = notif.object as? Bool ?? false
         self.hidePlayer(hide: show)
@@ -80,13 +124,11 @@ extension MainTabBar {
         containerView.heightAnchor.constraint(equalToConstant: 72).isActive = true
         
         // n7dr b2a kol el m2ader bta3tna
-        let songImage = UIImageView()
-        let songName = UILabel()
-        let songArtist = UILabel()
-        let favButton = UIButton()
-        let playButton = UIButton()
-        
-        
+        songImage  = UIImageView()
+        songName   = UILabel()
+        songArtist = UILabel()
+        favButton  = UIButton()
+        playButton = UIButton()
         // n7ot el m2ader ya 7bibte x el 7ala
         containerView.addSubview(songImage)
         containerView.addSubview(songName)
@@ -103,6 +145,9 @@ extension MainTabBar {
         Public.setupButton(button: playButton, imgString: "playButton")
         Public.setupButton(button: favButton, imgString: "heartIt")
         
+        
+        // Targets
+        playButton.addTarget(self, action:#selector(MainTabBar.playTarget(_sender:)), for: .touchUpInside)
         // N7ot ml7 3shan el t3m
         songImage.translatesAutoresizingMaskIntoConstraints = false
         songName.translatesAutoresizingMaskIntoConstraints = false
@@ -143,6 +188,37 @@ extension MainTabBar {
         
         
     }
+    @objc public func playTarget(_sender: UIButton) {
+        
+        if isPlaying {
+            musicPlayer.pause()
+            playButton.setImage(UIImage(named: "play"), for: .normal)
+        } else {
+            musicPlayer.play()
+            playButton.setImage(UIImage(named: "pause"), for: .normal)
+        }
+
+        }
+    
+    func setupPlayerData() {
+        
+        songName.text = nowPlayingTrack?.attributes?.name
+        songArtist.text = nowPlayingTrack?.attributes?.artistName
+        
+        
+        if isPlaying {
+            showPlayer(show: true)
+            playButton.setImage(UIImage(named: "pause"), for: .normal)
+        } else {
+            playButton.setImage(UIImage(named: "play"), for: .normal)
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     func hidePlayer(hide: Bool) {
         self.containerView.isHidden = true

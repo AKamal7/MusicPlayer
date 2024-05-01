@@ -8,6 +8,16 @@
 import UIKit
 import CupertinoJWT
 import StoreKit
+import AVFoundation
+import MediaPlayer
+import Cider
+
+var isPlaying: Bool = false
+var isAuthorized = false
+var player: AVPlayer!
+var musicPlayer: MPMusicPlayerController!
+var nowPlayingTrack: Cider.Track?
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultsManager.shared().token = token
             print(UserDefaultsManager.shared().token, "tokeeen")
             SKCloudServiceController().requestUserToken(forDeveloperToken: token) { userToken, error in
+                if userToken != nil {
+                    isAuthorized = true
+                } else {
+                    isAuthorized = false
+                }
                 print("Flagtoken2",userToken)
             }
 
