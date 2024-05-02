@@ -17,6 +17,7 @@ struct Playlist: Codable {
     let type: String
     let href: String
     let attributes: PlaylistAttributes
+    
 }
 
 struct PlaylistAttributes: Codable {

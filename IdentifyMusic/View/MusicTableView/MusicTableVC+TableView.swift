@@ -29,7 +29,11 @@ extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
     }
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        if let tracks = playlist?.relationships?.tracks.data {
+            return tracks.count
+        } else {
+            return 0
+        }
     }
     
     // Config cell
@@ -48,6 +52,7 @@ extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
         cell.containerView.roundCorners(topLeft: 40,topRight: 12, bottomLeft: 40, bottomRight: 12)
         cell.containerView.clipsToBounds = true
         cell.selectionStyle = .none
+        cell.songNameLabel.text = playlist?.relationships?.tracks.data?[indexPath.row].attributes?.name ?? ""
         
         return cell
     }
@@ -55,6 +60,8 @@ extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
         let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
+        
+        player.songData = playlist?.relationships?.tracks.data?[indexPath.row]
         navigationController?.pushViewController(player, animated: true)
     }
     

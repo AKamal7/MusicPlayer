@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cider
 
 protocol plistTabelCellProtocol: AnyObject {
     
@@ -37,7 +38,7 @@ class PlistTableCell: UITableViewCell {
         setupLabel(label: PlistNameLbl, text: "Plist Name", size: 20, fontName: "Heebo-Regular", color: UIColor(hex: "FFFFFF", alpha: 1))
         
 
-        setupImgView()
+        
         setupButton()
         
     }
@@ -49,9 +50,6 @@ class PlistTableCell: UITableViewCell {
         print("action yalla")
     }
     
-    
-    
-  
     private func setupButton() {
         moreActionsBtn.setImage(UIImage(named: "moreActions"), for: .normal)
         moreActionsBtn.setTitle("", for: .normal)
@@ -62,9 +60,18 @@ class PlistTableCell: UITableViewCell {
         label.font = UIFont(name: fontName, size: size)
         label.textColor = color
     }
-    private func setupImgView() {
-        cellImgView.image = UIImage(named: "musicIcon")
+    
+    
+    func setupImage(model: Playlist) {
+       
+        let imgString = model.attributes.artwork?.url.replacingOccurrences(of: "{w}", with: "\(model.attributes.artwork?.width ?? 80)")
+        let imgStringEnhanced = imgString?.replacingOccurrences(of: "{h}", with: "\(model.attributes.artwork?.height ?? 80)") ?? ""
+            let imgUrl = URL(string: imgStringEnhanced)
+            cellImgView.sd_setImage(with: imgUrl)
+            cellImgView.cornerRadius = 40
     }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
