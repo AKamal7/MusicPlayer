@@ -31,6 +31,8 @@
 		BB954FC32BA94A41001F12C0 /* PlistVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */; };
 		BB954FC62BA94C57001F12C0 /* CreatePlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB954FC52BA94C57001F12C0 /* CreatePlistVC.swift */; };
 		BB954FC82BA94C9B001F12C0 /* CreatePlistVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB954FC72BA94C9B001F12C0 /* CreatePlistVC.storyboard */; };
+		BB9EF6302BE49FD70000E709 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF62F2BE49FD70000E709 /* Genre.swift */; };
+		BB9EF6322BE4ACBC0000E709 /* GenreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EF6312BE4ACBC0000E709 /* GenreAPI.swift */; };
 		BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC07922BA6E7F900971473 /* PlistTableCell.swift */; };
 		BBAC07952BA6E7F900971473 /* PlistTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAC07932BA6E7F900971473 /* PlistTableCell.xib */; };
 		BBAE80C22BB80E910083F621 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE80C12BB80E910083F621 /* PremiumVC.swift */; };
@@ -114,6 +116,8 @@
 		BB954FC22BA94A41001F12C0 /* PlistVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlistVC+SearchBar.swift"; sourceTree = "<group>"; };
 		BB954FC52BA94C57001F12C0 /* CreatePlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlistVC.swift; sourceTree = "<group>"; };
 		BB954FC72BA94C9B001F12C0 /* CreatePlistVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePlistVC.storyboard; sourceTree = "<group>"; };
+		BB9EF62F2BE49FD70000E709 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		BB9EF6312BE4ACBC0000E709 /* GenreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreAPI.swift; sourceTree = "<group>"; };
 		BBAC07922BA6E7F900971473 /* PlistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistTableCell.swift; sourceTree = "<group>"; };
 		BBAC07932BA6E7F900971473 /* PlistTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlistTableCell.xib; sourceTree = "<group>"; };
 		BBAE80C12BB80E910083F621 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
@@ -503,6 +507,7 @@
 			children = (
 				F7754EA92BAB35DD003956C0 /* Song.swift */,
 				BBC79A462BE0FEB100E9E1FF /* UserPlaylists.swift */,
+				BB9EF62F2BE49FD70000E709 /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				BB4DB5342BBD61530081E62C /* UIView+CALayer.swift */,
 				F79E80C42BC630CA0028644C /* FilePresentationController.swift */,
 				BBC79A442BE0BEC200E9E1FF /* MusicAuthorizationManager.swift */,
+				BB9EF6312BE4ACBC0000E709 /* GenreAPI.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -763,6 +769,7 @@
 				F79E80C82BC631AC0028644C /* LyricsVC.swift in Sources */,
 				BB526F8F2BA28BB9006E6322 /* PlaylistVC.swift in Sources */,
 				BBFFA97B2BC21305005BD5B5 /* PlaylistsTableVC.swift in Sources */,
+				BB9EF6302BE49FD70000E709 /* Genre.swift in Sources */,
 				BBAC07942BA6E7F900971473 /* PlistTableCell.swift in Sources */,
 				F7D7D9812BC51F1000896EAB /* SearchResults+TableView.swift in Sources */,
 				BB85B8E32BBA60770099DE56 /* PulseAnimation.swift in Sources */,
@@ -774,6 +781,7 @@
 				BBC79A472BE0FEB100E9E1FF /* UserPlaylists.swift in Sources */,
 				F73B5A892B9CA7F100521C7F /* HistoryVC.swift in Sources */,
 				BBFFA9812BC214AB005BD5B5 /* TrendsCollectionVC.swift in Sources */,
+				BB9EF6322BE4ACBC0000E709 /* GenreAPI.swift in Sources */,
 				BBFFA97F2BC2136B005BD5B5 /* PlaylistsTableVC+TableView.swift in Sources */,
 				BBAE80CD2BB81F930083F621 /* NotAvailableVC.swift in Sources */,
 				F73B5A872B9CA73F00521C7F /* MainTabBar.swift in Sources */,

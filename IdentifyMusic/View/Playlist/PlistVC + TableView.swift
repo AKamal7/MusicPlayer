@@ -100,35 +100,7 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
 
     
 
-    func fetchTrendingPlaylists(completion: @escaping ([[String: Any]]) -> Void) {
-        // Your Apple Music API endpoint for fetching trending playlists
-        let url = URL(string: "https://api.music.apple.com/v1/catalog/us/charts/playlists")!
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization") // Replace YOUR_ACCESS_TOKEN with your actual access token
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error fetching trending playlists: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let results = json?["results"] as? [[String: Any]] {
-                    completion(results)
-                } else {
-                    print("Unable to parse response")
-                }
-            } catch {
-                print("Error parsing JSON: \(error.localizedDescription)")
-            }
-        }
-        
-        task.resume()
-    }
-    
+   
 
 
     func fetchMyPlaylists(userToken: String, completion: @escaping ([Playlist]?, Error?) -> Void) {

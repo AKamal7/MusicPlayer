@@ -29,17 +29,21 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var musicIconView: UIImageView!
     @IBOutlet weak var creatPlistImgView: UIImageView!
     
-    
+//    var genres: [GenreData] = []
     var userToken: String = ""
     var playlistsData: [Cider.Playlist] = []
     var fetchedPlaylists: [Playlist] = []
 
+    
+    
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-
+        
+        
+        
         setupView()
         setupTable()
         fetchUserData()
@@ -58,6 +62,17 @@ class PlaylistVC: UIViewController {
             
             
             self.userToken = "\(usertoken ?? "")"
+            GenreAPI.fetchGenres { result in
+                switch result {
+                case .success(let genres):
+                    // Handle fetched genres
+                    print("Fetched genres: \(genres)")
+                case .failure(let error):
+                    // Handle error
+                    print("Error fetching genres: \(error)")
+                }
+            }
+            
             
             self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
                 print("PLaylists", playlists)
@@ -82,8 +97,10 @@ class PlaylistVC: UIViewController {
                 }
             
             }
+            
         }
     }
+    
     @IBAction func seeAllBtnClicked(_ sender: Any) {
         let vc = UIStoryboard(name: "TrendsCollectionVC", bundle: nil).instantiateViewController(withIdentifier: "TrendsCollectionVC") as! TrendsCollectionVC
         navigationController?.pushViewController(vc, animated: false)
