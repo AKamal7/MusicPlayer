@@ -1,17 +1,26 @@
 PODS:
+  - Alamofire (5.9.1)
   - BlueCryptor (1.0.32)
   - BlueECC (1.2.5)
   - BlueRSA (1.0.200)
   - Cider (0.10.0)
   - CupertinoJWT (0.2.0)
+  - GoogleAPIClientForREST/Core (3.5.2):
+    - GTMSessionFetcher/Full (< 4.0, >= 1.6.1)
+  - GoogleAPIClientForREST/YouTube (3.5.2):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher/Full (< 4.0, >= 1.6.1)
+  - GTMSessionFetcher/Core (3.4.1)
+  - GTMSessionFetcher/Full (3.4.1):
+    - GTMSessionFetcher/Core
   - KituraContracts (1.2.1):
     - LoggerAPI (~> 1.7)
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
-  - SDWebImage (5.18.7):
-    - SDWebImage/Core (= 5.18.7)
-  - SDWebImage/Core (5.18.7)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
   - SwiftJWT (3.6.200):
     - BlueCryptor (~> 1.0)
     - BlueECC (~> 1.1)
@@ -20,18 +29,23 @@ PODS:
     - LoggerAPI (~> 1.7)
 
 DEPENDENCIES:
+  - Alamofire
   - Cider (~> 0.10)
   - CupertinoJWT
+  - GoogleAPIClientForREST/YouTube
   - SDWebImage
   - SwiftJWT
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - BlueCryptor
     - BlueECC
     - BlueRSA
     - Cider
     - CupertinoJWT
+    - GoogleAPIClientForREST
+    - GTMSessionFetcher
     - KituraContracts
     - LoggerAPI
     - Logging
@@ -39,17 +53,20 @@ SPEC REPOS:
     - SwiftJWT
 
 SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
   BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
   BlueRSA: dfeef51db96bcc4edec654956c1581adbda4e6a3
   Cider: 7d9518cfa70692d41f8f860bd04da33510479362
   CupertinoJWT: f712fdc2cc422aac8daa301ad1dce05ea9f6b6d6
+  GoogleAPIClientForREST: c26bb42dfcdf32a397e90275edfa84e5c50aa3ec
+  GTMSessionFetcher: 8000756fc1c19d2e5697b90311f7832d2e33f6cd
   KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
-  SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
   SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
 
-PODFILE CHECKSUM: e9f1bc403d66cf9b01d80010f50b8fea319f0aba
+PODFILE CHECKSUM: dd4658eabf447dc995fc7c364bd8a9c9c64fe19c
 
 COCOAPODS: 1.15.2
