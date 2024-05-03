@@ -54,33 +54,33 @@ class MainTabBar: UITabBarController {
     }
     
     deinit {
-         clearObserver()
-     }
-     
-     func setupObserver() {
-         NotificationCenter.default.addObserver(self,
-                                                selector: #selector(handleNotification(_:)),
-                                                name: NSNotification.Name("UpdatePlayer"),
-                                                object: nil)
-         
+        clearObserver()
+    }
+    
+    func setupObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleNotification(_:)),
+                                               name: NSNotification.Name("UpdatePlayer"),
+                                               object: nil)
         
-     }
-     
-     func clearObserver() {
-         NotificationCenter.default.removeObserver(self)
-     }
-     
-     @objc func handleNotification(_ sender: Notification) {
-         if isPlaying {
-             setupPlayerData()
-             showPlayer(show: true)
-//             playButton.setImage(UIImage(named:"pause"), for: .normal)
-         } else {
-//             playButton.setImage(UIImage(named:"play"), for: .normal)
-         }
-         print("Khaled")
-     }
         
+    }
+    
+    func clearObserver() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func handleNotification(_ sender: Notification) {
+        if isPlaying {
+            setupPlayerData()
+            showPlayer(show: true)
+            //             playButton.setImage(UIImage(named:"pause"), for: .normal)
+        } else {
+            //             playButton.setImage(UIImage(named:"play"), for: .normal)
+        }
+        print("Khaled")
+    }
+    
     @objc func playerVisibilityHidden(notif: Notification) {
         let show = notif.object as? Bool ?? false
         self.hidePlayer(hide: show)
@@ -102,10 +102,10 @@ extension MainTabBar {
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         visualEffectView.effect = blurEffect
-          // Set the frame of the visual effect view to cover the entire screen
+        // Set the frame of the visual effect view to cover the entire screen
         visualEffectView.frame = tabBar.bounds
-          
-          // Insert the visual effect view below the tab bar
+        
+        // Insert the visual effect view below the tab bar
         tabBar.insertSubview(visualEffectView, at: 0)
         self.tabBar.isTranslucent = true
         self.tabBar.backgroundColor = .clear
@@ -136,7 +136,7 @@ extension MainTabBar {
         containerView.addSubview(playButton)
         containerView.addSubview(favButton)
         
-       
+        
         
         // El 7rkat w el tkat
         songImage.image = UIImage(named: "Component 1")
@@ -197,8 +197,8 @@ extension MainTabBar {
             musicPlayer.play()
             playButton.setImage(UIImage(named: "pause"), for: .normal)
         }
-
-        }
+        
+    }
     
     func setupPlayerData() {
         
@@ -231,7 +231,7 @@ extension MainTabBar {
     private func createServiceSearchVC() -> UIViewController {
         let searchVC = UIStoryboard(name: "SearchVC", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 1)
-
+        
         
         return searchVC
     }
