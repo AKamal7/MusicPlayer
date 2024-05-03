@@ -193,9 +193,11 @@ extension MainTabBar {
         if isPlaying {
             musicPlayer.pause()
             playButton.setImage(UIImage(named: "play"), for: .normal)
-        } else {
+        } else if isPlaying == true {
             musicPlayer.play()
             playButton.setImage(UIImage(named: "pause"), for: .normal)
+        } else {
+            return
         }
         
     }

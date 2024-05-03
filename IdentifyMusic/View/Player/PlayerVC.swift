@@ -141,6 +141,7 @@ class PlayerVC: UIViewController {
         if isAuthorized {
             if musicPlayer.playbackState == .playing{
                 isPlaying = true
+                
 //                songImgView.rotate360Degrees()
                 playBtn.setImage(UIImage(named: "pause"), for: .normal)
                 durationLiveLabel.text  = musicPlayer.currentPlaybackTime.MinuteSeconds

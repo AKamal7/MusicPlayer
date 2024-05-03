@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Cider
 
 class MusicTableVC: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var fetchedPlaylists: Playlist!
+    var playlist: Cider.Playlist?
     
     var titleText: String?
     
@@ -30,6 +33,18 @@ class MusicTableVC: UIViewController {
         
         setupTable()
         setupNavBar()
+        
+        let client = CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
+        
+        client.playlist(id: fetchedPlaylists.attributes.playParams.globalId ?? "") { results, error in
+            self.playlist = results
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            print("id", results)
+            print("error",error)
+        }
     }
     
     private func setupNavBar() {

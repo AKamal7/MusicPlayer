@@ -10,6 +10,8 @@ import MusicKit
 import Cider
 import StoreKit
 import MusadoraKit
+
+
 class PlaylistVC: UIViewController {
     
     // MARK:- Variables
@@ -36,21 +38,25 @@ class PlaylistVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationItem.title = "My playlists"
-        
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "141414", alpha: 1)
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-        navigationItem.rightBarButtonItem = add
-        navigationItem.rightBarButtonItem?.tintColor = .white
+
 
         setupView()
         setupTable()
+        fetchUserData()
         
-        
+    }
+    
+    // Mark:-
+
+    
+    // MARK:- Actions
+    
+    private func fetchUserData() {
         authenticateUser { usertoken, error in
             print( "eroor",error)
             print("usertoken",usertoken)
+            
+            
             self.userToken = "\(usertoken ?? "")"
             
             self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
@@ -59,6 +65,11 @@ class PlaylistVC: UIViewController {
                 
                 if let playlists = playlists {
                     self.fetchedPlaylists = playlists
+                    self.fetchedPlaylists = self.fetchedPlaylists.filter({$0.attributes.playParams.globalId != nil})
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
                     print("Fetched \(self.fetchedPlaylists.count) playlists:")
                     for playlist in self.fetchedPlaylists {
                         print("Name: \(playlist.attributes.name)")
@@ -72,12 +83,7 @@ class PlaylistVC: UIViewController {
             
             }
         }
-        
     }
-    
-    // MARK:- Actions
-    
-    
     @IBAction func seeAllBtnClicked(_ sender: Any) {
         let vc = UIStoryboard(name: "TrendsCollectionVC", bundle: nil).instantiateViewController(withIdentifier: "TrendsCollectionVC") as! TrendsCollectionVC
         navigationController?.pushViewController(vc, animated: false)
@@ -100,6 +106,8 @@ class PlaylistVC: UIViewController {
         self.view.backgroundColor = UIColor(hex: "141414")
 //        Public.setupLabelWithMedium(label: titleLabel, text: "My Playlist", size: 20, color: .white)
         contentView.backgroundColor = UIColor(hex: "141414")
+        
+        
 //        setupNavBar()
         setupSearchBar()
         Public.setupLabelWithMedium(label: trendsLabel, text: "Trends", size: 18, color: .white)

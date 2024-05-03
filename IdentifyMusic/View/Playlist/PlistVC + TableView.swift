@@ -31,7 +31,7 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
     }
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlistsData.count  
+        return fetchedPlaylists.count
     }
     // Config cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,18 +47,25 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.delegate = self
         
-        cell.PlistNameLbl.text = playlistsData[indexPath.row].attributes?.name
+        cell.PlistNameLbl.text = fetchedPlaylists[indexPath.row].attributes.name
         
-        for play in playlistsData {
-            cell.PlistNameLbl.text = play.attributes?.name
-        }
-        return cell
+        
+        cell.setupImage(model: fetchedPlaylists[indexPath.row])
+            
+            
+      return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ay 7aga")
+        
+        
         let vc = UIStoryboard(name: "MusicTableVC", bundle: nil).instantiateViewController(withIdentifier: "MusicTableVC") as! MusicTableVC
+        
+        vc.fetchedPlaylists = fetchedPlaylists[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: false)
+        
+        
     }
     func authenticateUser(completion: @escaping (String?, Error?) -> Void) {
         // Present the SKCloudServiceSetupViewController to the user for authorization
@@ -90,49 +97,38 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+
     
-    // Function to fetch user playlists using the obtained user token
+
+    func fetchTrendingPlaylists(completion: @escaping ([[String: Any]]) -> Void) {
+        // Your Apple Music API endpoint for fetching trending playlists
+        let url = URL(string: "https://api.music.apple.com/v1/catalog/us/charts/playlists")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization") // Replace YOUR_ACCESS_TOKEN with your actual access token
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching trending playlists: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                if let results = json?["results"] as? [[String: Any]] {
+                    completion(results)
+                } else {
+                    print("Unable to parse response")
+                }
+            } catch {
+                print("Error parsing JSON: \(error.localizedDescription)")
+            }
+        }
+        
+        task.resume()
+    }
     
-//    func fetchUserPlaylists(userToken: String, completion: @escaping ([String]?, Error?) -> Void) {
-//        // Construct the request to fetch user playlists using the user token
-//        let baseURL = "https://api.music.apple.com"
-//        let url = URL(string: "\(baseURL)/v1/me/library/playlists")!
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
-//        request.addValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization")
-//        request.addValue("\(userToken)", forHTTPHeaderField: "Music-User-Token")
-//        
-//        // Perform the request
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            // Check for any errors
-//            if let error = error {
-//                completion(nil, error)
-//                return
-//            }
-//            
-//            // Parse the response data
-//            guard let data = data else {
-//                completion(nil, NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
-//                return
-//            }
-//            
-//            do {
-//                // Decode the JSON response
-//                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-//                if let playlistsData = json?["data"] as? [[String: Any]] {
-//                    // Extract playlist names from the response
-//                    let playlistNames = playlistsData.compactMap { $0["attributes"] as? [String: Any] } .compactMap { $0["name"] as? String }
-//                    completion(playlistNames, nil)
-//                } else {
-//                    // Unable to parse playlists data
-//                    completion(nil, NSError(domain: "MusicManager", code: 1, userInfo: [NSLocalizedDescriptionKey: "Error parsing playlists data"]))
-//                }
-//            } catch {
-//                // Error decoding JSON
-//                completion(nil, error)
-//            }
-//        }.resume()
-//    }
 
 
     func fetchMyPlaylists(userToken: String, completion: @escaping ([Playlist]?, Error?) -> Void) {
@@ -154,6 +150,7 @@ extension PlaylistVC: UITableViewDelegate, UITableViewDataSource {
             do {
                 let playlistResponse = try JSONDecoder().decode(PlaylistResponse.self, from: data)
                 completion(playlistResponse.data, nil)
+               
             } catch {
                 completion(nil, error)
             }
