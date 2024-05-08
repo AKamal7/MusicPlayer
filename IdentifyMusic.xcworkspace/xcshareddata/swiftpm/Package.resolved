@@ -1,0 +1,24 @@
+{
+  "originHash" : "ba6a0c6bb0adacb5efd3f49c8816c59ce25b64dce4f8bcc5b8ee05728ad12ac0",
+  "pins" : [
+    {
+      "identity" : "musadorakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rryam/MusadoraKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1bcfcdb819c6a3fb7d2b8a840273f11e2edce135"
+      }
+    },
+    {
+      "identity" : "youtubekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/b5i/YouTubeKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6382cf3e99dba4a1cb91076d88a5649f7b80d638"
+      }
+    }
+  ],
+  "version" : 3
+}
