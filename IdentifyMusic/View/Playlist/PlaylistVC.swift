@@ -33,14 +33,19 @@ class PlaylistVC: UIViewController {
     var userToken: String = ""
     var playlistsData: [Cider.Playlist] = []
     var fetchedPlaylists: [Playlist] = []
-
+    var fetchedGenres: GenreResponse?
     
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+        let cider = Cider.CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
+        cider.search(term: "genre",limit: 1) { results, error in
+            print("ciderGenres" ,results)
+            print(error,"cidergenreserror")
+        }
         
         
         
@@ -54,7 +59,26 @@ class PlaylistVC: UIViewController {
 
     
     // MARK:- Actions
-    
+    private func getGenres() {
+        GenreAPI.fetchGenres { result in
+            switch result {
+            case .success(let genres):
+                // Handle fetched genres
+                
+                self.fetchedGenres = genres
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            case .failure(let error):
+                // Handle error
+                print("Error fetching genres: \(error)")
+            }
+        }
+        
+        
+        
+    }
     private func fetchUserData() {
         authenticateUser { usertoken, error in
             print( "eroor",error)
@@ -62,17 +86,7 @@ class PlaylistVC: UIViewController {
             
             
             self.userToken = "\(usertoken ?? "")"
-            GenreAPI.fetchGenres { result in
-                switch result {
-                case .success(let genres):
-                    // Handle fetched genres
-                    print("Fetched genres: \(genres)")
-                case .failure(let error):
-                    // Handle error
-                    print("Error fetching genres: \(error)")
-                }
-            }
-            
+         
             
             self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
                 print("PLaylists", playlists)

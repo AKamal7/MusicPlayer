@@ -78,7 +78,7 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
     
     func searchForMusic(query: String) {
         let query = GTLRYouTubeQuery_SearchList.query(withPart: ["snippet"])
-        query.q = query
+//        query.q = query
         query.maxResults = 10
         
         service.apiKey = "YOUR_API_KEY"
@@ -166,10 +166,7 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.m4a") {
             do {
                 let audioData = try Data(contentsOf: url)
-                print(getDirectory().appendingPathComponent("recording.m4a"), "dataaaaaaaaa")
                 recognizeSong(path: getDirectory().appendingPathComponent("recording.m4a"))
-               // recordedAudio = try AVAudioPlayer(data: audioData)
-               // recordedAudio?.play()
             } catch {
                 print("Failed to play recorded audio: \(error.localizedDescription)")
             }
@@ -467,22 +464,7 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
            
        }
     
-    // completion of recording
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        if flag {
-//            
-//            soundsRecordPlayStatusLabel.text = "Recording Completed"
-//            
-//            recordButtonOutlet.setImage(UIImage(named: "Microphone-Jolly"), for: UIControl.State())
-//            playButtonOutlet.setImage(UIImage(named: "Play-Jolly"), for: UIControl.State())
-//            stopButtonOutlet.setImage(UIImage(named: "Stop-Outlined"), for: UIControl.State())
-//            
-//            recordButtonOutlet.isEnabled = true
-//            playButtonOutlet.isEnabled = true
-//            stopButtonOutlet.isEnabled = false
-//            
-//        }
-//    }
+
     func getDirectory() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
