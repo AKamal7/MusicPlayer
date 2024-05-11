@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,6 +25,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="639-qF-eFs" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ULw-Uv-1CX"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dri-2H-qE4">
                                 <rect key="frame" x="0.0" y="59" width="393" height="300"/>
                                 <subviews>
@@ -64,16 +71,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-Qv-6Rg">
-                                <rect key="frame" x="80" y="59" width="104" height="55"/>
+                                <rect key="frame" x="80" y="59" width="105.66666666666669" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jw-yk-5xf">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="29.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105.66666666666667" height="23.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVO-8D-sfm">
-                                        <rect key="frame" x="0.0" y="31.333333333333329" width="104" height="23.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="36.333333333333329" width="105.66666666666667" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -84,16 +91,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-eB-kaL">
-                                <rect key="frame" x="48" y="366.33333333333331" width="104" height="55"/>
+                                <rect key="frame" x="48.000000000000007" y="366.33333333333331" width="105.66666666666669" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-NU-w2E">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="29.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105.66666666666667" height="23.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWs-F0-Icq">
-                                        <rect key="frame" x="0.0" y="31.333333333333371" width="104" height="23.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="36.333333333333371" width="105.66666666666667" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -256,13 +263,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vce-i8-hZY">
-                                <rect key="frame" x="48" y="538.33333333333337" width="19.333333333333329" height="15"/>
+                                <rect key="frame" x="48" y="538.33333333333337" width="19.666666666666671" height="11.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxi-kg-6HB">
-                                <rect key="frame" x="325.66666666666669" y="538.33333333333337" width="19.333333333333314" height="15"/>
+                                <rect key="frame" x="325.33333333333331" y="538.33333333333337" width="19.666666666666686" height="11.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -274,7 +281,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyrics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7a-ys-kjd">
-                                                <rect key="frame" x="24" y="24" width="53" height="29.666666666666671"/>
+                                                <rect key="frame" x="24.000000000000004" y="24" width="52.333333333333343" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -340,9 +347,11 @@
                         <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kLN-eB-kaL" firstAttribute="top" secondItem="gHU-3F-AcT" secondAttribute="bottom" id="0z5-Iu-zL9"/>
+                            <constraint firstItem="Jjn-gg-4yC" firstAttribute="trailing" secondItem="639-qF-eFs" secondAttribute="trailing" id="1hc-lU-KmE"/>
                             <constraint firstItem="Jjn-gg-4yC" firstAttribute="trailing" secondItem="Lip-wB-XcM" secondAttribute="trailing" constant="24" id="1pQ-0z-wHL"/>
                             <constraint firstItem="vce-i8-hZY" firstAttribute="top" secondItem="Z2L-0s-WNy" secondAttribute="bottom" constant="7" id="54U-ZU-aW2"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="top" secondItem="kLN-eB-kaL" secondAttribute="bottom" constant="10" id="AEB-pe-fmw"/>
+                            <constraint firstItem="639-qF-eFs" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" id="G4n-5H-xWC"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="centerX" secondItem="Jjn-gg-4yC" secondAttribute="centerX" id="G6w-8s-Jyg"/>
                             <constraint firstItem="Jjn-gg-4yC" firstAttribute="trailing" secondItem="Z2L-0s-WNy" secondAttribute="trailing" constant="48" id="GjE-8u-mgj"/>
                             <constraint firstItem="6WX-Qv-6Rg" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" id="I3l-Ph-FbN"/>
@@ -365,6 +374,7 @@
                             <constraint firstItem="Lip-wB-XcM" firstAttribute="top" secondItem="Jjn-gg-4yC" secondAttribute="top" constant="500" id="nlp-J0-fxh"/>
                             <constraint firstItem="Jjn-gg-4yC" firstAttribute="bottom" secondItem="Lip-wB-XcM" secondAttribute="bottom" constant="131" id="sMv-zV-DKV"/>
                             <constraint firstItem="dri-2H-qE4" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" id="u5h-d1-utj"/>
+                            <constraint firstItem="639-qF-eFs" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" id="uFR-4F-IHB"/>
                             <constraint firstItem="j11-Zh-Tyj" firstAttribute="leading" secondItem="t9i-3P-v1s" secondAttribute="trailing" constant="18.666666666666657" id="uck-qD-fcA"/>
                             <constraint firstItem="Lip-wB-XcM" firstAttribute="leading" secondItem="Jjn-gg-4yC" secondAttribute="leading" constant="24" id="usq-15-zmB"/>
                             <constraint firstItem="t9i-3P-v1s" firstAttribute="leading" secondItem="Dfx-tu-taI" secondAttribute="trailing" constant="17" id="xnZ-5k-Dcm"/>
@@ -391,7 +401,9 @@
                         <outlet property="songImgView" destination="gHU-3F-AcT" id="x51-R3-eL9"/>
                         <outlet property="songNameLbl" destination="kLg-NU-w2E" id="y28-Ju-AqL"/>
                         <outlet property="songTop" destination="j08-0k-tqA" id="d7o-eJ-Oqs"/>
+                        <outlet property="songView" destination="dri-2H-qE4" id="Mso-G6-5rQ"/>
                         <outlet property="titleLabelsStack" destination="6WX-Qv-6Rg" id="dtb-09-L96"/>
+                        <outlet property="videoView" destination="639-qF-eFs" id="6Po-gM-G2z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqc-Eu-iOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

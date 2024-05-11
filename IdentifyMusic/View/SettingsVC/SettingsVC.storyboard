@@ -77,6 +77,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCF-OK-OdO">
                                                 <rect key="frame" x="264" y="12" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="premiumSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="sqg-1m-q9R"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,6 +140,9 @@
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeB-8Q-CH1">
                                                 <rect key="frame" x="264" y="12.333333333333314" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="appleMusicSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="3lQ-kf-QJ3"/>
+                                                </connections>
                                             </switch>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing 3" translatesAutoresizingMaskIntoConstraints="NO" id="rSL-8E-SnY">
                                                 <rect key="frame" x="16" y="13" width="30" height="30"/>
@@ -184,8 +190,11 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTe-UA-o1n">
+                                            <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTe-UA-o1n">
                                                 <rect key="frame" x="264" y="15.666666666666629" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="appleMusicSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="sOy-sg-o7s"/>
+                                                </connections>
                                             </switch>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtubeMusic" translatesAutoresizingMaskIntoConstraints="NO" id="49o-VP-Nfl">
                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
@@ -296,10 +305,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appleMusicSwitch" destination="xeB-8Q-CH1" id="Q6i-Z1-P4j"/>
                         <outlet property="backButton" destination="ufu-Nn-7Wj" id="tfQ-He-mSS"/>
                         <outlet property="contactBtn" destination="J1w-D2-niS" id="HSq-P2-eb7"/>
                         <outlet property="contactLabel" destination="I9o-Tr-0XC" id="1Wj-N6-D5U"/>
+                        <outlet property="premiumSwitch" destination="xCF-OK-OdO" id="rSf-sA-Fsl"/>
                         <outlet property="titleLabel" destination="QRQ-tk-OvA" id="ctB-cb-N7j"/>
+                        <outlet property="youtubeSwitch" destination="ZTe-UA-o1n" id="q1s-FB-o4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

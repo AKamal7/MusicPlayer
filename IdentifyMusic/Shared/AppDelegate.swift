@@ -27,7 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        if UserDefaultsManager.shared().isFirstTime == nil || UserDefaultsManager.shared().isFirstTime == false {
+            UserDefaultsManager.shared().isFirstTime = true
+            UserDefaultsManager.shared().appleMusicPremium = true
+            UserDefaultsManager.shared().youtubeEnabled = false
+            print(UserDefaultsManager.shared().isFirstTime, "firstTimeee")
+        }
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         getDeveloperToken()

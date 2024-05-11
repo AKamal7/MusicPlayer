@@ -80,6 +80,15 @@ class HistoryTableCell: UITableViewCell {
         cellImgView.cornerRadius = cellImgView.frame.size.height / 2
     }
     
+    func setupYoutube(model: Video) {
+        self.songNameLabel.text = model.title
+        let imgUrl = URL(string: model.thumbnailUrl)
+        cellImgView.sd_setImage(with: imgUrl)
+        self.dateLabel.isHidden = true
+        self.artistNameLabel.text = model.channelTitle
+        
+    }
+    
     func setupCell(model: Cider.Track) {
         if let attributes = model.attributes {
             let imgString = attributes.artwork.url.replacingOccurrences(of: "{w}", with: "\(attributes.artwork.width)")
@@ -88,7 +97,13 @@ class HistoryTableCell: UITableViewCell {
             cellImgView.sd_setImage(with: imgUrl)
         }
         
+        
+        
     }
+    
+    
+    
+    
     
     
     

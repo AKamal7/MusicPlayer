@@ -27,6 +27,7 @@ PODS:
     - BlueRSA (~> 1.0)
     - KituraContracts (~> 1.2)
     - LoggerAPI (~> 1.7)
+  - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - GoogleAPIClientForREST/YouTube
   - SDWebImage
   - SwiftJWT
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -51,6 +53,7 @@ SPEC REPOS:
     - Logging
     - SDWebImage
     - SwiftJWT
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
@@ -66,7 +69,8 @@ SPEC CHECKSUMS:
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
   SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
   SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: dd4658eabf447dc995fc7c364bd8a9c9c64fe19c
+PODFILE CHECKSUM: 36726c214e4ee58ac6942b9c728185896aafcea1
 
 COCOAPODS: 1.15.2

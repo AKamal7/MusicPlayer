@@ -8,12 +8,17 @@
 import UIKit
 import Cider
 import SDWebImage
+import Alamofire
 
 class SearchResultsVC: UIViewController {
     
+    var isYoutube = false
     var songsData: Cider.ResponseRoot<Track>!
+    var youtubeVid: [Video] = []
     var offset = 0
     var isPagination = false
+    var id: String?
+
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     

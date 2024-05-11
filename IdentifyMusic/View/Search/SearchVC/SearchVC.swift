@@ -11,8 +11,9 @@ import Cider
 import CupertinoJWT
 import StoreKit
 import Alamofire
-import YouTubeKit
-import GoogleAPIClientForREST
+
+//import Metal
+//import Accelerate
 
 class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
@@ -45,25 +46,26 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
     var timer = Timer()
     var audioRecorder: AVAudioRecorder?
     var isRecording = false
-   // var recordedAudio: AVAudioPlayer?
     
-    let service = GTLRYouTubeService()
-
+    //    var engine : AVAudioEngine!
+    //    private var magnitudes: [Float] = []
+    //    private let metalView = MetalView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    //    private let circularView = CircularSoundWaveView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        circularView.center = pulsyBtn.center
+        //        pulsyBtn.addSubview(circularView)
         
-    
-   
         checkMicrophoneAccess()
         closeRecognitionBtn.isHidden = true
         hummingResponseLbl.isHidden = true
         assistLabel.isHidden = true
-   
         backBtnOutlet.isHidden = true
         backLbl.isHidden = true
         noSongAlertLbl.isHidden = true
         tapLbl.isHidden = true
-//        setupAudioRecorder()
+
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.playAndRecord, mode: .default)
@@ -72,37 +74,67 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
             print("Failed to set up audio session: \(error.localizedDescription)")
         }
         setupView()
-        
- 
     }
     
-    func searchForMusic(query: String) {
-        let query = GTLRYouTubeQuery_SearchList.query(withPart: ["snippet"])
-        query.q = query
-        query.maxResults = 10
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        setupPulsy()
+    }
+    
+    @IBAction func pulsyBtnPressed(_ sender: UIButton) {
+        if isRecording {
+            stopRecording()
+        } else {
+            startRecording()
+        }
+    }
+    
+    
+    @IBAction func searchBtnPressed(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "SearchResultsVC", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsVC") as! SearchResultsVC
+        self.navigationController?.pushViewController(vc, animated: false)
+        print("ahaahah")
+    }
+    
+    @IBAction func searchClicked(_ sender: UIButton) {
         
-        service.apiKey = "YOUR_API_KEY"
+    }
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
         
-        service.executeQuery(query) { (ticket, response, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+        backToOriginal()
+    }
+    
+    func fetchMyPlaylists(userToken: String, completion: @escaping ([Playlist]?, Error?) -> Void) {
+        let baseURL = "https://api.music.apple.com"
+        let endpoint = "/v1/catalog/eg/songs/1411629089"
+        let url = URL(string: "\(baseURL)\(endpoint)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(UserDefaultsManager.shared().token ?? "")", forHTTPHeaderField: "Authorization")
+        request.addValue("\(userToken)", forHTTPHeaderField: "Music-User-Token")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion(nil, error ?? NSError(domain: "MusicManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data returned"]))
                 return
             }
             
-            if let searchResponse = response as? GTLRYouTube_SearchListResponse {
-                for item in searchResponse.items! {
-                    if let searchResult = item as? GTLRYouTube_SearchResult {
-                        if let snippet = searchResult.snippet {
-                            print("Title: \(snippet.title)")
-                            print("Description: \(snippet.descriptionProperty)")
-                            print("Thumbnail: \(snippet.thumbnails!.defaultProperty!.url!)")
-                        }
-                    }
-                }
+            do {
+                let playlistResponse = try JSONDecoder().decode(PlaylistResponse.self, from: data)
+                completion(playlistResponse.data, nil)
+                
+            } catch {
+                completion(nil, error)
             }
         }
+        task.resume()
     }
-  
+    
     func setBlurView() {
         // Init a UIVisualEffectView which going to do the blur for us
         let blurView = UIVisualEffectView()
@@ -114,26 +146,9 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         // Now add the blur view to the main view
         //           view.addSubview(blurView)
         view.addSubview(blurView)
-
-    }
-
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        setupPulsy()
     }
     
-    
-    @IBAction func pulsyBtnPressed(_ sender: UIButton) {
-        if isRecording {
-            stopRecording()
-        } else {
-            startRecording()
-        }
-    }
-    
+    //RecordingStates
     func startRecording() {
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -152,7 +167,12 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
                 audioRecorder?.delegate = self
                 audioRecorder?.record()
                 isRecording = true
+                //                timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] _ in
+                //                     self?.updateCircularView()
+                //                 })
             }
+            hearingView()
+            
         } catch {
             print("Failed to start recording: \(error.localizedDescription)")
         }
@@ -168,38 +188,17 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
                 let audioData = try Data(contentsOf: url)
                 print(getDirectory().appendingPathComponent("recording.m4a"), "dataaaaaaaaa")
                 recognizeSong(path: getDirectory().appendingPathComponent("recording.m4a"))
-               // recordedAudio = try AVAudioPlayer(data: audioData)
-               // recordedAudio?.play()
+                
             } catch {
                 print("Failed to play recorded audio: \(error.localizedDescription)")
             }
         }
     }
     
-    @IBAction func searchBtnPressed(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "SearchResultsVC", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsVC") as! SearchResultsVC
-        self.navigationController?.pushViewController(vc, animated: false)
-        print("ahaahah")
-    }
-    
-    @IBAction func searchClicked(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func backBtnPressed(_ sender: UIButton) {
-      
-        backToOriginal()
-    }
-    
     private func hearingView() {
         
-    
-//        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.update), userInfo: nil, repeats: false)
-//    
-      
         pulsyBtn.setImage(UIImage(named: "Component 1"), for: .normal)
         songImgView.isHidden = false
-      
         self.view.backgroundColor = UIColor(hex: "1E1029", alpha: 1)
         adView.isHidden = true
         searchBar.isHidden = true
@@ -215,10 +214,23 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         backBtnOutlet.isHidden = true
         noSongAlertLbl.isHidden = true
         tapLbl.isHidden = true
-        pulsyBtn.isEnabled = false
+        pulsyBtn.isEnabled = true
+        //        pulsyBtn.layer.removeAllAnimations()
+        
         pulsyAnimation()
         print("111...")
     }
+    
+    //    private func updateCircularView() {
+    //        // Calculate the sound wave intensity based on audio level
+    //        audioRecorder?.updateMeters()
+    //        let normalizedValue = pow(10, (audioRecorder?.averagePower(forChannel: 0) ?? 0) / 20)
+    //
+    //        // Update the circular view with the sound wave intensity
+    //        circularView.updateSoundWave(intensity: normalizedValue)
+    //
+    //    }
+    //
     
     private func noSongView() {
         self.view.backgroundColor = UIColor(hex: "2C1010", alpha: 1)
@@ -257,6 +269,7 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         pulsyAnimation()
         
     }
+    
     private func pulsyAnimation() {
         
         let pulse1 = CASpringAnimation(keyPath: "transform.scale")
@@ -270,11 +283,11 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         
         let animation = CAKeyframeAnimation(keyPath: "transform.scale")
         
-         animation.values = [1.0, 1.2, 1.0]
+        animation.values = [1.0, 1.2, 1.0]
         animation.keyTimes = [0, 0.5, 1]
-         animation.duration = 1.0
-         animation.repeatCount = Float.infinity
-      
+        animation.duration = 1.0
+        animation.repeatCount = Float.infinity
+        
         pulsyBtn.layer.add(animation, forKey: "pulse")
     }
     
@@ -284,7 +297,7 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         self.view.backgroundColor = UIColor(hex: "141414", alpha: 1)
         setupSearchBar()
         setupSettingBtn()
-//        setupPulsy()
+        //        setupPulsy()
     }
     
     private func hidePlayer() {
@@ -315,9 +328,6 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         pulsyAnimation()
     }
     
-    @objc func addButtonTapped() {
-        
-    }
     
     @IBAction func closeRecogntionBtnPressed(_ sender: UIButton) {
         self.view.backgroundColor = UIColor(hex: "141414", alpha: 1)
@@ -331,15 +341,17 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         assistLabel.isHidden = true
         tabBarController?.tabBar.isHidden = false
         showPlayer()
-
         
     }
     
     @IBAction func settingsBtnClicked(_ sender: UIButton) {
-       
+        
         let settings = UIStoryboard(name: "SettingsVC", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
-        settings.modalPresentationStyle = .fullScreen
-        self.present(settings,animated: false,completion: nil)
+        //        settings.modalPresentationStyle = .fullScreen
+        //        self.present(settings,animated: false,completion: nil)
+        self.navigationController?.pushViewController(settings, animated: true)
+        
+        
     }
     
     @IBAction func getPremiumTapped(_ sender: UIButton) {
@@ -347,11 +359,9 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         let premiumVC = UIStoryboard(name: "PremiumVC", bundle: nil).instantiateViewController(withIdentifier: "PremiumVC") as! PremiumVC
         premiumVC.modalPresentationStyle = .custom
         self.present(premiumVC, animated: false, completion: nil)
-         
+        
         self.setBlurView()
         premiumVC.delegate = self
-
-     
         
     }
     
@@ -362,127 +372,67 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
             multipartFormData.append(path, withName: "file", fileName: "recording.m4a", mimeType: "audio/m4a")
             multipartFormData.append(Data("apple_music,lyrics".utf8), withName: "return")
             multipartFormData.append(Data(apiKey.utf8), withName: "api_token")
-        }, to: apiUrlString).responseJSON { response in
+        }, to: apiUrlString).responseDecodable { (response: AFDataResponse<SongResponse>) in
             switch response.result {
                 
             case .success(let data):
-                print(data)
+                let player = UIStoryboard(name: "PlayerVC", bundle: nil).instantiateViewController(withIdentifier: "PlayerVC") as! PlayerVC
+                player.recognitionData = data
+                self.navigationController?.pushViewController(player, animated: true)
+                print(data, "DAAATaaaaa")
             case .failure(let error):
-                print(error)
+                self.noSongView()
+                print(error, "EErrorr")
             }
         }
     }
-    
-    func createBodyWithParameters(parameters: [String: String], filePathKey: String?, audioData: Data?, boundary: String) -> Data {
-        var body = Data();
 
-        for (key, value) in parameters {
-            body.appendString("--\(boundary)\r\n")
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-            body.appendString("\(value)\r\n")
-        }
-
-        let filename = "recording.m4a"
-        let mimetype = "audio/m4a"
-
-        body.appendString("--\(boundary)\r\n")
-
-        if let filePath = filePathKey {
-            let imageData = self.getDirectory().appendingPathComponent("recording.m4a")
-            body.appendString("Content-Disposition: form-data; name=\"\(filePath)\"; filename=\"\(filename)\"\r\n")
-            body.appendString("Content-Type: \(mimetype)\r\n\r\n")
-            body.appendString("\(imageData)")
-            body.appendString("\r\n")
-            body.appendString("--\(boundary)--\r\n")
-        }
-
-        return body
-    }
-    
-    func handleRecognitionResponse(_ response: [String: Any]) {
-        // Process the recognition response here
-        // You can extract the recognized song information from the response dictionary
-        // For example, you can access the "title", "artist", or "album" fields
-
-        if let title = response["title"] as? String {
-            print("Title: \(title)")
-        }
-
-        if let artist = response["artist"] as? String {
-            print("Artist: \(artist)")
-        }
-
-        if let album = response["album"] as? String {
-            print("Album: \(album)")
-        }
-        
-        print(response, "Response")
-
-        // Continue with further processing or UI updates based on the recognition results
-    }
-    
     func checkMicrophoneAccess() {
-           // Check Microphone Authorization
-           switch AVAudioSession.sharedInstance().recordPermission {
-               
-           case AVAudioSession.RecordPermission.granted:
-               print(#function, " Microphone Permission Granted")
-               break
-               
-           case AVAudioSession.RecordPermission.denied:
-               // Dismiss Keyboard (on UIView level, without reference to a specific text field)
-               UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
-               let alert = UIAlertController(title: "Mic Error", message: "Not authorized", preferredStyle: .alert)
-               alert.addAction(UIAlertAction(title: "Click", style: .default, handler: { _ in
-                                      DispatchQueue.main.async {
-                                          if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                                              
-                                              UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                                          }
-                                      } // end dispatchQueue
-                                      
-               }))
-               self.present(alert, animated: true, completion: nil)
-     
-
-               return
-               
-           case AVAudioSession.RecordPermission.undetermined:
-               print("Request permission here")
-               // Dismiss Keyboard (on UIView level, without reference to a specific text field)
-               UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
-               
-               AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
-                   // Handle granted
-                   if granted {
-                       print(#function, " Now Granted")
-                   } else {
-                       print("Pemission Not Granted")
-                       
-                   } // end else
-               })
-           @unknown default:
-               print("ERROR! Unknown Default. Check!")
-           } // end switch
-           
-       }
+        // Check Microphone Authorization
+        switch AVAudioSession.sharedInstance().recordPermission {
+            
+        case AVAudioSession.RecordPermission.granted:
+            print(#function, " Microphone Permission Granted")
+            break
+            
+        case AVAudioSession.RecordPermission.denied:
+            // Dismiss Keyboard (on UIView level, without reference to a specific text field)
+            UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
+            let alert = UIAlertController(title: "Mic Error", message: "Not authorized", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: { _ in
+                DispatchQueue.main.async {
+                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        
+                        UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+                    }
+                } // end dispatchQueue
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            return
+            
+        case AVAudioSession.RecordPermission.undetermined:
+            print("Request permission here")
+            // Dismiss Keyboard (on UIView level, without reference to a specific text field)
+            UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
+            
+            AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
+                // Handle granted
+                if granted {
+                    print(#function, " Now Granted")
+                } else {
+                    print("Pemission Not Granted")
+                    
+                } // end else
+            })
+        @unknown default:
+            print("ERROR! Unknown Default. Check!")
+        } // end switch
+        
+    }
     
-    // completion of recording
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        if flag {
-//            
-//            soundsRecordPlayStatusLabel.text = "Recording Completed"
-//            
-//            recordButtonOutlet.setImage(UIImage(named: "Microphone-Jolly"), for: UIControl.State())
-//            playButtonOutlet.setImage(UIImage(named: "Play-Jolly"), for: UIControl.State())
-//            stopButtonOutlet.setImage(UIImage(named: "Stop-Outlined"), for: UIControl.State())
-//            
-//            recordButtonOutlet.isEnabled = true
-//            playButtonOutlet.isEnabled = true
-//            stopButtonOutlet.isEnabled = false
-//            
-//        }
-//    }
     func getDirectory() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -490,21 +440,18 @@ class SearchVC: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate
     
 }
 
-
-
-
 extension SearchVC: BlurVCDelegate {
     
     func removeBlurView() {
-         for subview in view.subviews {
-             if subview.isKind(of: UIVisualEffectView.self) {
-                 subview.removeFromSuperview()
-             }
-         }
-     }
-    
-    
+        for subview in view.subviews {
+            if subview.isKind(of: UIVisualEffectView.self) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
 }
+
+
 // Helper function inserted by Swift migrator.
 fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
     return input.rawValue

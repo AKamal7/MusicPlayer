@@ -20,11 +20,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8Y-xf-dWi">
                         <rect key="frame" x="24" y="20" width="373" height="81"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qij-We-zcl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qij-We-zcl">
                                 <rect key="frame" x="8" y="8" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="AKw-qJ-lS7"/>
                                     <constraint firstAttribute="width" secondItem="qij-We-zcl" secondAttribute="height" multiplier="1:1" id="YUe-7c-0c0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ph_play-fill" translatesAutoresizingMaskIntoConstraints="NO" id="esC-j1-kie">
+                                <rect key="frame" x="25.666666666666664" y="25.666666666666664" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RCL-zq-NGq"/>
+                                    <constraint firstAttribute="width" constant="30" id="SlW-Ei-tHl"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-Qk-x2B">
@@ -59,7 +74,9 @@
                         <constraints>
                             <constraint firstItem="dvJ-Qk-x2B" firstAttribute="bottom" secondItem="qij-We-zcl" secondAttribute="bottom" id="1ba-qk-3Kl"/>
                             <constraint firstItem="dvJ-Qk-x2B" firstAttribute="top" secondItem="qij-We-zcl" secondAttribute="top" id="2ax-9f-8aj"/>
+                            <constraint firstItem="esC-j1-kie" firstAttribute="centerX" secondItem="qij-We-zcl" secondAttribute="centerX" id="4Mz-y8-fxC"/>
                             <constraint firstItem="qij-We-zcl" firstAttribute="centerY" secondItem="e8Y-xf-dWi" secondAttribute="centerY" id="7fk-e0-jya"/>
+                            <constraint firstItem="esC-j1-kie" firstAttribute="centerY" secondItem="qij-We-zcl" secondAttribute="centerY" id="OMm-Rs-ghR"/>
                             <constraint firstItem="dvJ-Qk-x2B" firstAttribute="leading" secondItem="qij-We-zcl" secondAttribute="trailing" constant="12" id="hym-yp-p9D"/>
                             <constraint firstItem="qij-We-zcl" firstAttribute="leading" secondItem="e8Y-xf-dWi" secondAttribute="leading" constant="8" id="n3d-IS-N8W"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dvJ-Qk-x2B" secondAttribute="trailing" constant="30" id="nNA-Jr-Der"/>
@@ -93,6 +110,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ph_play-fill" width="43" height="45.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

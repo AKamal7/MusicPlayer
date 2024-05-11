@@ -30,3 +30,43 @@ class GlowBall: UIView {
     }
 
 }
+
+
+class CircularSoundWaveView: UIView {
+    private let shapeLayer = CAShapeLayer()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        // Configure the circular shape layer
+        shapeLayer.lineWidth = 2.0
+        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        layer.addSublayer(shapeLayer)
+    }
+    
+    func updateSoundWave(intensity: Float) {
+        // Calculate the radius based on the intensity
+        let maxRadius = min(bounds.width, bounds.height) / 2.0
+        let radius = maxRadius * CGFloat(intensity)
+        
+        // Create a circular path
+        let path = UIBezierPath(arcCenter: CGPoint(x: bounds.midX, y: bounds.midY),
+                                radius: radius,
+                                startAngle: 0,
+                                endAngle: CGFloat.pi * 2,
+                                clockwise: true)
+        
+        // Apply the path to the shape layer
+        shapeLayer.path = path.cgPath
+    }
+}
+

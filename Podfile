@@ -12,4 +12,5 @@ pod 'SwiftJWT'
 pod 'SDWebImage'
 pod 'Alamofire'
 pod 'GoogleAPIClientForREST/YouTube'
+pod 'youtube-ios-player-helper'
 end

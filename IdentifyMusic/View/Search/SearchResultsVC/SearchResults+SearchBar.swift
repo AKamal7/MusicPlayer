@@ -15,10 +15,13 @@ extension SearchResultsVC: UISearchBarDelegate {
         self.offset = 0
             guard !searchText.isEmpty else {
                 return
-               
-
             }
-        setupSearchResults()
+        
+        if UserDefaultsManager.shared().youtubeEnabled ?? false {
+            searchYouTube(searchText: searchText)
+        } else {
+            setupSearchResults()
+        }
         }
     
     func setupSearchBar() {
@@ -59,9 +62,6 @@ extension SearchResultsVC: UISearchBarDelegate {
                     self.isPagination = false
                 }
             }
-            
-            
-
         }
     }
     
@@ -100,6 +100,91 @@ extension SearchResultsVC: UISearchBarDelegate {
       return url.queryItems?.first(where: { $0.name == param })?.value
     }
     
+    func searchYouTube(searchText: String) {
+        searchYouTubeVideos(query: searchText) { (videos, error) in
+            if let error = error {
+                // Handle the error
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let videos = videos {
+                self.youtubeVid = videos
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }
+        }
+    }
     
+    
+    func searchYouTubeVideos(query: String, completion: @escaping ([Video]?, Error?) -> Void) {
+        // Construct the URL
+        let urlString = "https://www.googleapis.com/youtube/v3/search"
+
+        // Construct the query parameters
+        let apiKey = "AIzaSyD_53VTrGxEDO2-oCi6g7HVQXYAaOVtnyI"
+        let part = "snippet"
+        let order = "relevance" // Specify the desired order, e.g., relevance, date, rating, etc.
+    
+        let queryParams: [String: String] = [
+            "part": part,
+            "q": query,
+            "key": apiKey,
+            "order": order
+        ]
+
+        // Create the URL components
+        var urlComponents = URLComponents(string: urlString)
+        urlComponents?.queryItems = queryParams.map { URLQueryItem(name: $0.key, value: $0.value) }
+
+        // Make the GET request
+        guard let url = urlComponents?.url else {
+            completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+
+            if let data = data {
+                // Parse the response data
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+
+                    // Process the JSON and extract the video information
+                    // Example implementation:
+                    var videos: [Video] = []
+
+                    if let items = json?["items"] as? [[String: Any]] {
+                        for item in items {
+                            if let itemId = item["id"] as? [String: Any],
+                               let videoId = itemId["videoId"] as? String,
+                               let snippet = item["snippet"] as? [String: Any],
+                               let title = snippet["title"] as? String,
+                               let thumbnails = snippet["thumbnails"] as? [String: Any],
+                               let defaultThumbnail = thumbnails["default"] as? [String: Any],
+                               let channelTitle = snippet["channelTitle"] as? String,
+                               let thumbnailUrl = defaultThumbnail["url"] as? String {
+
+                                let video = Video(videoId: videoId, title: title, thumbnailUrl: thumbnailUrl, channelTitle: channelTitle)
+                                videos.append(video)
+                            }
+                        }
+                    }
+
+                    completion(videos, nil)
+                } catch {
+                    completion(nil, error)
+                }
+            } else {
+                completion(nil, NSError(domain: "No data returned", code: 0, userInfo: nil))
+            }
+        }.resume()
+    }
     
 }
