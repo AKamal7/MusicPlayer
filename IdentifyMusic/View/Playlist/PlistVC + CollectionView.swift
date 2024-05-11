@@ -35,7 +35,7 @@ extension PlaylistVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor(hex: "FFFFFF", alpha: 0.04).cgColor
         cell.imgView.image = UIImage(named: "musicIcon")
-        cell.trendsLabel.text = "trendName02"
+        cell.trendsLabel.text = fetchedGenres?.data[indexPath.row].attributes.name
        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

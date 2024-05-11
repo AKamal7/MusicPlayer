@@ -11,6 +11,7 @@ import Cider
 class MusicTableVC: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+   
     @IBOutlet weak var tableView: UITableView!
     var fetchedPlaylists: Playlist!
     var playlist: Cider.Playlist?

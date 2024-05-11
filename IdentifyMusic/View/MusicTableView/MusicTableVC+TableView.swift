@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Cider
 
 
 extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +54,12 @@ extension MusicTableVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.songNameLabel.text = playlist?.relationships?.tracks.data?[indexPath.row].attributes?.name ?? ""
         
+        if let attributes = playlist?.relationships?.tracks.data?[indexPath.row].attributes {
+            let imgString = attributes.artwork.url.replacingOccurrences(of: "{w}", with: "\(attributes.artwork.width)")
+            let imgStringEnhanced = imgString.replacingOccurrences(of: "{h}", with: "\(attributes.artwork.height)")
+            let imgUrl = URL(string: imgStringEnhanced)
+            cell.cellImgView.sd_setImage(with: imgUrl)
+        }
         return cell
     }
     

@@ -29,17 +29,26 @@ class PlaylistVC: UIViewController {
     @IBOutlet weak var musicIconView: UIImageView!
     @IBOutlet weak var creatPlistImgView: UIImageView!
     
-    
+//    var genres: [GenreData] = []
     var userToken: String = ""
     var playlistsData: [Cider.Playlist] = []
     var fetchedPlaylists: [Playlist] = []
-
+    var fetchedGenres: GenreResponse?
+    
+    
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-
+        
+        let cider = Cider.CiderClient(storefront: .egypt, developerToken: UserDefaultsManager.shared().token ?? "")
+        cider.search(term: "genre",limit: 1) { results, error in
+            print("ciderGenres" ,results)
+            print(error,"cidergenreserror")
+        }
+        
+        
+        
         setupView()
         setupTable()
         fetchUserData()
@@ -50,7 +59,26 @@ class PlaylistVC: UIViewController {
 
     
     // MARK:- Actions
-    
+    private func getGenres() {
+        GenreAPI.fetchGenres { result in
+            switch result {
+            case .success(let genres):
+                // Handle fetched genres
+                
+                self.fetchedGenres = genres
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            case .failure(let error):
+                // Handle error
+                print("Error fetching genres: \(error)")
+            }
+        }
+        
+        
+        
+    }
     private func fetchUserData() {
         authenticateUser { usertoken, error in
             print( "eroor",error)
@@ -58,6 +86,7 @@ class PlaylistVC: UIViewController {
             
             
             self.userToken = "\(usertoken ?? "")"
+         
             
             self.fetchMyPlaylists(userToken: self.userToken) { playlists, error in
                 print("PLaylists", playlists)
@@ -82,8 +111,10 @@ class PlaylistVC: UIViewController {
                 }
             
             }
+            
         }
     }
+    
     @IBAction func seeAllBtnClicked(_ sender: Any) {
         let vc = UIStoryboard(name: "TrendsCollectionVC", bundle: nil).instantiateViewController(withIdentifier: "TrendsCollectionVC") as! TrendsCollectionVC
         navigationController?.pushViewController(vc, animated: false)
