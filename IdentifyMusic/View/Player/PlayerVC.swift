@@ -53,7 +53,7 @@ class PlayerVC: UIViewController {
         super.viewDidLoad()
         
         if UserDefaultsManager.shared().youtubeEnabled == true {
-            youtubeState()
+//            youtubeState()
             videoView.delegate = self
             songNameLbl.text = youtubeVid?.title
             artistNameLbl.text = youtubeVid?.channelTitle
@@ -164,30 +164,30 @@ class PlayerVC: UIViewController {
                                         object: nil,
                                         userInfo: nil)
     }
-    func youtubeState() {
-        videoView.playerState { state, error in
-            switch state {
-                
-            case .unstarted:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            case .ended:
-                self.playBtn.setImage(UIImage(named: "play"), for: .normal)
-            case .playing:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            case .paused:
-                self.playBtn.setImage(UIImage(named: "play"), for: .normal)
-            case .buffering:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            case .cued:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            case .unknown:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            @unknown default:
-                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
-            }
-        }
-       
-    }
+//    func youtubeState() {
+//        videoView.playerState { state, error in
+//            switch state {
+//                
+//            case .unstarted:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            case .ended:
+//                self.playBtn.setImage(UIImage(named: "play"), for: .normal)
+//            case .playing:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            case .paused:
+//                self.playBtn.setImage(UIImage(named: "play"), for: .normal)
+//            case .buffering:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            case .cued:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            case .unknown:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            @unknown default:
+//                self.playBtn.setImage(UIImage(named: "pause"), for: .normal)
+//            }
+//        }
+//       
+//    }
     
     
     @objc func playerDidFinishPlaying(sender: Notification) {
@@ -215,7 +215,7 @@ class PlayerVC: UIViewController {
     
     @objc func update(){
         if UserDefaultsManager.shared().youtubeEnabled == true {
-            youtubeState()
+//            youtubeState()
         } else {
             
             if isAuthorized {
