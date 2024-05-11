@@ -59,6 +59,4 @@ class LyricsVC: UIViewController {
         }
     }
 
-
-
 }

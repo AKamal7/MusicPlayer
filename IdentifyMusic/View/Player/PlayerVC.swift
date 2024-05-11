@@ -410,7 +410,7 @@ class PlayerVC: UIViewController {
     
     @IBAction func forwardBtn(_ sender: UIButton) {
         if UserDefaultsManager.shared().youtubeEnabled == true {
-             videoView.next
+             videoView.nextVideo()
         } else {
             if isAuthorized {
                 if musicPlayer.currentPlaybackTime > 5 {
