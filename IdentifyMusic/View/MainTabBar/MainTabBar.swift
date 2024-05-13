@@ -18,6 +18,7 @@ class MainTabBar: UITabBarController {
     var songArtist : UILabel!
     var favButton  : UIButton!
     var playButton : UIButton!
+    var containerViewHeight: NSLayoutConstraint? = nil
     
     // MARK:- LifeCycle Methods
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class MainTabBar: UITabBarController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerVisibilityShown(notif:)), name: Notification.Name(rawValue: "showPlayer"), object: nil)
         if isPlaying == false {
-            hidePlayer(hide: true)
+            hidePlayer()
         }
         setupObserver()
     }
@@ -73,7 +74,7 @@ class MainTabBar: UITabBarController {
     @objc func handleNotification(_ sender: Notification) {
         if isPlaying {
             setupPlayerData()
-            showPlayer(show: true)
+            showPlayer()
             //             playButton.setImage(UIImage(named:"pause"), for: .normal)
         } else {
             //             playButton.setImage(UIImage(named:"play"), for: .normal)
@@ -83,12 +84,13 @@ class MainTabBar: UITabBarController {
     
     @objc func playerVisibilityHidden(notif: Notification) {
         let show = notif.object as? Bool ?? false
-        self.hidePlayer(hide: show)
+        self.hidePlayer()
     }
     
     @objc func playerVisibilityShown(notif: Notification) {
-        let show = notif.object as? Bool ?? true
-        self.showPlayer(show: show)
+//        let show = notif.object as? Bool ?? true
+        print("show")
+        self.showPlayer()
     }
 }
 
@@ -117,11 +119,20 @@ extension MainTabBar {
         // Bn3ml el container bta3na ya st el kol
         containerView.backgroundColor = UIColor(hex: "1E1E1E", alpha: 1)
         view.addSubview(containerView)
+//        view.insertSubview(containerView, at: 0)
+        containerView.clipsToBounds = true
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         containerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 72).isActive = true
+        if isPlaying {
+            self.containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: 72)
+            self.containerViewHeight?.isActive = true
+        } else {
+            self.containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: 0)
+            self.containerViewHeight?.isActive = true
+        }
+        
         
         // n7dr b2a kol el m2ader bta3tna
         songImage  = UIImageView()
@@ -209,7 +220,7 @@ extension MainTabBar {
         
         
         if isPlaying {
-            showPlayer(show: true)
+            showPlayer()
             playButton.setImage(UIImage(named: "pause"), for: .normal)
         } else {
             playButton.setImage(UIImage(named: "play"), for: .normal)
@@ -222,12 +233,20 @@ extension MainTabBar {
     
     
     
-    func hidePlayer(hide: Bool) {
-        self.containerView.isHidden = true
+    func hidePlayer() {
+        containerViewHeight?.constant = 0
+        UIView.animate(withDuration: 0.1) {
+            self.containerView.layoutIfNeeded()
+        }
+        
     }
     
-    func showPlayer(show: Bool) {
-        self.containerView.isHidden = false
+    func showPlayer() {
+        print("showinnnnng")
+        containerViewHeight?.constant = 72
+        UIView.animate(withDuration: 0.1) {
+            self.containerView.layoutIfNeeded()
+        }
     }
     
     private func createServiceSearchVC() -> UIViewController {

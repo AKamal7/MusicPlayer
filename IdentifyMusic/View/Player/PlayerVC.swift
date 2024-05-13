@@ -103,20 +103,21 @@ class PlayerVC: UIViewController {
                     if  let songURL = URL(string: url ?? "") {
                         player = AVPlayer(url: songURL)
                         player.volume = 1
+                        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinishPlaying), name: AVPlayerItem.didPlayToEndTimeNotification, object: player.currentItem)
                         print(url, "recognitionURL")
                     }
                 }
             }
         }
-        if UserDefaultsManager.shared().youtubeEnabled == true {
-            
-        } else {
-            if !isAuthorized {
-               
-                    NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinishPlaying), name: AVPlayerItem.didPlayToEndTimeNotification, object: player.currentItem)
-            }
-        }
-       
+//        if UserDefaultsManager.shared().youtubeEnabled == true {
+//            
+//        } else {
+//            if !isAuthorized {
+//               
+//                    
+//            }
+//        }
+//       
         let backBtn = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backTapped))
         
         navigationItem.leftBarButtonItem = backBtn
@@ -148,8 +149,9 @@ class PlayerVC: UIViewController {
                 }
                 
             }
-            startTimer()
+            
         }
+        startTimer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -215,6 +217,12 @@ class PlayerVC: UIViewController {
     
     @objc func update(){
         if UserDefaultsManager.shared().youtubeEnabled == true {
+            videoView.currentTime { current, error in
+                self.durationLiveLabel.text = "\(current.minutesSecondsFormat)"
+            }
+//            videoView.duration { duration, error in
+//                
+//            }
 //            youtubeState()
         } else {
             
@@ -458,14 +466,14 @@ class PlayerVC: UIViewController {
     
     @IBAction func sliderChanged(_ sender: CustomSlider) {
             if UserDefaultsManager.shared().youtubeEnabled == true {
-//                let duration = videoView.duration
+                
                      
 //                let currentTime = Int(Double(self.sliderView.value) * duration)
-//                     self.durationLiveLabel.text = self.ytk_secondsToCounter(currentTime)
+//                     
 //                     
 //                     let timeLeft = Int(duration) - currentTime
 //                     self.remainingTimeLabel.text = "-\(self.ytk_secondsToCounter(timeLeft))"
-//                     
+                     
             } else {
                 self.sliderView.value = sender.value
                 if isAuthorized {
@@ -623,5 +631,15 @@ extension CMTime {
         String(format: "%02d:%02d",
                minute, second)
     }
+}
+
+extension Float {
+
+    var minutesSecondsFormat : String {
+    let seconds = self.truncatingRemainder(dividingBy: 60).rounded(.toNearestOrAwayFromZero)
+    let minutes = (self / 60).truncatingRemainder(dividingBy: 60).rounded(.toNearestOrAwayFromZero)
+    return String(format:"%02.f:%02.f",minutes, seconds);
+    }
+   
 }
 

@@ -126,7 +126,7 @@ extension SearchResultsVC: UISearchBarDelegate {
         // Construct the query parameters
         let apiKey = "AIzaSyD_53VTrGxEDO2-oCi6g7HVQXYAaOVtnyI"
         let part = "snippet"
-        let order = "relevance" // Specify the desired order, e.g., relevance, date, rating, etc.
+        let order = "rating" // Specify the desired order, e.g., relevance, date, rating, etc.
     
         let queryParams: [String: String] = [
             "part": part,
@@ -175,9 +175,12 @@ extension SearchResultsVC: UISearchBarDelegate {
                                 videos.append(video)
                             }
                         }
+                        completion(videos, nil)
+                    } else {
+                        completion(nil, error)
                     }
 
-                    completion(videos, nil)
+                    
                 } catch {
                     completion(nil, error)
                 }
