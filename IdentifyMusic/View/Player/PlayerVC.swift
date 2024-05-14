@@ -66,6 +66,7 @@ class PlayerVC: UIViewController {
                "autoplay": 1
            ]
             videoView.load(withVideoId: self.videoID ?? "", playerVars: playerVars)
+            videoView.delegate = self
             
         } else {
             songView.isHidden = false
@@ -131,7 +132,12 @@ class PlayerVC: UIViewController {
         lyricsHeight.constant = 400
         print(isAuthorized, "adsgfasdgas")
         if UserDefaultsManager.shared().youtubeEnabled == true {
-            
+            durationLiveLabel.text  = "00:00"
+            videoView.duration { duration, error in
+                print(Float(duration), "duration youtubeeee")
+                self.sliderView.maximumValue = Float(duration.second)
+                self.fullDurationLabel.text = "\(duration.MinuteSeconds)"
+            }
         } else {
             if isAuthorized {
                 fullDurationLabel.text  = musicPlayer.nowPlayingItem?.playbackDuration.MinuteSeconds
@@ -218,7 +224,9 @@ class PlayerVC: UIViewController {
     @objc func update(){
         if UserDefaultsManager.shared().youtubeEnabled == true {
             videoView.currentTime { current, error in
-                self.durationLiveLabel.text = "\(current.minutesSecondsFormat)"
+                self.durationLiveLabel.text = "\(Double(current).MinuteSeconds)"
+                self.sliderView.value = current
+                print(current, "cureent")
             }
 //            videoView.duration { duration, error in
 //                
@@ -270,6 +278,10 @@ class PlayerVC: UIViewController {
         }
 
         
+    }
+    
+    deinit {
+        timer.invalidate()
     }
     
     private func applyBlurEffect(to view: UIView) {
@@ -358,9 +370,9 @@ class PlayerVC: UIViewController {
         if isPlaying {
             if UserDefaultsManager.shared().youtubeEnabled == true {
                 
-                videoView.playVideo()
+                videoView.pauseVideo()
                 songImgView.layer.removeAllAnimations()
-                playBtn.setImage(UIImage(named: "pause"), for: .normal)
+                playBtn.setImage(UIImage(named: "play"), for: .normal)
                 isPlaying = false
             } else {
                 isPlaying = false
@@ -376,9 +388,9 @@ class PlayerVC: UIViewController {
         } else {
 
             if UserDefaultsManager.shared().youtubeEnabled == true {
-                videoView.pauseVideo()
+                videoView.playVideo()
                 songImgView.rotate360Degrees()
-                playBtn.setImage(UIImage(named: "play"), for: .normal)
+                playBtn.setImage(UIImage(named: "pause"), for: .normal)
                 isPlaying = true
             } else {
                 isPlaying = true
@@ -473,6 +485,7 @@ class PlayerVC: UIViewController {
 //                     
 //                     let timeLeft = Int(duration) - currentTime
 //                     self.remainingTimeLabel.text = "-\(self.ytk_secondsToCounter(timeLeft))"
+                videoView.seek(toSeconds: sliderView.value, allowSeekAhead: true)
                      
             } else {
                 self.sliderView.value = sender.value
@@ -641,5 +654,22 @@ extension Float {
     return String(format:"%02.f:%02.f",minutes, seconds);
     }
    
+}
+
+extension PlayerVC {
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+        if state == .playing {
+            playerView.duration { duration, error in
+                print(Float(duration), "duratioooooon")
+                self.sliderView.maximumValue = Float(duration)
+                self.fullDurationLabel.text = "\(duration.MinuteSeconds)"
+            }
+            playBtn.setImage(UIImage(named: "pause"), for: .normal)
+            isPlaying = true
+        } else if state == .paused {
+            playBtn.setImage(UIImage(named: "play"), for: .normal)
+            isPlaying = false
+        }
+    }
 }
 

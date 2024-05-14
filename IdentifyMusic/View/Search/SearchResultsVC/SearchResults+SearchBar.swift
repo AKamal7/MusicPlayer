@@ -11,18 +11,32 @@ import Cider
 
 extension SearchResultsVC: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.offset = 0
-            guard !searchText.isEmpty else {
-                return
-            }
+        guard let searchText = searchBar.searchTextField.text else { return }
+        guard !searchText.isEmpty else {
+            return
+        }
         
         if UserDefaultsManager.shared().youtubeEnabled ?? false {
             searchYouTube(searchText: searchText)
         } else {
             setupSearchResults()
         }
-        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        self.offset = 0
+//            guard !searchText.isEmpty else {
+//                return
+//            }
+//        
+//        if UserDefaultsManager.shared().youtubeEnabled ?? false {
+//            searchYouTube(searchText: searchText)
+//        } else {
+//            setupSearchResults()
+//        }
+    }
     
     func setupSearchBar() {
         searchBar.delegate = self
@@ -132,7 +146,8 @@ extension SearchResultsVC: UISearchBarDelegate {
             "part": part,
             "q": query,
             "key": apiKey,
-            "order": order
+            "order": order,
+            "maxResults": "50"
         ]
 
         // Create the URL components
